@@ -305,6 +305,14 @@
         }
       });
 
+      // Fire Analytics Event for step change
+      if (window.gtag) {
+        window.gtag('event', 'step_view', {
+          event_category: 'funnel',
+          event_label: `step_${step}`
+        });
+      }
+
       currentStep = step;
     }
 
@@ -341,6 +349,21 @@
       json.hasQrcode = formData.get('hasQrcode') === 'true';
       json.hasBarcode = formData.get('hasBarcode') === 'true';
 
+      // Capture UTMs
+      const utms = JSON.parse(sessionStorage.getItem('beg_utms') || '{}');
+      if (Object.keys(utms).length > 0) {
+        json.utms = utms;
+      }
+
+      // Fire Analytics Event: Quote Submission Started
+      if (window.gtag) {
+        window.gtag('event', 'quote_started', {
+          event_category: 'form',
+          event_label: 'orcamento',
+          category: json.category
+        });
+      }
+
       try {
         const API_URL = import.meta.env.PUBLIC_API_URL || 'http://localhost:8080';
         // Post JSON Data
@@ -366,6 +389,15 @@
           });
         }
 
+        // Fire Analytics Event: Quote Submitted
+        if (window.gtag) {
+          window.gtag('event', 'quote_submitted', {
+            event_category: 'form',
+            event_label: protocol,
+            value: 1
+          });
+        }
+
         // Show Success
         contents.forEach(c => c.classList.add('hidden'));
         document.querySelector('.stepper-header')?.classList.add('hidden');
@@ -377,6 +409,15 @@
         const wppBtn = document.getElementById('whatsapp-link') as HTMLAnchorElement;
         const msg = encodeURIComponent(`Olá! Solicitei um orçamento no site. Meu protocolo é: ${protocol}`);
         wppBtn.href = `https://wa.me/5511999999999?text=${msg}`;
+        
+        wppBtn.addEventListener('click', () => {
+          if (window.gtag) {
+            window.gtag('event', 'click_whatsapp', {
+              event_category: 'contact',
+              event_label: protocol
+            });
+          }
+        });
 
       } catch (error) {
         alert('Ocorreu um erro ao enviar o orçamento. Tente novamente.');

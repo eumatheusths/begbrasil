@@ -4,6 +4,7 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Map;
 
 public class QuoteRequest {
     
@@ -38,6 +39,7 @@ public class QuoteRequest {
     private String colors;
     private String desiredLeadTime;
     private String notes;
+    private Map<String, String> utms;
 
     // Getters and Setters
     public String getName() { return name; }
@@ -84,4 +86,6 @@ public class QuoteRequest {
     public void setDesiredLeadTime(String desiredLeadTime) { this.desiredLeadTime = desiredLeadTime; }
     public String getNotes() { return notes; }
     public void setNotes(String notes) { this.notes = notes; }
+    public Map<String, String> getUtms() { return utms; }
+    public void setUtms(Map<String, String> utms) { this.utms = utms; }
 }

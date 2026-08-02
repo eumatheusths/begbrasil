@@ -69,6 +69,29 @@ const {
         }
       }} 
     />
+
+    <!-- Analytics & UTM Tracking -->
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      // Capture UTMs
+      const params = new URLSearchParams(window.location.search);
+      const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+      let hasUtms = false;
+      const sessionUtms = JSON.parse(sessionStorage.getItem('beg_utms') || '{}');
+      
+      utms.forEach(u => {
+        if (params.has(u)) {
+          sessionUtms[u] = params.get(u);
+          hasUtms = true;
+        }
+      });
+      
+      if (hasUtms) {
+        sessionStorage.setItem('beg_utms', JSON.stringify(sessionUtms));
+      }
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>

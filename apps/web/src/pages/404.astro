@@ -1,95 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Button from '../components/ui/Button.astro';
-import { ShieldAlert } from 'lucide-react'; // we don't have lucide-react yet, let's use SVG
-
-// 404.astro
 ---
 
 <Layout 
-  title="Página não encontrada" 
-  description="A página que você tentou acessar não foi encontrada."
-  noindex={true}
+  title="Página Não Encontrada (404) | BEG Brasil"
+  description="A página que você está procurando pode ter sido removida, renomeada ou está temporariamente indisponível."
 >
-  <div class="error-page container">
-    <div class="error-content">
-      <div class="error-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
-        </svg>
-      </div>
-      <h1 class="error-title">404 - Página não encontrada</h1>
-      <p class="error-text">
-        O recurso que você tentou acessar foi movido ou não existe mais. Verifique se o endereço foi digitado corretamente.
+  <div class="min-h-[70vh] flex items-center justify-center bg-gray-50 px-4 py-16">
+    <div class="text-center max-w-2xl mx-auto">
+      <h1 class="text-9xl font-black text-primary-100 mb-4">404</h1>
+      <h2 class="text-3xl font-bold text-graphite-900 mb-6">Página Não Encontrada</h2>
+      <p class="text-lg text-gray-600 mb-8">
+        Atualizamos nossa estrutura para melhor atendê-lo. A página que você busca foi movida.
+        Explore nossas categorias principais abaixo ou retorne à página inicial.
       </p>
-      <div class="error-actions">
-        <a href="/" class="btn btn-primary">Voltar ao Início</a>
-        <a href="/produtos" class="btn btn-outline">Ver Produtos</a>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-left">
+        <a href="/produtos/etiquetas-de-patrimonio" class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-primary-600 transition-colors">
+          <h3 class="font-bold text-graphite-900 mb-2">Etiquetas de Patrimônio &rarr;</h3>
+          <p class="text-sm text-gray-500">Alumínio, Inox e Policarbonato com código de barras.</p>
+        </a>
+        <a href="/produtos/placas-para-maquinas" class="p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:border-primary-600 transition-colors">
+          <h3 class="font-bold text-graphite-900 mb-2">Placas para Máquinas &rarr;</h3>
+          <p class="text-sm text-gray-500">Identificação técnica resistente a solventes.</p>
+        </a>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="/" class="px-6 py-3 bg-primary-600 hover:bg-primary-700 text-white font-bold rounded w-full sm:w-auto transition-colors">
+          Voltar para Home
+        </a>
+        <a href="/orcamento" class="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-graphite-900 font-bold rounded w-full sm:w-auto transition-colors">
+          Solicitar Orçamento
+        </a>
       </div>
     </div>
   </div>
 </Layout>
-
-<style>
-  .error-page {
-    min-height: 60vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: var(--space-12) 0;
-  }
-
-  .error-content {
-    text-align: center;
-    max-width: 500px;
-  }
-
-  .error-icon {
-    color: var(--color-gray-400);
-    margin-bottom: var(--space-6);
-  }
-
-  .error-title {
-    font-size: var(--text-3xl);
-    color: var(--color-graphite-900);
-    margin-bottom: var(--space-4);
-  }
-
-  .error-text {
-    color: var(--color-gray-600);
-    margin-bottom: var(--space-8);
-    font-size: var(--text-lg);
-  }
-
-  .error-actions {
-    display: flex;
-    gap: var(--space-4);
-    justify-content: center;
-  }
-
-  .btn {
-    padding: var(--space-3) var(--space-6);
-    border-radius: var(--radius-sm);
-    font-weight: var(--font-medium);
-    text-decoration: none;
-    transition: all var(--transition-fast);
-  }
-
-  .btn-primary {
-    background-color: var(--color-primary-600);
-    color: var(--color-white);
-  }
-
-  .btn-primary:hover, .btn-primary:focus-visible {
-    background-color: var(--color-primary-700);
-  }
-
-  .btn-outline {
-    border: 1px solid var(--color-gray-300);
-    color: var(--color-graphite-800);
-  }
-
-  .btn-outline:hover, .btn-outline:focus-visible {
-    background-color: var(--color-gray-100);
-  }
-</style>

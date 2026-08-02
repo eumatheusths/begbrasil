@@ -1,0 +1,13 @@
+{
+  "redirects": [
+    { "source": "/contato-beg-brasil.html", "destination": "/orcamento", "permanent": true },
+    { "source": "/placas_beg_brasil.html", "destination": "/produtos/placas-para-maquinas", "permanent": true },
+    { "source": "/etiquetas-beg-brasil.html", "destination": "/produtos/etiquetas-de-patrimonio", "permanent": true },
+    { "source": "/pe-r-beg-brasil.html", "destination": "/produtos/etiquetas-de-patrimonio", "permanent": true },
+    { "source": "/pe-beg-brasil.html", "destination": "/produtos/etiquetas-de-patrimonio", "permanent": true },
+    { "source": "/pc-beg-brasil.html", "destination": "/produtos/etiquetas-de-patrimonio", "permanent": true },
+    { "source": "/pm-beg-brasil.html", "destination": "/produtos/etiquetas-metalicas", "permanent": true },
+    { "source": "/pmi-beg-brasil.html", "destination": "/produtos/etiquetas-metalicas", "permanent": true },
+    { "source": "/index.html", "destination": "/", "permanent": true }
+  ]
+}

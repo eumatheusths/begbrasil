@@ -48,6 +48,9 @@ public class Quote {
     @OneToMany(mappedBy = "quote", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<QuoteAttachment> attachments = new ArrayList<>();
 
+    @OneToOne(mappedBy = "quote", cascade = CascadeType.ALL)
+    private UTMData utmData;
+
     @Column(updatable = false)
     private OffsetDateTime createdAt;
 
@@ -111,6 +114,11 @@ public class Quote {
     public void setNotes(String notes) { this.notes = notes; }
     public List<QuoteAttachment> getAttachments() { return attachments; }
     public void setAttachments(List<QuoteAttachment> attachments) { this.attachments = attachments; }
+    public UTMData getUtmData() { return utmData; }
+    public void setUtmData(UTMData utmData) { 
+        this.utmData = utmData; 
+        if(utmData != null) utmData.setQuote(this);
+    }
     public OffsetDateTime getCreatedAt() { return createdAt; }
     public void setCreatedAt(OffsetDateTime createdAt) { this.createdAt = createdAt; }
     public OffsetDateTime getUpdatedAt() { return updatedAt; }
