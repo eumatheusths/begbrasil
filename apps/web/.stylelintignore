@@ -1,0 +1,6 @@
+.astro/
+.vercel/
+dist/
+coverage/
+playwright-report/
+test-results/
