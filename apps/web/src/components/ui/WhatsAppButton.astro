@@ -79,4 +79,22 @@ const whatsappUrl = `https://wa.me/${internationalPhone}?text=${encodeURICompone
     width: 48px;
     height: 48px;
   }
+  @media (max-width: 639px) {
+    .position-bottom-right,
+    .position-bottom-left {
+      bottom: 16px;
+      height: 52px;
+      width: 52px;
+    }
+    .position-bottom-right {
+      right: 16px;
+    }
+    .position-bottom-left {
+      left: 16px;
+    }
+    .whatsapp-btn svg {
+      height: 24px;
+      width: 24px;
+    }
+  }
 </style>

@@ -80,4 +80,29 @@ const { items } = Astro.props;
     color: var(--color-graphite-900);
     font-weight: var(--font-medium);
   }
+  @media (max-width: 639px) {
+    .breadcrumb-list {
+      flex-wrap: nowrap;
+      gap: 3px;
+      overflow-x: auto;
+      padding-bottom: 5px;
+      scrollbar-width: none;
+      white-space: nowrap;
+    }
+    .breadcrumb-list::-webkit-scrollbar {
+      display: none;
+    }
+    .breadcrumb-item {
+      flex: 0 0 auto;
+    }
+    .breadcrumb-current {
+      display: inline-block;
+      max-width: 210px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .breadcrumb-separator {
+      margin: 0 3px;
+    }
+  }
 </style>

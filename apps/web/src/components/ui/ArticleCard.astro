@@ -121,4 +121,14 @@ const copy = summary || excerpt || '';
     margin-top: auto;
     padding-top: var(--space-4);
   }
+  @media (max-width: 639px) {
+    .article-content {
+      padding: 16px 18px 20px;
+    }
+    .article-meta {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 4px;
+    }
+  }
 </style>

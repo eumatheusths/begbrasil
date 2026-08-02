@@ -75,7 +75,7 @@ const formatClusterName = (name: string) => {
                         {article.data.title}
                       </h3>
                       <p class="text-gray-600 text-sm line-clamp-3">{article.data.description}</p>
-                      <div class="mt-4 flex items-center text-sm text-gray-500">
+                      <div class="content-reading mt-4 flex items-center text-sm text-gray-500">
                         <svg
                           class="w-4 h-4 mr-1"
                           fill="none"
@@ -145,6 +145,19 @@ const formatClusterName = (name: string) => {
     font-weight: 750;
     margin-top: 18px;
   }
+  .content-reading {
+    align-items: center;
+    color: var(--color-gray-500);
+    display: flex;
+    font-size: 0.875rem;
+    gap: 5px;
+    margin-top: 16px;
+  }
+  .content-reading svg {
+    flex: 0 0 16px;
+    height: 16px;
+    width: 16px;
+  }
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -157,8 +170,27 @@ const formatClusterName = (name: string) => {
     }
   }
   @media (max-width: 620px) {
+    .content-index {
+      padding-bottom: 44px;
+      padding-top: 22px;
+    }
+    .content-clusters {
+      gap: 42px;
+      margin-top: 32px;
+    }
+    .content-cluster > h2 {
+      font-size: 1.65rem;
+      margin-bottom: 22px;
+    }
     .content-grid {
+      gap: 18px;
       grid-template-columns: 1fr;
+    }
+    .content-card {
+      border-radius: 14px;
+    }
+    .content-card-copy {
+      padding: 18px;
     }
   }
 </style>

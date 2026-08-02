@@ -173,4 +173,34 @@
     font-size: var(--text-sm);
     color: rgb(255 255 255 / 78%);
   }
+  @media (max-width: 639px) {
+    .trust-bar {
+      padding: 24px 0;
+    }
+    .trust-container {
+      gap: 10px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .trust-item {
+      align-items: flex-start;
+      background: rgb(255 255 255 / 10%);
+      border: 1px solid rgb(255 255 255 / 15%);
+      border-radius: 14px;
+      flex-direction: column;
+      gap: 8px;
+      min-height: 132px;
+      padding: 14px;
+    }
+    .trust-icon {
+      height: 40px;
+      width: 40px;
+    }
+    .trust-title {
+      font-size: 0.9rem;
+    }
+    .trust-desc {
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+  }
 </style>

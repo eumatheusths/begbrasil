@@ -159,4 +159,24 @@ const icons: Record<string, string> = {
   .sector-card:hover .action-icon {
     transform: translateX(4px);
   }
+  @media (max-width: 639px) {
+    .sector-card {
+      padding: 20px;
+    }
+    .card-icon {
+      height: 54px;
+      margin-bottom: 14px;
+      width: 54px;
+    }
+    .card-icon svg {
+      height: 28px;
+      width: 28px;
+    }
+    .sector-name {
+      font-size: 1.1rem;
+    }
+    .sector-desc {
+      margin-bottom: 18px;
+    }
+  }
 </style>

@@ -99,6 +99,28 @@ const {
   .btn-cookie-accept:focus-visible {
     background-color: var(--color-primary-700);
   }
+
+  @media (max-width: 767px) {
+    .cookie-banner {
+      padding: 12px 0;
+    }
+    .cookie-container {
+      align-items: stretch;
+      gap: 10px;
+    }
+    .cookie-text {
+      font-size: 0.78rem;
+      line-height: 1.45;
+      text-align: left;
+    }
+    .cookie-actions,
+    .btn-cookie {
+      width: 100%;
+    }
+    .btn-cookie {
+      min-height: 44px;
+    }
+  }
 </style>
 
 <script>

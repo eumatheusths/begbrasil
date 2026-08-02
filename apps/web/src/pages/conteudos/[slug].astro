@@ -194,6 +194,9 @@ const formatClusterName = (name: string) => {
     grid-template-columns: minmax(0, 2fr) minmax(260px, 0.85fr);
     margin-top: var(--space-8);
   }
+  .article-main {
+    min-width: 0;
+  }
   .article-header {
     border-bottom: 1px solid var(--color-gray-200);
     margin-bottom: 40px;
@@ -218,6 +221,35 @@ const formatClusterName = (name: string) => {
     align-items: center;
     display: flex;
     gap: 24px;
+  }
+  .author-row > div {
+    align-items: center;
+    display: flex;
+  }
+  .author-row .w-10 {
+    align-items: center;
+    background: var(--color-gray-200);
+    border-radius: 50%;
+    color: var(--color-gray-500);
+    display: flex;
+    flex: 0 0 40px;
+    height: 40px;
+    justify-content: center;
+    margin-right: 12px;
+    width: 40px;
+  }
+  .author-row .w-6 {
+    height: 24px;
+    width: 24px;
+  }
+  .author-row .text-sm {
+    color: var(--color-graphite-900);
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+  .author-row .text-xs {
+    color: var(--color-gray-500);
+    font-size: 0.75rem;
   }
   .article-aside {
     position: sticky;
@@ -316,7 +348,10 @@ const formatClusterName = (name: string) => {
   }
   .prose table {
     border-collapse: collapse;
+    display: block;
     margin: 28px 0;
+    max-width: 100%;
+    overflow-x: auto;
     width: 100%;
   }
   .prose th,
@@ -335,6 +370,64 @@ const formatClusterName = (name: string) => {
     }
     .article-aside {
       position: static;
+    }
+  }
+  @media (max-width: 639px) {
+    .article-shell {
+      padding-bottom: 44px;
+      padding-top: 18px;
+    }
+    .article-layout {
+      gap: 30px;
+      margin-top: 18px;
+    }
+    .article-header {
+      margin-bottom: 28px;
+      padding-bottom: 24px;
+    }
+    .article-hero {
+      border-radius: 13px;
+      margin-bottom: 22px;
+    }
+    .article-meta {
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-bottom: 14px;
+    }
+    .article-title {
+      font-size: clamp(1.85rem, 9vw, 2.35rem);
+      margin-bottom: 20px;
+    }
+    .author-row {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .prose {
+      min-width: 0;
+      overflow-wrap: anywhere;
+    }
+    .prose h2 {
+      font-size: 1.35rem;
+      line-height: 1.25;
+      margin-top: 1.7rem;
+    }
+    .prose p,
+    .prose li {
+      font-size: 0.98rem;
+    }
+    .prose table {
+      font-size: 0.88rem;
+      overscroll-behavior-inline: contain;
+    }
+    .prose th,
+    .prose td {
+      min-width: 120px;
+      padding: 10px 11px;
+    }
+    .article-cta {
+      border-radius: 15px;
+      padding: 20px;
     }
   }
 </style>

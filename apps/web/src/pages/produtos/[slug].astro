@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 import FAQ from '../../components/ui/FAQ.astro';
 import QuoteCTA from '../../components/ui/QuoteCTA.astro';
 
@@ -30,14 +31,17 @@ const image =
   <!-- Breadcrumbs -->
   <div class="bg-gray-100 py-4 border-b border-gray-200">
     <div class="container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> &rsaquo;
-        <a href="/produtos">Produtos</a> &rsaquo;
-        <a href={`/produtos/${data.category}`} class="capitalize"
-          >{data.category.replace('-', ' ')}</a
-        > &rsaquo;
-        <span aria-current="page">{data.name}</span>
-      </nav>
+      <Breadcrumb
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Produtos', href: '/produtos' },
+          {
+            label: data.category.replaceAll('-', ' '),
+            href: `/produtos/${data.category}`,
+          },
+          { label: data.name, href: Astro.url.pathname },
+        ]}
+      />
     </div>
   </div>
 
@@ -225,24 +229,6 @@ const image =
 <style>
   .section {
     padding: var(--space-12) 0;
-  }
-
-  .breadcrumb {
-    font-size: var(--text-sm);
-    color: var(--color-gray-600);
-  }
-
-  .breadcrumb a {
-    color: var(--color-primary-600);
-    text-decoration: none;
-  }
-
-  .breadcrumb a:hover {
-    text-decoration: underline;
-  }
-
-  .capitalize {
-    text-transform: capitalize;
   }
 
   .product-layout {
@@ -563,6 +549,50 @@ const image =
     .md\:grid-cols-2 {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 639px) {
+    .section {
+      padding: 32px 0;
+    }
+    .product-layout,
+    .details-grid {
+      gap: 30px;
+    }
+    .product-title {
+      font-size: 2rem;
+    }
+    .product-short-desc {
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .product-specs-quick {
+      margin-bottom: 24px;
+    }
+    .spec-row {
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .spec-value {
+      text-align: left;
+    }
+    .spec-card,
+    #orcamento > div {
+      border-radius: 16px;
+      padding: 20px;
+    }
+    .product-quote-form .btn-primary {
+      min-height: 50px;
+      width: 100%;
+    }
+    .mt-16 {
+      margin-top: 36px;
+    }
+    .pt-16 {
+      padding-top: 36px;
     }
   }
 </style>
