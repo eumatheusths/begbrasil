@@ -1,0 +1,257 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/ui/Hero.astro';
+import QuoteCTA from '../../components/ui/QuoteCTA.astro';
+
+const sectors = [
+  {
+    title: 'Indústrias',
+    description:
+      'Placas técnicas, identificação de máquinas, comandos, escalas, avisos e etiquetas para ativos sujeitos a condições severas.',
+    applications: ['Máquinas e equipamentos', 'Painéis e componentes', 'Segurança e manutenção'],
+  },
+  {
+    title: 'Fabricantes de máquinas',
+    description:
+      'Identificação personalizada para valorizar o equipamento e manter dados técnicos, comandos e instruções sempre legíveis.',
+    applications: ['Placas de especificação', 'Tabelas e escalas', 'Logotipos e identificação'],
+  },
+  {
+    title: 'Hospitais e laboratórios',
+    description:
+      'Soluções resistentes à umidade e à limpeza frequente para patrimônio, equipamentos e comunicação de ambientes.',
+    applications: ['Controle patrimonial', 'Sinalização interna', 'Aço inox e materiais selados'],
+  },
+  {
+    title: 'Alimentos e bebidas',
+    description:
+      'Materiais resistentes à corrosão e à higienização para identificar equipamentos, áreas e procedimentos.',
+    applications: ['Aço inox', 'Avisos de segurança', 'Identificação de equipamentos'],
+  },
+  {
+    title: 'Escolas, universidades e órgãos públicos',
+    description:
+      'Etiquetas numeradas e personalizadas para inventário de mobiliário, eletrônicos e demais bens permanentes.',
+    applications: ['Numeração sequencial', 'Código de barras e QR Code', 'Inventário de ativos'],
+  },
+  {
+    title: 'Moda, calçados e acessórios',
+    description:
+      'Etiquetas e apliques que reforçam a identidade da marca com acabamento metálico, acrílico ou personalizado.',
+    applications: ['Logotipos e apliques', 'Peças decorativas', 'Projetos sob medida'],
+  },
+  {
+    title: 'Comércio e escritórios',
+    description:
+      'Identificação prática e econômica para mobiliário, informática, instalações e comunicação interna.',
+    applications: ['Poliplastic', 'Etiquetas adesivas', 'Placas informativas'],
+  },
+  {
+    title: 'Arquitetura e decoração',
+    description:
+      'Placas e elementos personalizados para ambientes, fachadas, sinalização e identificação visual.',
+    applications: ['Acrílico e metais', 'Sinalização personalizada', 'Acabamentos especiais'],
+  },
+];
+---
+
+<Layout
+  title="Segmentos atendidos"
+  description="Soluções de identificação para indústrias, fabricantes de máquinas, hospitais, escolas, comércio, moda e outros setores."
+>
+  <Hero
+    title="Experiência aplicada às exigências de cada setor"
+    subtitle="Atendemos empresas de todo o Brasil com soluções personalizadas para patrimônio, operação, segurança e identidade de marca."
+    primaryCta={{ label: 'Solicitar orçamento', href: '/orcamento' }}
+    secondaryCta={{ label: 'Conhecer materiais', href: '/materiais' }}
+    imageUrl="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1000&q=85"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span>Onde atuamos</span>
+        <h2>Identificação para diferentes ambientes e operações</h2>
+        <p>
+          Cada setor combina necessidades próprias de resistência, rastreabilidade, higiene,
+          segurança e acabamento.
+        </p>
+      </div>
+      <div class="sector-grid">
+        {
+          sectors.map((sector) => (
+            <article class="sector-card">
+              <div class="icon" aria-hidden="true">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="28"
+                  height="28"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.7"
+                >
+                  <>
+                    <path d="M4 20V10l5 3V8l5 3V4l6 4v12H4Z" />
+                    <path d="M8 17h1m4 0h1m4 0h1" />
+                  </>
+                </svg>
+              </div>
+              <h3>{sector.title}</h3>
+              <p>{sector.description}</p>
+              <ul>
+                {sector.applications.map((application) => (
+                  <li>{application}</li>
+                ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section proof">
+    <div class="container proof-grid">
+      <div>
+        <strong>Atendimento nacional</strong><span
+          >Projetos e entregas para empresas em todo o território brasileiro.</span
+        >
+      </div>
+      <div>
+        <strong>Personalização total</strong><span
+          >Medidas, logotipo, cores, textos e dados variáveis conforme sua necessidade.</span
+        >
+      </div>
+      <div>
+        <strong>Orientação técnica</strong><span
+          >Material e fixação definidos de acordo com o ambiente real de aplicação.</span
+        >
+      </div>
+    </div>
+  </section>
+
+  <QuoteCTA
+    title="Seu segmento tem uma exigência específica?"
+    description="Compartilhe as condições de uso e as informações que precisam aparecer. Desenvolvemos a identificação conforme o seu processo."
+  />
+</Layout>
+
+<style>
+  .section {
+    background: var(--color-white);
+    padding: var(--space-16) 0;
+  }
+  .section-heading {
+    max-width: 760px;
+    margin-bottom: var(--space-12);
+  }
+  .section-heading > span {
+    color: var(--color-primary-600);
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+  }
+  .section-heading p {
+    color: var(--color-graphite-500);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+  }
+  .sector-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+  .sector-card {
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    transition:
+      transform var(--transition-normal),
+      box-shadow var(--transition-normal);
+  }
+  .sector-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+  }
+  .icon {
+    align-items: center;
+    background: var(--color-gray-100);
+    border-radius: var(--radius-md);
+    color: var(--color-primary-600);
+    display: flex;
+    height: 56px;
+    justify-content: center;
+    margin-bottom: var(--space-4);
+    width: 56px;
+  }
+  .sector-card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+  }
+  .sector-card p {
+    color: var(--color-graphite-500);
+    flex: 1;
+    line-height: 1.65;
+  }
+  .sector-card ul {
+    border-top: 1px solid var(--color-gray-200);
+    display: grid;
+    gap: var(--space-2);
+    list-style: none;
+    margin-top: var(--space-6);
+    padding-top: var(--space-4);
+  }
+  .sector-card li {
+    color: var(--color-graphite-800);
+    font-size: var(--text-sm);
+    padding-left: var(--space-4);
+    position: relative;
+  }
+  .sector-card li::before {
+    color: var(--color-primary-600);
+    content: '•';
+    left: 0;
+    position: absolute;
+  }
+  .proof {
+    background: var(--color-graphite-900);
+    color: var(--color-white);
+  }
+  .proof-grid {
+    display: grid;
+    gap: var(--space-8);
+  }
+  .proof-grid div {
+    display: grid;
+    gap: var(--space-2);
+  }
+  .proof-grid strong {
+    font-size: var(--text-xl);
+  }
+  .proof-grid span {
+    color: var(--color-gray-200);
+    line-height: 1.6;
+  }
+  @media (min-width: 700px) {
+    .sector-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .proof-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 1050px) {
+    .sector-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+</style>

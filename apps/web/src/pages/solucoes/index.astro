@@ -1,0 +1,250 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Hero from '../../components/ui/Hero.astro';
+import QuoteCTA from '../../components/ui/QuoteCTA.astro';
+
+const solutions = [
+  {
+    title: 'Controle patrimonial',
+    description:
+      'Etiquetas personalizadas para identificar e controlar ativos fixos, com excelente legibilidade e fixação.',
+    details: [
+      'Numeração sequencial, código de barras e QR Code',
+      'Logotipo e dados da empresa em preto ou colorido',
+      'Tamanhos padrão 50 × 20, 40 × 20 e 44 × 16 mm',
+      'Formatos e dimensões especiais sob consulta',
+    ],
+    href: '/produtos/etiquetas-de-patrimonio',
+  },
+  {
+    title: 'Identificação de máquinas',
+    description:
+      'Placas técnicas, tabelas, escalas e avisos desenvolvidos para máquinas e equipamentos industriais.',
+    details: [
+      'Dados técnicos, comandos e instruções de operação',
+      'Placas de escala e tabelas para tornos',
+      'Materiais resistentes a abrasão e produtos químicos',
+      'Produção conforme desenho ou amostra aprovada',
+    ],
+    href: '/produtos',
+  },
+  {
+    title: 'Sinalização e comunicação',
+    description:
+      'Placas para orientar, informar e reforçar procedimentos de segurança em ambientes internos e externos.',
+    details: [
+      'Placas de emergência e segurança',
+      'Sinalização de áreas, fluxos e equipamentos',
+      'Avisos e comunicados personalizados',
+      'Opções para instalação interna ou externa',
+    ],
+    href: '/produtos/placas-de-sinalizacao',
+  },
+  {
+    title: 'Identificação de marca',
+    description:
+      'Etiquetas, placas e apliques personalizados que agregam acabamento e reconhecimento aos produtos.',
+    details: [
+      'Aplicação de logotipos e identidade visual',
+      'Acabamentos metálicos e em acrílico',
+      'Peças para moda, calçados, acessórios e decoração',
+      'Desenvolvimento sob medida para cada projeto',
+    ],
+    href: '/orcamento',
+  },
+];
+---
+
+<Layout
+  title="Soluções em identificação industrial"
+  description="Soluções personalizadas para controle patrimonial, identificação de máquinas, sinalização e valorização de marcas."
+>
+  <Hero
+    title="Soluções de identificação feitas para cada necessidade"
+    subtitle="Da gestão de patrimônio à sinalização industrial, desenvolvemos peças personalizadas com o material, a fixação e o acabamento adequados ao ambiente de uso."
+    primaryCta={{ label: 'Solicitar orçamento', href: '/orcamento' }}
+    secondaryCta={{ label: 'Ver produtos', href: '/produtos' }}
+    imageUrl="https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1000&q=85"
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <span class="eyebrow">Soluções completas</span>
+        <h2>Do projeto à identificação instalada</h2>
+        <p>
+          Nossa equipe orienta a escolha do material e desenvolve a personalização conforme a
+          aplicação, o ambiente e a vida útil esperada.
+        </p>
+      </div>
+
+      <div class="solution-grid">
+        {
+          solutions.map((solution, index) => (
+            <article class="solution-card">
+              <span class="solution-number">0{index + 1}</span>
+              <h3>{solution.title}</h3>
+              <p>{solution.description}</p>
+              <ul>
+                {solution.details.map((detail) => (
+                  <li>{detail}</li>
+                ))}
+              </ul>
+              <a href={solution.href}>
+                Conhecer opções <span aria-hidden="true">→</span>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section process-section">
+    <div class="container process-layout">
+      <div>
+        <span class="eyebrow">Atendimento consultivo</span>
+        <h2>Como transformamos sua necessidade em produto</h2>
+        <p>
+          Para preparar uma solução adequada, avaliamos o local de aplicação, exposição ao sol,
+          umidade, temperatura, produtos químicos e frequência de manuseio.
+        </p>
+      </div>
+      <ol class="process-list">
+        <li>
+          <strong>Briefing</strong><span>Você envia medidas, quantidade, aplicação e arte.</span>
+        </li>
+        <li>
+          <strong>Especificação</strong><span
+            >Indicamos material, acabamento e método de fixação.</span
+          >
+        </li>
+        <li>
+          <strong>Aprovação</strong><span
+            >O layout e os dados variáveis são validados antes da produção.</span
+          >
+        </li>
+        <li>
+          <strong>Produção e envio</strong><span
+            >Fabricamos sob medida e entregamos em todo o Brasil.</span
+          >
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <QuoteCTA
+    title="Qual identificação o seu projeto precisa?"
+    description="Envie as medidas, a quantidade e o ambiente de aplicação. Nossa equipe indicará a solução mais adequada."
+  />
+</Layout>
+
+<style>
+  .section {
+    padding: var(--space-16) 0;
+    background: var(--color-white);
+  }
+  .section-heading {
+    max-width: 720px;
+    margin-bottom: var(--space-12);
+  }
+  .eyebrow {
+    display: block;
+    color: var(--color-primary-600);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+  }
+  h2 {
+    color: var(--color-graphite-900);
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+  }
+  .section-heading p,
+  .process-layout > div > p {
+    color: var(--color-graphite-500);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+  }
+  .solution-grid {
+    display: grid;
+    gap: var(--space-6);
+  }
+  .solution-card {
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    box-shadow: var(--shadow-sm);
+  }
+  .solution-number {
+    color: var(--color-primary-600);
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+  }
+  .solution-card h3 {
+    font-size: var(--text-xl);
+    margin: var(--space-3) 0;
+  }
+  .solution-card p {
+    color: var(--color-graphite-500);
+    line-height: 1.65;
+  }
+  .solution-card ul {
+    display: grid;
+    gap: var(--space-3);
+    list-style: none;
+    margin: var(--space-6) 0;
+  }
+  .solution-card li {
+    color: var(--color-graphite-800);
+    font-size: var(--text-sm);
+    padding-left: var(--space-6);
+    position: relative;
+  }
+  .solution-card li::before {
+    color: var(--color-primary-600);
+    content: '✓';
+    font-weight: var(--font-bold);
+    left: 0;
+    position: absolute;
+  }
+  .solution-card a {
+    color: var(--color-primary-600);
+    font-weight: var(--font-semibold);
+  }
+  .process-section {
+    background: var(--color-gray-100);
+  }
+  .process-layout {
+    display: grid;
+    gap: var(--space-12);
+  }
+  .process-list {
+    display: grid;
+    gap: var(--space-4);
+    list-style: none;
+  }
+  .process-list li {
+    background: var(--color-white);
+    border-left: 4px solid var(--color-primary-600);
+    border-radius: var(--radius-md);
+    display: grid;
+    gap: var(--space-2);
+    padding: var(--space-6);
+  }
+  .process-list span {
+    color: var(--color-graphite-500);
+  }
+  @media (min-width: 768px) {
+    .solution-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .process-layout {
+      align-items: start;
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+  }
+</style>
