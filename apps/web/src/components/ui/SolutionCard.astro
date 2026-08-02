@@ -3,11 +3,12 @@
 export interface Props {
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
+  icon?: string;
   href: string;
 }
 
-const { title, description, imageUrl, href } = Astro.props;
+const { title, description, imageUrl, icon, href } = Astro.props;
 ---
 
 <a href={href} class="solution-card">

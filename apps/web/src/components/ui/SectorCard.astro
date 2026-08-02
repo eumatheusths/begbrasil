@@ -1,13 +1,15 @@
 ---
 // SectorCard.astro
 export interface Props {
-  sectorName: string;
-  description: string;
+  title?: string;
+  name?: string;
+  description?: string;
   icon?: string;
   href: string;
 }
 
-const { sectorName, description, icon, href } = Astro.props;
+const { name, title, description, icon, href } = Astro.props;
+const displayTitle = title || name || '';
 ---
 
 <a href={href} class="sector-card">
@@ -36,7 +38,7 @@ const { sectorName, description, icon, href } = Astro.props;
     }
   </div>
   <div class="card-content">
-    <h3 class="sector-name">{sectorName}</h3>
+    <h3 class="sector-name">{displayTitle}</h3>
     <p class="sector-desc">{description}</p>
   </div>
   <div class="card-action">

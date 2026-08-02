@@ -1,9 +1,10 @@
 ---
 // CaseCard.astro
 export interface Props {
-  clientName: string;
+  clientName?: string;
+  client?: string;
   title: string;
-  description: string;
+  description?: string;
   imageUrl: string;
   href: string;
 }

@@ -2,14 +2,15 @@
 // ArticleCard.astro
 export interface Props {
   title: string;
-  summary: string;
+  summary?: string;
+  excerpt?: string;
   imageUrl: string;
   href: string;
   date: string;
-  category: string;
+  category?: string;
 }
 
-const { title, summary, imageUrl, href, date, category } = Astro.props;
+const { title, summary, excerpt, imageUrl, href, date, category } = Astro.props;
 ---
 
 <a href={href} class="article-card">
