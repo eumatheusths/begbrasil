@@ -1,0 +1,251 @@
+---
+const solutions = [
+  [
+    '▥',
+    'Etiquetas de patrimônio',
+    'Tamanhos, QR Code e numeração sob medida.',
+    '/produtos/etiquetas-de-patrimonio',
+  ],
+  ['✦', 'Etiquetas adesivas', 'Material, adesivo e acabamento para cada uso.', '/solucoes'],
+  ['▤', 'Placas personalizadas', 'Projetos exclusivos para diversas aplicações.', '/solucoes'],
+  ['ⓘ', 'Placas de informação', 'Comunicação clara para pessoas e processos.', '/solucoes'],
+  [
+    '⚠',
+    'Placas de sinalização',
+    'Sinalização interna e externa de alta visibilidade.',
+    '/produtos/placas-de-sinalizacao',
+  ],
+  [
+    '⚙',
+    'Placas para indústrias',
+    'Painéis, escalas e tabelas técnicas para máquinas.',
+    '/produtos/placas-para-maquinas',
+  ],
+];
+---
+
+<section id="solucoes" class="showcase" aria-labelledby="solutions-showcase-title">
+  <div class="container">
+    <div class="heading">
+      <div>
+        <span class="eyebrow">Encontre a solução ideal</span><h2 id="solutions-showcase-title">
+          Identificação para cada necessidade
+        </h2>
+      </div>
+      <a href="/solucoes" class="all">Ver todas as soluções <span>→</span></a>
+    </div>
+    <div class="solutions-grid">
+      {
+        solutions.map(([icon, title, description, href]) => (
+          <a href={href} class="solution-item">
+            <span class="solution-icon" aria-hidden="true">
+              {icon}
+            </span>
+            <span class="copy">
+              <>
+                <strong>{title}</strong>
+                <span>{description}</span>
+              </>
+            </span>
+            <span class="arrow" aria-hidden="true">
+              ↗
+            </span>
+          </a>
+        ))
+      }
+    </div>
+    <div class="benefits" aria-label="Diferenciais da BEG Brasil">
+      <span><strong>Atendimento consultivo</strong> para especificar melhor</span>
+      <span><strong>Produção personalizada</strong> do início ao fim</span>
+      <span><strong>Entrega nacional</strong> com suporte comercial</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  .showcase {
+    background:
+      radial-gradient(circle at 10% 0%, rgb(14 165 233 / 16%), transparent 28%),
+      linear-gradient(180deg, #fff, #f5faff);
+    padding: clamp(44px, 6vw, 80px) 0;
+  }
+  .heading {
+    align-items: end;
+    display: flex;
+    gap: 24px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .eyebrow {
+    color: var(--color-primary-600);
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  h2 {
+    color: var(--color-graphite-900);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    letter-spacing: -0.035em;
+    line-height: 1.1;
+  }
+  .all {
+    color: var(--color-primary-700);
+    flex: none;
+    font-weight: 750;
+    text-decoration: none;
+  }
+  .all span {
+    transition: margin 0.18s ease;
+  }
+  .all:hover span {
+    margin-left: 5px;
+  }
+  .solutions-grid {
+    background: #fff;
+    border: 1px solid #dbeafe;
+    border-radius: 22px;
+    box-shadow: 0 20px 55px -35px rgb(29 78 216 / 55%);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    overflow: hidden;
+  }
+  .solution-item {
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    color: inherit;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: auto 1fr auto;
+    min-height: 150px;
+    padding: 25px;
+    position: relative;
+    text-decoration: none;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
+  }
+  .solution-item:nth-child(3n) {
+    border-right: 0;
+  }
+  .solution-item:nth-last-child(-n + 3) {
+    border-bottom: 0;
+  }
+  .solution-item::before {
+    background: linear-gradient(var(--color-primary-600), var(--color-cyan-500));
+    content: '';
+    inset: 0 auto 0 0;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 0.18s ease;
+    width: 4px;
+  }
+  .solution-item:hover,
+  .solution-item:focus-visible {
+    background: linear-gradient(135deg, #eff6ff, #ecfeff);
+    transform: translateY(-2px);
+    z-index: 1;
+  }
+  .solution-item:hover::before,
+  .solution-item:focus-visible::before {
+    opacity: 1;
+  }
+  .solution-icon {
+    align-items: center;
+    background: linear-gradient(135deg, #dbeafe, #cffafe);
+    border-radius: 15px;
+    color: var(--color-primary-700);
+    display: flex;
+    font-size: 1.65rem;
+    font-weight: 800;
+    height: 58px;
+    justify-content: center;
+    width: 58px;
+  }
+  .copy {
+    display: grid;
+    gap: 7px;
+  }
+  .copy strong {
+    color: var(--color-graphite-900);
+    font-size: 1rem;
+    line-height: 1.2;
+    text-transform: uppercase;
+  }
+  .copy > span {
+    color: var(--color-gray-600);
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+  .arrow {
+    color: var(--color-primary-500);
+    font-size: 1.15rem;
+    opacity: 0;
+    transform: translate(-5px, 5px);
+    transition: 0.18s ease;
+  }
+  .solution-item:hover .arrow,
+  .solution-item:focus-visible .arrow {
+    opacity: 1;
+    transform: none;
+  }
+  .benefits {
+    color: var(--color-gray-600);
+    display: grid;
+    font-size: 0.9rem;
+    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 22px;
+    text-align: center;
+  }
+  .benefits span {
+    background: rgb(255 255 255 / 70%);
+    border-radius: 99px;
+    padding: 11px 15px;
+  }
+  .benefits strong {
+    color: var(--color-primary-700);
+  }
+  @media (max-width: 960px) {
+    .solutions-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .solution-item:nth-child(3n) {
+      border-right: 1px solid #e2e8f0;
+    }
+    .solution-item:nth-child(2n) {
+      border-right: 0;
+    }
+    .solution-item:nth-last-child(-n + 3) {
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .solution-item:nth-last-child(-n + 2) {
+      border-bottom: 0;
+    }
+  }
+  @media (max-width: 640px) {
+    .heading {
+      align-items: start;
+      flex-direction: column;
+    }
+    .solutions-grid,
+    .benefits {
+      grid-template-columns: 1fr;
+    }
+    .solution-item,
+    .solution-item:nth-child(n) {
+      border-bottom: 1px solid #e2e8f0;
+      border-right: 0;
+      min-height: 130px;
+    }
+    .solution-item:last-child {
+      border-bottom: 0;
+    }
+    .benefits {
+      text-align: left;
+    }
+  }
+</style>

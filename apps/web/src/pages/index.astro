@@ -1,8 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/ui/Hero.astro';
+import BannerCarousel from '../components/home/BannerCarousel.astro';
+import SolutionStrip from '../components/home/SolutionStrip.astro';
 import TrustBar from '../components/home/TrustBar.astro';
-import SolutionCard from '../components/ui/SolutionCard.astro';
 import ProductCard from '../components/ui/ProductCard.astro';
 import GuidedSelector from '../components/home/GuidedSelector.astro';
 import MaterialCard from '../components/ui/MaterialCard.astro';
@@ -77,53 +77,14 @@ const processSteps = [
   title="Identificação industrial feita para durar"
   description="Etiquetas patrimoniais, placas para máquinas, sinalização e soluções personalizadas para empresas de todo o Brasil."
 >
-  <!-- 1. Hero -->
-  <Hero
-    title="Identificação industrial feita para durar."
-    subtitle="Etiquetas patrimoniais, placas para máquinas, sinalização e soluções personalizadas para empresas de todo o Brasil."
-    primaryCta={{ label: 'Solicitar orçamento', href: '/orcamento' }}
-    secondaryCta={{ label: 'Conhecer soluções', href: '#solucoes' }}
-    imageUrl="/images/portfolio/placa-torno-joinville.jpg"
-  />
+  <!-- 1. Banners rotativos -->
+  <BannerCarousel />
+
+  <!-- 2. Atalhos de soluções -->
+  <SolutionStrip />
 
   <!-- 2. Barra de Confiança -->
   <TrustBar />
-
-  <!-- 3. Soluções -->
-  <section id="solucoes" class="section">
-    <div class="container">
-      <div class="section-header text-center">
-        <h2 class="section-title">Soluções Completas</h2>
-        <p class="section-subtitle">Tudo o que sua empresa precisa em identificação durável.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <SolutionCard
-          title="Controle Patrimonial"
-          description="Etiquetas de alta fixação para gestão de ativos físicos."
-          icon="barcode"
-          href="/produtos/etiquetas-de-patrimonio"
-        />
-        <SolutionCard
-          title="Identificação de Máquinas"
-          description="Placas técnicas resistentes a ambientes industriais severos."
-          icon="settings"
-          href="/produtos/placas-para-maquinas"
-        />
-        <SolutionCard
-          title="Sinalização Industrial"
-          description="Avisos e alertas para segurança no trabalho e fluxos."
-          icon="alert-triangle"
-          href="/produtos/placas-de-sinalizacao"
-        />
-        <SolutionCard
-          title="Identificação de Marca"
-          description="Logotipos e apliques metálicos premium para produtos."
-          icon="tag"
-          href="/produtos/etiquetas-metalicas"
-        />
-      </div>
-    </div>
-  </section>
 
   <!-- 4. Produtos Principais -->
   <section class="section bg-gray-50">

@@ -17,7 +17,13 @@ import MegaMenu from './MegaMenu.astro';
   <div class="header-main">
     <div class="container main-inner">
       <a href="/" class="logo-link" aria-label="BEG Brasil Home">
-        <span class="logo-text">BEG BRASIL</span>
+        <img
+          src="/images/brand/logo-beg-brasil.png"
+          alt="BEG Brasil Etiquetas Metálicas"
+          class="brand-logo"
+          width="363"
+          height="162"
+        />
       </a>
 
       <div class="desktop-nav">
@@ -55,7 +61,12 @@ import MegaMenu from './MegaMenu.astro';
   }
 
   .header-topbar {
-    background-color: var(--color-graphite-900);
+    background: linear-gradient(
+      90deg,
+      var(--color-primary-700),
+      var(--color-primary-600),
+      var(--color-accent-cyan)
+    );
     color: var(--color-gray-200);
     font-size: var(--text-xs);
     padding: var(--space-2) 0;
@@ -109,11 +120,11 @@ import MegaMenu from './MegaMenu.astro';
     align-items: center;
   }
 
-  .logo-text {
-    font-size: var(--text-2xl);
-    font-weight: var(--font-bold);
-    color: var(--color-primary-600);
-    letter-spacing: -0.025em;
+  .brand-logo {
+    height: 54px;
+    object-fit: contain;
+    object-position: left center;
+    width: auto;
   }
 
   .desktop-nav {

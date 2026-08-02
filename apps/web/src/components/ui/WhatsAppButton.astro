@@ -14,7 +14,8 @@ const {
 
 // Format phone number for the URL
 const cleanPhone = phoneNumber.replace(/\D/g, '');
-const whatsappUrl = `https://wa.me/55${cleanPhone}?text=${encodeURIComponent(message)}`;
+const internationalPhone = cleanPhone.startsWith('55') ? cleanPhone : `55${cleanPhone}`;
+const whatsappUrl = `https://wa.me/${internationalPhone}?text=${encodeURIComponent(message)}`;
 ---
 
 <a

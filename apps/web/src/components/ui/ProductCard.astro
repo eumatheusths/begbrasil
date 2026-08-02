@@ -45,12 +45,24 @@ const { title, description, imageUrl, href, tags = [] } = Astro.props;
     transition: all var(--transition-normal);
     height: 100%;
     text-decoration: none;
+    position: relative;
+  }
+
+  .product-card::before {
+    background: var(--gradient-brand);
+    content: '';
+    height: 4px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
   }
 
   .product-card:hover,
   .product-card:focus-visible {
     border-color: var(--color-primary-500);
-    box-shadow: var(--shadow-md);
+    box-shadow: var(--shadow-color);
     transform: translateY(-4px);
   }
 
@@ -121,8 +133,8 @@ const { title, description, imageUrl, href, tags = [] } = Astro.props;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-weight: var(--font-bold);
-    color: var(--color-primary-600);
-    background-color: var(--color-gray-100);
+    color: var(--color-primary-700);
+    background-color: var(--color-sky-100);
     padding: 2px 8px;
     border-radius: var(--radius-sm);
   }

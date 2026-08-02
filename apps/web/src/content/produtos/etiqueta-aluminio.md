@@ -28,6 +28,7 @@ leadTime: '[CONFIRMAR PRAZO]'
 images:
   - '/images/portfolio/etiquetas-patrimonio-prefeitura.png'
   - '/images/portfolio/etiqueta-patrimonio-codigo-barras.jpg'
+  - '/images/portfolio/etiqueta-patrimonial-beg-123456.png'
 featured: true
 seoTitle: 'Etiqueta de Patrimônio em Alumínio | BEG Brasil'
 seoDescription: 'Etiquetas de patrimônio em alumínio de alta resistência para gestão de ativos. Gravação permanente, QR Code e código de barras. Solicite orçamento.'

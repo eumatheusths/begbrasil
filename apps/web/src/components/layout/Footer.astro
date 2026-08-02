@@ -22,7 +22,15 @@ const socialLinks = [
   <div class="container">
     <div class="footer-intro">
       <div>
-        <a href="/" class="logo-text" aria-label="BEG Brasil — página inicial">BEG BRASIL</a>
+        <a href="/" class="logo-link" aria-label="BEG Brasil — página inicial">
+          <img
+            src="/images/brand/logo-beg-brasil.png"
+            alt="BEG Brasil Etiquetas Metálicas"
+            class="footer-logo"
+            width="363"
+            height="162"
+          />
+        </a>
         <p class="brand-desc">
           Identificação, patrimônio e sinalização personalizados. Qualidade para durar em cada
           detalhe.
@@ -133,7 +141,7 @@ const socialLinks = [
       <nav aria-label="Produtos">
         <h3>Produtos</h3>
         <a href="/produtos/etiquetas-de-patrimonio">Etiquetas de patrimônio</a>
-        <a href="/produtos">Placas para máquinas</a>
+        <a href="/produtos/placas-para-maquinas">Placas para máquinas</a>
         <a href="/produtos/placas-de-sinalizacao">Sinalização industrial</a>
         <a href="/produtos">Placas personalizadas</a>
       </nav>
@@ -163,7 +171,7 @@ const socialLinks = [
 
 <style>
   .footer {
-    background: var(--color-graphite-900);
+    background: linear-gradient(155deg, #0f172a 0%, #172554 60%, #0c4a6e 100%);
     color: var(--color-gray-200);
     padding-top: var(--space-12);
   }
@@ -176,13 +184,17 @@ const socialLinks = [
     justify-content: space-between;
     padding-bottom: var(--space-8);
   }
-  .logo-text {
-    color: var(--color-white);
+  .logo-link {
     display: inline-block;
-    font-size: var(--text-2xl);
-    font-weight: var(--font-bold);
-    letter-spacing: -0.025em;
     margin-bottom: var(--space-3);
+  }
+
+  .footer-logo {
+    filter: brightness(0) invert(1);
+    height: 72px;
+    object-fit: contain;
+    object-position: left center;
+    width: auto;
   }
   .brand-desc {
     color: var(--color-gray-200);

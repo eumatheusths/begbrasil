@@ -29,15 +29,30 @@ const {
 
 <style>
   .quote-cta {
-    background-color: var(--color-primary-700);
+    background: var(--gradient-brand);
     padding: var(--space-12) 0;
     color: var(--color-white);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .quote-cta::after {
+    background: rgb(251 191 36 / 22%);
+    border-radius: 999px;
+    content: '';
+    height: 280px;
+    position: absolute;
+    right: -100px;
+    top: -150px;
+    width: 280px;
   }
 
   .cta-container {
     display: flex;
     flex-direction: column;
     gap: var(--space-8);
+    position: relative;
+    z-index: 1;
   }
 
   @media (min-width: 768px) {
@@ -89,6 +104,7 @@ const {
     text-decoration: none;
     transition: all var(--transition-fast);
     white-space: nowrap;
+    box-shadow: var(--shadow-color);
   }
 
   .btn-primary-large:hover,

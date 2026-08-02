@@ -59,10 +59,34 @@ const { title, subtitle, primaryCta, secondaryCta, imageUrl, align = 'left' } = 
 
 <style>
   .hero-section {
-    background-color: var(--color-gray-100);
+    background: var(--gradient-hero);
     padding: var(--space-12) 0;
     position: relative;
     overflow: hidden;
+  }
+
+  .hero-section::before,
+  .hero-section::after {
+    border-radius: 999px;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+  }
+
+  .hero-section::before {
+    background: rgb(56 189 248 / 18%);
+    height: 320px;
+    right: -120px;
+    top: -180px;
+    width: 320px;
+  }
+
+  .hero-section::after {
+    background: rgb(251 191 36 / 14%);
+    bottom: -160px;
+    height: 280px;
+    left: -120px;
+    width: 280px;
   }
 
   @media (min-width: 1024px) {
@@ -75,6 +99,8 @@ const { title, subtitle, primaryCta, secondaryCta, imageUrl, align = 'left' } = 
     display: flex;
     flex-direction: column;
     gap: var(--space-12);
+    position: relative;
+    z-index: 1;
   }
 
   @media (min-width: 1024px) {
@@ -108,6 +134,7 @@ const { title, subtitle, primaryCta, secondaryCta, imageUrl, align = 'left' } = 
     color: var(--color-graphite-900);
     line-height: 1.1;
     letter-spacing: -0.025em;
+    position: relative;
   }
 
   @media (min-width: 768px) {
@@ -143,14 +170,16 @@ const { title, subtitle, primaryCta, secondaryCta, imageUrl, align = 'left' } = 
   }
 
   .btn-primary {
-    background-color: var(--color-primary-600);
+    background: var(--gradient-brand);
     color: var(--color-white);
     border: 2px solid transparent;
+    box-shadow: var(--shadow-color);
   }
 
   .btn-primary:hover,
   .btn-primary:focus-visible {
-    background-color: var(--color-primary-700);
+    filter: saturate(1.2) brightness(0.95);
+    transform: translateY(-2px);
   }
 
   .btn-outline {
@@ -172,9 +201,10 @@ const { title, subtitle, primaryCta, secondaryCta, imageUrl, align = 'left' } = 
 
   .hero-image-wrapper {
     position: relative;
-    border-radius: var(--radius-lg);
+    border: 6px solid rgb(255 255 255 / 85%);
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 24px 60px -24px rgb(29 78 216 / 55%);
     background-color: var(--color-gray-200);
     aspect-ratio: 4/3;
   }
@@ -184,7 +214,7 @@ const { title, subtitle, primaryCta, secondaryCta, imageUrl, align = 'left' } = 
     position: absolute;
     inset: 0;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-    border-radius: var(--radius-lg);
+    border-radius: 12px;
     pointer-events: none;
   }
 

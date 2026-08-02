@@ -1,0 +1,223 @@
+---
+const banners = [
+  [
+    '/images/banners/banner-01-atendimento.webp',
+    'Atendimento especializado da BEG Brasil em todo o Brasil',
+    '/orcamento',
+  ],
+  [
+    '/images/banners/banner-02-clientes.webp',
+    'Mais de quatro mil clientes atendidos pela BEG Brasil',
+    '/solucoes',
+  ],
+  [
+    '/images/banners/banner-03-etiquetas-qr-code.webp',
+    'Etiquetas patrimoniais com QR Code e código de barras',
+    '/produtos/etiqueta-aluminio',
+  ],
+  [
+    '/images/banners/banner-04-cobertura-nacional.webp',
+    'Cobertura nacional com entregas para todo o Brasil',
+    '/contato',
+  ],
+];
+---
+
+<section class="carousel" aria-label="Destaques da BEG Brasil" data-carousel>
+  <div class="stage">
+    {
+      banners.map(([src, alt, href], index) => (
+        <a
+          class="slide"
+          href={href}
+          data-slide
+          aria-hidden={index ? 'true' : 'false'}
+          tabindex={index ? -1 : 0}
+        >
+          <img
+            src={src}
+            alt={alt}
+            width="1672"
+            height="940"
+            loading={index ? 'lazy' : 'eager'}
+            fetchpriority={index ? 'auto' : 'high'}
+          />
+        </a>
+      ))
+    }
+    <button class="arrow prev" type="button" aria-label="Banner anterior" data-prev
+      ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg></button
+    >
+    <button class="arrow next" type="button" aria-label="Próximo banner" data-next
+      ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg></button
+    >
+  </div>
+  <div class="dots" aria-label="Selecionar banner">
+    {
+      banners.map((_, index) => (
+        <button
+          type="button"
+          class="dot"
+          aria-label={`Mostrar banner ${index + 1}`}
+          aria-current={index ? 'false' : 'true'}
+          data-dot={index}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((carousel) => {
+    const slides = [...carousel.querySelectorAll<HTMLElement>('[data-slide]')];
+    const dots = [...carousel.querySelectorAll<HTMLButtonElement>('[data-dot]')];
+    let active = 0;
+    let timer: number | undefined;
+    const show = (index: number) => {
+      active = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => {
+        const selected = i === active;
+        slide.setAttribute('aria-hidden', String(!selected));
+        slide.setAttribute('tabindex', selected ? '0' : '-1');
+      });
+      dots.forEach((dot, i) => dot.setAttribute('aria-current', String(i === active)));
+    };
+    const stop = () => window.clearInterval(timer);
+    const start = () => {
+      stop();
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+        timer = window.setInterval(() => show(active + 1), 6000);
+    };
+    carousel.querySelector('[data-prev]')?.addEventListener('click', () => {
+      show(active - 1);
+      start();
+    });
+    carousel.querySelector('[data-next]')?.addEventListener('click', () => {
+      show(active + 1);
+      start();
+    });
+    dots.forEach((dot, i) =>
+      dot.addEventListener('click', () => {
+        show(i);
+        start();
+      })
+    );
+    carousel.addEventListener('mouseenter', stop);
+    carousel.addEventListener('mouseleave', start);
+    carousel.addEventListener('focusin', stop);
+    carousel.addEventListener('focusout', start);
+    start();
+  });
+</script>
+
+<style>
+  .carousel {
+    background: linear-gradient(135deg, #eaf4ff, #fff);
+    overflow: hidden;
+    position: relative;
+  }
+  .stage {
+    aspect-ratio: 16/9;
+    margin: auto;
+    max-width: 1672px;
+    position: relative;
+    width: 100%;
+  }
+  .slide {
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    transform: scale(1.015);
+    transition:
+      opacity 0.65s ease,
+      transform 0.65s ease;
+    visibility: hidden;
+  }
+  .slide[aria-hidden='false'] {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    z-index: 1;
+  }
+  .slide img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .arrow {
+    align-items: center;
+    backdrop-filter: blur(8px);
+    background: rgb(255 255 255 / 84%);
+    border: 1px solid rgb(29 78 216 / 15%);
+    border-radius: 50%;
+    box-shadow: 0 10px 30px rgb(15 23 42 / 18%);
+    color: var(--color-primary-700);
+    cursor: pointer;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.18s ease;
+    width: 48px;
+    z-index: 3;
+  }
+  .arrow:hover,
+  .arrow:focus-visible {
+    background: #fff;
+    transform: translateY(-50%) scale(1.08);
+  }
+  .arrow svg {
+    fill: none;
+    height: 25px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.5;
+    width: 25px;
+  }
+  .prev {
+    left: clamp(10px, 2.5vw, 40px);
+  }
+  .next {
+    right: clamp(10px, 2.5vw, 40px);
+  }
+  .dots {
+    bottom: clamp(10px, 2vw, 24px);
+    display: flex;
+    gap: 9px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 4;
+  }
+  .dot {
+    background: rgb(255 255 255 / 82%);
+    border: 2px solid rgb(29 78 216 / 65%);
+    border-radius: 99px;
+    cursor: pointer;
+    height: 11px;
+    padding: 0;
+    transition: 0.18s ease;
+    width: 11px;
+  }
+  .dot[aria-current='true'] {
+    background: var(--color-primary-600);
+    width: 32px;
+  }
+  @media (max-width: 640px) {
+    .arrow {
+      height: 38px;
+      width: 38px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .slide,
+    .arrow,
+    .dot {
+      transition: none;
+    }
+  }
+</style>
