@@ -40,7 +40,16 @@ const { title, subtitle, primaryCta, secondaryCta, imageUrl, align = 'left' } = 
       imageUrl && (
         <div class="hero-media">
           <div class="hero-image-wrapper">
-            <img src={imageUrl} alt="" aria-hidden="true" class="hero-image" loading="eager" fetchpriority="high" width="800" height="600" />
+            <img
+              src={imageUrl}
+              alt=""
+              aria-hidden="true"
+              class="hero-image"
+              loading="eager"
+              fetchpriority="high"
+              width="800"
+              height="600"
+            />
           </div>
         </div>
       )

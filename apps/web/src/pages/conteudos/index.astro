@@ -7,28 +7,31 @@ import Breadcrumb from '../../components/ui/Breadcrumb.astro';
 const allArticles = await getCollection('artigos');
 
 // Group by cluster
-const clusters = allArticles.reduce((acc, article) => {
-  const cluster = article.data.cluster || 'Geral';
-  if (!acc[cluster]) {
-    acc[cluster] = [];
-  }
-  acc[cluster].push(article);
-  return acc;
-}, {} as Record<string, typeof allArticles>);
+const clusters = allArticles.reduce(
+  (acc, article) => {
+    const cluster = article.data.cluster || 'Geral';
+    if (!acc[cluster]) {
+      acc[cluster] = [];
+    }
+    acc[cluster].push(article);
+    return acc;
+  },
+  {} as Record<string, typeof allArticles>
+);
 
 // Capitalize cluster name
 const formatClusterName = (name: string) => {
   const map: Record<string, string> = {
-    'patrimonio': 'Patrimônio',
-    'maquinas': 'Máquinas Industriais',
-    'sinalizacao': 'Sinalização',
-    'marca': 'Identificação de Marca'
+    patrimonio: 'Patrimônio',
+    maquinas: 'Máquinas Industriais',
+    sinalizacao: 'Sinalização',
+    marca: 'Identificação de Marca',
   };
   return map[name] || name;
 };
 ---
 
-<Layout 
+<Layout
   title="Conteúdos B2B | BEG Brasil"
   description="Artigos técnicos, guias de engenharia e materiais educativos sobre identificação e sinalização industrial."
 >
@@ -38,40 +41,54 @@ const formatClusterName = (name: string) => {
   />
 
   <div class="container mx-auto px-4 py-8 max-w-6xl">
-    <Breadcrumb 
+    <Breadcrumb
       items={[
         { label: 'Home', href: '/' },
-        { label: 'Conteúdos', href: '/conteudos' }
-      ]} 
+        { label: 'Conteúdos', href: '/conteudos' },
+      ]}
     />
-    
+
     <div class="mt-12 space-y-16">
-      {Object.entries(clusters).map(([cluster, articles]) => (
-        <section>
-          <h2 class="text-3xl font-bold mb-8 pb-4 border-b border-gray-200 capitalize">
-            {formatClusterName(cluster)}
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
-              <a href={`/conteudos/${article.id}`} class="block group">
-                <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 h-full transition-all hover:shadow-md hover:border-primary-600">
-                  <span class="text-sm text-primary-600 font-medium mb-2 block">{new Date(article.data.publishedAt).toLocaleDateString('pt-BR')}</span>
-                  <h3 class="text-xl font-bold text-graphite-900 group-hover:text-primary-600 transition-colors mb-3">
-                    {article.data.title}
-                  </h3>
-                  <p class="text-gray-600 text-sm line-clamp-3">
-                    {article.data.description}
-                  </p>
-                  <div class="mt-4 flex items-center text-sm text-gray-500">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-                    {article.data.author}
-                  </div>
-                </article>
-              </a>
-            ))}
-          </div>
-        </section>
-      ))}
+      {
+        Object.entries(clusters).map(([cluster, articles]) => (
+          <section>
+            <h2 class="text-3xl font-bold mb-8 pb-4 border-b border-gray-200 capitalize">
+              {formatClusterName(cluster)}
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {articles.map((article) => (
+                <a href={`/conteudos/${article.id}`} class="block group">
+                  <article class="bg-white rounded-lg shadow-sm border border-gray-200 p-6 h-full transition-all hover:shadow-md hover:border-primary-600">
+                    <span class="text-sm text-primary-600 font-medium mb-2 block">
+                      {new Date(article.data.publishedAt).toLocaleDateString('pt-BR')}
+                    </span>
+                    <h3 class="text-xl font-bold text-graphite-900 group-hover:text-primary-600 transition-colors mb-3">
+                      {article.data.title}
+                    </h3>
+                    <p class="text-gray-600 text-sm line-clamp-3">{article.data.description}</p>
+                    <div class="mt-4 flex items-center text-sm text-gray-500">
+                      <svg
+                        class="w-4 h-4 mr-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                        />
+                      </svg>
+                      {article.data.author}
+                    </div>
+                  </article>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))
+      }
     </div>
   </div>
 </Layout>
@@ -80,7 +97,7 @@ const formatClusterName = (name: string) => {
   .line-clamp-3 {
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
+    -webkit-box-orient: vertical;
     overflow: hidden;
   }
 </style>

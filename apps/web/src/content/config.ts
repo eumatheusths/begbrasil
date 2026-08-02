@@ -22,15 +22,19 @@ const produtosCollection = defineCollection({
     featured: z.boolean().default(false),
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
-    faq: z.array(z.object({
-      question: z.string(),
-      answer: z.string()
-    })).default([]),
+    faq: z
+      .array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        })
+      )
+      .default([]),
     status: z.enum(['active', 'draft', 'archived']).default('active'),
-    lastReviewedAt: z.string().optional()
-  })
+    lastReviewedAt: z.string().optional(),
+  }),
 });
 
 export const collections = {
-  produtos: produtosCollection
+  produtos: produtosCollection,
 };

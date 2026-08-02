@@ -7,9 +7,9 @@ export interface Props {
 const { type, data } = Astro.props;
 
 let schema: any = {
-  "@context": "https://schema.org",
-  "@type": type,
-  ...data
+  '@context': 'https://schema.org',
+  '@type': type,
+  ...data,
 };
 ---
 

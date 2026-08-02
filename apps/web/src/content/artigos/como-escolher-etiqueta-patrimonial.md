@@ -1,12 +1,12 @@
 ---
-title: "Como escolher etiqueta patrimonial para o ambiente industrial"
-description: "Descubra como avaliar materiais, adesivos e métodos de fixação para garantir que a identificação de seus ativos não falhe em ambientes hostis."
-cluster: "patrimonio"
-author: "Engenharia BEG Brasil"
-reviewer: "Departamento Técnico"
-publishedAt: "2026-08-02"
-updatedAt: "2026-08-02"
-relatedProducts: ["etiquetas-de-patrimonio", "etiqueta-aluminio"]
+title: 'Como escolher etiqueta patrimonial para o ambiente industrial'
+description: 'Descubra como avaliar materiais, adesivos e métodos de fixação para garantir que a identificação de seus ativos não falhe em ambientes hostis.'
+cluster: 'patrimonio'
+author: 'Engenharia BEG Brasil'
+reviewer: 'Departamento Técnico'
+publishedAt: '2026-08-02'
+updatedAt: '2026-08-02'
+relatedProducts: ['etiquetas-de-patrimonio', 'etiqueta-aluminio']
 ---
 
 O controle de ativos fixos em uma indústria não é apenas uma exigência contábil, mas o pilar de uma manutenção preditiva eficiente. A falha na identificação (etiquetas que descolam, apagam ou derretem) gera prejuízos de milhares de reais anuais em re-trabalho e auditorias malsucedidas.
@@ -18,6 +18,7 @@ Neste guia técnico, vamos dissecar o processo de escolha da etiqueta patrimonia
 O primeiro erro comum é subestimar a severidade do ambiente. Uma etiqueta de poliéster comum pode durar anos em um escritório com ar-condicionado, mas não resiste a três meses sob a ação direta de fluidos de corte, vapor ou solventes.
 
 Para ambientes onde há:
+
 - **Limpeza pesada ou jatos de água quente:** É imprescindível o uso de materiais selados (como o Poliéster Subsuperfície) ou metais gravados.
 - **Exposição a raios UV (sol):** O alumínio anodizado é o rei. Polímeros comuns amarelam e ressecam, fazendo o adesivo soltar ou a impressão desaparecer.
 - **Altas Temperaturas (Fornos e Caldeiras):** O Aço Inox suporta picos que destruiriam instantaneamente o alumínio e o acrílico.

@@ -1,6 +1,6 @@
 /// <reference types="astro/client" />
 
 interface Window {
-  gtag: (...args: any[]) => void;
-  dataLayer: any[];
+  gtag: (...args: unknown[]) => void;
+  dataLayer: unknown[];
 }

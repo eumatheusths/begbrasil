@@ -43,9 +43,9 @@ const {
   <head>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/manifest.json" />
-    <SEO 
-      title={title} 
-      description={description} 
+    <SEO
+      title={title}
+      description={description}
       canonical={canonical}
       image={image}
       noindex={noindex}
@@ -54,40 +54,44 @@ const {
       modifiedTime={modifiedTime}
       schema={schema}
     />
-    <JsonLd 
-      type="Organization" 
+    <JsonLd
+      type="Organization"
       data={{
-        name: "BEG Brasil",
-        url: "https://begbrasil.com.br",
-        logo: "https://begbrasil.com.br/logo.png",
+        name: 'BEG Brasil',
+        url: 'https://begbrasil.com.br',
+        logo: 'https://begbrasil.com.br/logo.png',
         contactPoint: {
-          "@type": "ContactPoint",
-          telephone: "+55-11-99999-9999",
-          contactType: "customer service",
-          areaServed: "BR",
-          availableLanguage: "Portuguese"
-        }
-      }} 
+          '@type': 'ContactPoint',
+          telephone: '+55-11-99999-9999',
+          contactType: 'customer service',
+          areaServed: 'BR',
+          availableLanguage: 'Portuguese',
+        },
+      }}
     />
 
     <!-- Analytics & UTM Tracking -->
     <script is:inline>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
       // Capture UTMs
       const params = new URLSearchParams(window.location.search);
       const utms = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
       let hasUtms = false;
       const sessionUtms = JSON.parse(sessionStorage.getItem('beg_utms') || '{}');
-      
-      utms.forEach(u => {
+
+      utms.forEach((u) => {
         if (params.has(u)) {
           sessionUtms[u] = params.get(u);
           hasUtms = true;
         }
       });
-      
+
       if (hasUtms) {
         sessionStorage.setItem('beg_utms', JSON.stringify(sessionUtms));
       }

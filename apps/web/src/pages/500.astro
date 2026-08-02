@@ -4,15 +4,21 @@ import Layout from '../layouts/Layout.astro';
 // 500.astro
 ---
 
-<Layout 
-  title="Erro Interno" 
-  description="Ocorreu um erro no servidor."
-  noindex={true}
->
+<Layout title="Erro Interno" description="Ocorreu um erro no servidor." noindex={true}>
   <div class="error-page container">
     <div class="error-content">
       <div class="error-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="64"
+          height="64"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
           <circle cx="12" cy="12" r="10"></circle>
           <line x1="12" y1="8" x2="12" y2="12"></line>
           <line x1="12" y1="16" x2="12.01" y2="16"></line>
@@ -20,9 +26,10 @@ import Layout from '../layouts/Layout.astro';
       </div>
       <h1 class="error-title">500 - Erro Interno</h1>
       <p class="error-text">
-        Ocorreu um problema inesperado nos nossos servidores. Nossa equipe técnica já foi notificada.
+        Ocorreu um problema inesperado nos nossos servidores. Nossa equipe técnica já foi
+        notificada.
       </p>
-      
+
       <div class="error-actions">
         <a href="/" class="btn btn-primary">Voltar ao Início</a>
       </div>
@@ -80,7 +87,8 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-white);
   }
 
-  .btn-primary:hover, .btn-primary:focus-visible {
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
     background-color: var(--color-primary-700);
   }
 </style>

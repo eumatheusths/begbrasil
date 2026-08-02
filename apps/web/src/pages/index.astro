@@ -16,55 +16,73 @@ import QuoteCTA from '../components/ui/QuoteCTA.astro';
 // FAQs para a Home
 const homeFaqs = [
   {
-    question: "Vocês personalizam tamanho?",
-    answer: "Sim, fabricamos etiquetas e placas sob medida, cortadas com precisão de acordo com as especificações do seu projeto."
+    question: 'Vocês personalizam tamanho?',
+    answer:
+      'Sim, fabricamos etiquetas e placas sob medida, cortadas com precisão de acordo com as especificações do seu projeto.',
   },
   {
-    question: "Posso enviar meu logotipo?",
-    answer: "Sim, aceitamos logotipos e os reproduzimos com alta fidelidade e durabilidade através de [CONFIRMAR PROCESSO] ou gravação."
+    question: 'Posso enviar meu logotipo?',
+    answer:
+      'Sim, aceitamos logotipos e os reproduzimos com alta fidelidade e durabilidade através de [CONFIRMAR PROCESSO] ou gravação.',
   },
   {
-    question: "Trabalham com numeração?",
-    answer: "Sim, produzimos itens com numeração sequencial, código de barras e dados variáveis para controle de patrimônio e rastreabilidade."
+    question: 'Trabalham com numeração?',
+    answer:
+      'Sim, produzimos itens com numeração sequencial, código de barras e dados variáveis para controle de patrimônio e rastreabilidade.',
   },
   {
-    question: "Fazem QR Code?",
-    answer: "Sim, gravamos ou imprimimos QR Codes de alta definição, garantindo a leitura industrial mesmo em ambientes severos."
+    question: 'Fazem QR Code?',
+    answer:
+      'Sim, gravamos ou imprimimos QR Codes de alta definição, garantindo a leitura industrial mesmo em ambientes severos.',
   },
   {
-    question: "Quais arquivos posso enviar?",
-    answer: "Aceitamos os formatos vetorizados (.pdf, .ai, .eps, .cdr) para garantir a melhor qualidade de gravação e impressão."
+    question: 'Quais arquivos posso enviar?',
+    answer:
+      'Aceitamos os formatos vetorizados (.pdf, .ai, .eps, .cdr) para garantir a melhor qualidade de gravação e impressão.',
   },
   {
-    question: "Como solicito orçamento?",
-    answer: "Basta clicar em 'Solicitar orçamento' e enviar as especificações. Nossa equipe retornará rapidamente com a proposta comercial."
+    question: 'Como solicito orçamento?',
+    answer:
+      "Basta clicar em 'Solicitar orçamento' e enviar as especificações. Nossa equipe retornará rapidamente com a proposta comercial.",
   },
   {
-    question: "Atendem todo o Brasil?",
-    answer: "Sim, enviamos nossas soluções de identificação para empresas, indústrias e órgãos de todos os estados do Brasil."
-  }
+    question: 'Atendem todo o Brasil?',
+    answer:
+      'Sim, enviamos nossas soluções de identificação para empresas, indústrias e órgãos de todos os estados do Brasil.',
+  },
 ];
 
 const processSteps = [
-  { title: "Envie sua necessidade", description: "Fale com nossa equipe sobre o que você precisa identificar." },
-  { title: "Receba orientação", description: "Nossos especialistas indicam o material e processo ideal." },
-  { title: "Aprove o projeto", description: "Validação final do layout e das especificações técnicas." },
-  { title: "Acompanhe a produção", description: "Fabricação com qualidade garantida em cada etapa." },
-  { title: "Receba seu pedido", description: "Entrega segura em todo o território nacional." }
+  {
+    title: 'Envie sua necessidade',
+    description: 'Fale com nossa equipe sobre o que você precisa identificar.',
+  },
+  {
+    title: 'Receba orientação',
+    description: 'Nossos especialistas indicam o material e processo ideal.',
+  },
+  {
+    title: 'Aprove o projeto',
+    description: 'Validação final do layout e das especificações técnicas.',
+  },
+  {
+    title: 'Acompanhe a produção',
+    description: 'Fabricação com qualidade garantida em cada etapa.',
+  },
+  { title: 'Receba seu pedido', description: 'Entrega segura em todo o território nacional.' },
 ];
-
 ---
 
-<Layout 
-  title="Identificação industrial feita para durar" 
+<Layout
+  title="Identificação industrial feita para durar"
   description="Etiquetas patrimoniais, placas para máquinas, sinalização e soluções personalizadas para empresas de todo o Brasil."
 >
   <!-- 1. Hero -->
   <Hero
     title="Identificação industrial feita para durar."
     subtitle="Etiquetas patrimoniais, placas para máquinas, sinalização e soluções personalizadas para empresas de todo o Brasil."
-    primaryCta={{ label: "Solicitar orçamento", href: "/orcamento" }}
-    secondaryCta={{ label: "Conhecer soluções", href: "#solucoes" }}
+    primaryCta={{ label: 'Solicitar orçamento', href: '/orcamento' }}
+    secondaryCta={{ label: 'Conhecer soluções', href: '#solucoes' }}
     imageUrl="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
   />
 
@@ -79,29 +97,29 @@ const processSteps = [
         <p class="section-subtitle">Tudo o que sua empresa precisa em identificação durável.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <SolutionCard 
-          title="Controle Patrimonial" 
-          description="Etiquetas de alta fixação para gestão de ativos físicos." 
-          icon="barcode" 
-          href="/produtos/etiquetas-de-patrimonio" 
+        <SolutionCard
+          title="Controle Patrimonial"
+          description="Etiquetas de alta fixação para gestão de ativos físicos."
+          icon="barcode"
+          href="/produtos/etiquetas-de-patrimonio"
         />
-        <SolutionCard 
-          title="Identificação de Máquinas" 
-          description="Placas técnicas resistentes a ambientes industriais severos." 
-          icon="settings" 
-          href="/produtos/placas-para-maquinas" 
+        <SolutionCard
+          title="Identificação de Máquinas"
+          description="Placas técnicas resistentes a ambientes industriais severos."
+          icon="settings"
+          href="/produtos/placas-para-maquinas"
         />
-        <SolutionCard 
-          title="Sinalização Industrial" 
-          description="Avisos e alertas para segurança no trabalho e fluxos." 
-          icon="alert-triangle" 
-          href="/produtos/placas-de-sinalizacao" 
+        <SolutionCard
+          title="Sinalização Industrial"
+          description="Avisos e alertas para segurança no trabalho e fluxos."
+          icon="alert-triangle"
+          href="/produtos/placas-de-sinalizacao"
         />
-        <SolutionCard 
-          title="Identificação de Marca" 
-          description="Logotipos e apliques metálicos premium para produtos." 
-          icon="tag" 
-          href="/produtos/etiquetas-metalicas" 
+        <SolutionCard
+          title="Identificação de Marca"
+          description="Logotipos e apliques metálicos premium para produtos."
+          icon="tag"
+          href="/produtos/etiquetas-metalicas"
         />
       </div>
     </div>
@@ -151,29 +169,29 @@ const processSteps = [
         <p class="section-subtitle">Selecionados para resistir ao seu ambiente operacional.</p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <MaterialCard 
-          name="Alumínio" 
-          description="Leve, resistente à corrosão e aceita [CONFIRMAR PROCESSO] em alta definição." 
-          features={["Resistente a UV", "Alta fixação"]}
-          href="/materiais/aluminio" 
+        <MaterialCard
+          name="Alumínio"
+          description="Leve, resistente à corrosão e aceita [CONFIRMAR PROCESSO] em alta definição."
+          features={['Resistente a UV', 'Alta fixação']}
+          href="/materiais/aluminio"
         />
-        <MaterialCard 
-          name="Aço Inox" 
-          description="Extrema resistência mecânica e química, ideal para indústrias pesadas." 
-          features={["Ambientes severos", "Anticorrosivo"]}
-          href="/materiais/aco-inox" 
+        <MaterialCard
+          name="Aço Inox"
+          description="Extrema resistência mecânica e química, ideal para indústrias pesadas."
+          features={['Ambientes severos', 'Anticorrosivo']}
+          href="/materiais/aco-inox"
         />
-        <MaterialCard 
-          name="Acrílico" 
-          description="Acabamento premium e transparente para displays e painéis." 
-          features={["Corte a laser", "Alta transparência"]}
-          href="/materiais/acrilico" 
+        <MaterialCard
+          name="Acrílico"
+          description="Acabamento premium e transparente para displays e painéis."
+          features={['Corte a laser', 'Alta transparência']}
+          href="/materiais/acrilico"
         />
-        <MaterialCard 
-          name="Poliéster / Adesivos" 
-          description="Flexibilidade e alta aderência para superfícies curvadas." 
-          features={["Flexível", "Várias espessuras"]}
-          href="/materiais/polimeros" 
+        <MaterialCard
+          name="Poliéster / Adesivos"
+          description="Flexibilidade e alta aderência para superfícies curvadas."
+          features={['Flexível', 'Várias espessuras']}
+          href="/materiais/polimeros"
         />
       </div>
     </div>
@@ -184,7 +202,9 @@ const processSteps = [
     <div class="container">
       <div class="section-header text-center">
         <h2 class="section-title text-white">Como Trabalhamos</h2>
-        <p class="section-subtitle text-gray-400">Do primeiro contato até a entrega na sua empresa.</p>
+        <p class="section-subtitle text-gray-400">
+          Do primeiro contato até a entrega na sua empresa.
+        </p>
       </div>
       <ProcessTimeline steps={processSteps} />
     </div>
@@ -199,9 +219,17 @@ const processSteps = [
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <SectorCard title="Indústrias" icon="factory" href="/segmentos/industrias" />
-        <SectorCard title="Fabricantes de Máquinas" icon="cpu" href="/segmentos/fabricantes-de-maquinas" />
+        <SectorCard
+          title="Fabricantes de Máquinas"
+          icon="cpu"
+          href="/segmentos/fabricantes-de-maquinas"
+        />
         <SectorCard title="Hospitais" icon="activity" href="/segmentos/hospitais" />
-        <SectorCard title="Escolas e Universidades" icon="book-open" href="/segmentos/escolas-e-universidades" />
+        <SectorCard
+          title="Escolas e Universidades"
+          icon="book-open"
+          href="/segmentos/escolas-e-universidades"
+        />
       </div>
     </div>
   </section>
@@ -282,7 +310,7 @@ const processSteps = [
   </section>
 
   <!-- 12. CTA Final -->
-  <QuoteCTA 
+  <QuoteCTA
     title="Conte para nossa equipe o que você precisa identificar."
     description="Especialistas prontos para entender seu projeto e indicar a solução ideal com foco na durabilidade."
   />
@@ -292,29 +320,29 @@ const processSteps = [
   .section {
     padding: var(--space-16) 0;
   }
-  
+
   .section-header {
     margin-bottom: var(--space-12);
   }
-  
+
   .section-title {
     font-size: var(--text-3xl);
     font-weight: var(--font-bold);
     color: var(--color-graphite-900);
     margin-bottom: var(--space-4);
   }
-  
+
   .section-title.text-white {
     color: var(--color-white);
   }
-  
+
   .section-subtitle {
     font-size: var(--text-lg);
     color: var(--color-gray-600);
     max-width: 600px;
     margin: 0 auto;
   }
-  
+
   .section-subtitle.text-gray-400 {
     color: var(--color-gray-400);
   }
@@ -322,30 +350,53 @@ const processSteps = [
   .grid {
     display: grid;
   }
-  
-  .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-  
-  .gap-6 { gap: var(--space-6); }
-  
-  .mt-8 { margin-top: var(--space-8); }
-  
-  .text-center { text-align: center; }
-  
-  .max-w-3xl { max-width: 48rem; }
-  
-  .mx-auto { margin-left: auto; margin-right: auto; }
+
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .gap-6 {
+    gap: var(--space-6);
+  }
+
+  .mt-8 {
+    margin-top: var(--space-8);
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   @media (min-width: 640px) {
-    .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .sm\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (min-width: 768px) {
-    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 
   @media (min-width: 1024px) {
-    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .lg\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .lg\:grid-cols-4 {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
   }
 </style>

@@ -10,56 +10,66 @@ const produtos = await getCollection('produtos', ({ data }) => {
 });
 
 // Agrupar produtos por categoria
-const productsByCategory = produtos.reduce((acc, produto) => {
-  if (!acc[produto.data.category]) {
-    acc[produto.data.category] = [];
-  }
-  acc[produto.data.category].push(produto);
-  return acc;
-}, {} as Record<string, typeof produtos>);
+const productsByCategory = produtos.reduce(
+  (acc, produto) => {
+    if (!acc[produto.data.category]) {
+      acc[produto.data.category] = [];
+    }
+    acc[produto.data.category].push(produto);
+    return acc;
+  },
+  {} as Record<string, typeof produtos>
+);
 
 const formatCategoryName = (slug: string) => {
   return slug
     .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(' ');
 };
 ---
 
-<Layout 
-  title="Catálogo de Produtos" 
+<Layout
+  title="Catálogo de Produtos"
   description="Explore nossa linha completa de etiquetas patrimoniais, placas para máquinas e sinalização de segurança."
 >
   <Hero
     title="Catálogo de Soluções Industriais"
     subtitle="Navegue por nossas categorias de produtos desenvolvidos para resistir aos ambientes mais severos."
-    primaryCta={{ label: "Solicitar Orçamento Geral", href: "/orcamento" }}
+    primaryCta={{ label: 'Solicitar Orçamento Geral', href: '/orcamento' }}
     align="center"
   />
 
   <section class="catalog-section container">
-    {Object.entries(productsByCategory).map(([categorySlug, categoryProducts]) => (
-      <div class="category-block">
-        <div class="category-header">
-          <h2 class="category-title">{formatCategoryName(categorySlug)}</h2>
-          <a href={`/produtos/${categorySlug}`} class="category-link">Ver todos dessa categoria &rarr;</a>
+    {
+      Object.entries(productsByCategory).map(([categorySlug, categoryProducts]) => (
+        <div class="category-block">
+          <div class="category-header">
+            <h2 class="category-title">{formatCategoryName(categorySlug)}</h2>
+            <a href={`/produtos/${categorySlug}`} class="category-link">
+              Ver todos dessa categoria &rarr;
+            </a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {categoryProducts.map((produto) => (
+              <ProductCard
+                title={produto.data.name}
+                description={produto.data.shortDescription}
+                imageUrl={
+                  produto.data.images[0] ||
+                  'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+                }
+                href={`/produtos/${produto.id}`}
+              />
+            ))}
+          </div>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categoryProducts.map(produto => (
-            <ProductCard
-              title={produto.data.name}
-              description={produto.data.shortDescription}
-              imageUrl={produto.data.images[0] || 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'}
-              href={`/produtos/${produto.id}`}
-            />
-          ))}
-        </div>
-      </div>
-    ))}
+      ))
+    }
   </section>
 
-  <QuoteCTA 
+  <QuoteCTA
     title="Não encontrou exatamente o que procurava?"
     description="Temos processos de fabricação flexíveis para criar projetos personalizados sob medida para sua planta."
   />
@@ -95,7 +105,8 @@ const formatCategoryName = (slug: string) => {
     transition: color var(--transition-fast);
   }
 
-  .category-link:hover, .category-link:focus-visible {
+  .category-link:hover,
+  .category-link:focus-visible {
     color: var(--color-primary-700);
     text-decoration: underline;
   }
@@ -103,15 +114,23 @@ const formatCategoryName = (slug: string) => {
   .grid {
     display: grid;
   }
-  
-  .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-  .gap-6 { gap: var(--space-6); }
+
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .gap-6 {
+    gap: var(--space-6);
+  }
 
   @media (min-width: 768px) {
-    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 
   @media (min-width: 1024px) {
-    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .lg\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
   }
 </style>

@@ -16,11 +16,13 @@ const { produto } = Astro.props;
 const { Content } = await render(produto);
 const data = produto.data;
 
-const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+const image =
+  data.images[0] ||
+  'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
 ---
 
-<Layout 
-  title={data.seoTitle || `${data.name} | BEG Brasil`} 
+<Layout
+  title={data.seoTitle || `${data.name} | BEG Brasil`}
   description={data.seoDescription || data.shortDescription}
   image={image}
   type="article"
@@ -31,7 +33,9 @@ const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a> &rsaquo;
         <a href="/produtos">Produtos</a> &rsaquo;
-        <a href={`/produtos/${data.category}`} class="capitalize">{data.category.replace('-', ' ')}</a> &rsaquo;
+        <a href={`/produtos/${data.category}`} class="capitalize"
+          >{data.category.replace('-', ' ')}</a
+        > &rsaquo;
         <span aria-current="page">{data.name}</span>
       </nav>
     </div>
@@ -44,13 +48,15 @@ const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562
         <div class="main-image-wrapper">
           <img src={image} alt={data.name} class="main-image" fetchpriority="high" />
         </div>
-        {data.images.length > 1 && (
-          <div class="thumbnail-list">
-            {data.images.map(img => (
-              <img src={img} alt={`Miniatura ${data.name}`} class="thumbnail" loading="lazy" />
-            ))}
-          </div>
-        )}
+        {
+          data.images.length > 1 && (
+            <div class="thumbnail-list">
+              {data.images.map((img) => (
+                <img src={img} alt={`Miniatura ${data.name}`} class="thumbnail" loading="lazy" />
+              ))}
+            </div>
+          )
+        }
       </div>
 
       <!-- Resumo do Produto -->
@@ -59,28 +65,36 @@ const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562
         <p class="product-short-desc">{data.shortDescription}</p>
 
         <div class="product-specs-quick">
-          {data.materials.length > 0 && (
-            <div class="spec-row">
-              <span class="spec-label">Materiais:</span>
-              <span class="spec-value">{data.materials.join(', ')}</span>
-            </div>
-          )}
-          {data.minimumQuantity && (
-            <div class="spec-row">
-              <span class="spec-label">Qtd. Mínima:</span>
-              <span class="spec-value">{data.minimumQuantity}</span>
-            </div>
-          )}
-          {data.leadTime && (
-            <div class="spec-row">
-              <span class="spec-label">Prazo de Produção:</span>
-              <span class="spec-value">{data.leadTime}</span>
-            </div>
-          )}
+          {
+            data.materials.length > 0 && (
+              <div class="spec-row">
+                <span class="spec-label">Materiais:</span>
+                <span class="spec-value">{data.materials.join(', ')}</span>
+              </div>
+            )
+          }
+          {
+            data.minimumQuantity && (
+              <div class="spec-row">
+                <span class="spec-label">Qtd. Mínima:</span>
+                <span class="spec-value">{data.minimumQuantity}</span>
+              </div>
+            )
+          }
+          {
+            data.leadTime && (
+              <div class="spec-row">
+                <span class="spec-label">Prazo de Produção:</span>
+                <span class="spec-value">{data.leadTime}</span>
+              </div>
+            )
+          }
         </div>
 
         <div class="product-cta">
-          <a href="#orcamento" class="btn-primary w-full text-center py-3">Solicitar Orçamento Deste Produto</a>
+          <a href="#orcamento" class="btn-primary w-full text-center py-3"
+            >Solicitar Orçamento Deste Produto</a
+          >
         </div>
       </div>
     </div>
@@ -95,25 +109,31 @@ const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562
 
         <div class="specs-tables">
           <h2 class="text-2xl font-bold mb-6">Especificações</h2>
-          
+
           <div class="spec-card">
             <h3 class="spec-card-title">Aplicações</h3>
             <ul class="spec-list">
-              {data.applications.map(app => <li>{app}</li>)}
+              {data.applications.map((app) => <li>{app}</li>)}
             </ul>
           </div>
 
           <div class="spec-card">
             <h3 class="spec-card-title">Opções de Fixação</h3>
             <ul class="spec-list">
-              {data.fixationMethods.map(method => <li>{method}</li>)}
+              {data.fixationMethods.map((method) => <li>{method}</li>)}
             </ul>
           </div>
 
           <div class="spec-card">
             <h3 class="spec-card-title">Dados Variáveis</h3>
             <ul class="spec-list">
-              {data.variableData ? <li>Gravação de Dados Variáveis disponível</li> : <li>Sem dados variáveis</li>}
+              {
+                data.variableData ? (
+                  <li>Gravação de Dados Variáveis disponível</li>
+                ) : (
+                  <li>Sem dados variáveis</li>
+                )
+              }
               {data.supportsQRCode && <li>Gravação de QR Code Industrial</li>}
               {data.supportsBarcode && <li>Suporte a Códigos de Barras (ex: Code 128)</li>}
               {data.supportsSequentialNumbering && <li>Numeração Sequencial</li>}
@@ -124,14 +144,18 @@ const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562
     </div>
 
     <!-- FAQ do Produto -->
-    {data.faq && data.faq.length > 0 && (
-      <div class="product-faq mt-16 pt-16 border-t border-gray-200">
-        <h2 class="text-2xl font-bold mb-8 text-center">Perguntas Frequentes sobre este Produto</h2>
-        <div class="max-w-3xl mx-auto">
-          <FAQ items={data.faq} />
+    {
+      data.faq && data.faq.length > 0 && (
+        <div class="product-faq mt-16 pt-16 border-t border-gray-200">
+          <h2 class="text-2xl font-bold mb-8 text-center">
+            Perguntas Frequentes sobre este Produto
+          </h2>
+          <div class="max-w-3xl mx-auto">
+            <FAQ items={data.faq} />
+          </div>
         </div>
-      </div>
-    )}
+      )
+    }
 
     <!-- Formulário Mockado de Orçamento -->
     <div id="orcamento" class="mt-16 pt-16 border-t border-gray-200 scroll-mt-24">
@@ -142,28 +166,49 @@ const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium mb-1">Nome Completo</label>
-              <input type="text" class="form-input w-full p-2 border border-gray-300 rounded" placeholder="Seu nome" />
+              <input
+                type="text"
+                class="form-input w-full p-2 border border-gray-300 rounded"
+                placeholder="Seu nome"
+              />
             </div>
             <div>
               <label class="block text-sm font-medium mb-1">E-mail Corporativo</label>
-              <input type="email" class="form-input w-full p-2 border border-gray-300 rounded" placeholder="email@empresa.com.br" />
+              <input
+                type="email"
+                class="form-input w-full p-2 border border-gray-300 rounded"
+                placeholder="email@empresa.com.br"
+              />
             </div>
           </div>
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium mb-1">Telefone / WhatsApp</label>
-              <input type="tel" class="form-input w-full p-2 border border-gray-300 rounded" placeholder="(00) 00000-0000" />
+              <input
+                type="tel"
+                class="form-input w-full p-2 border border-gray-300 rounded"
+                placeholder="(00) 00000-0000"
+              />
             </div>
             <div>
               <label class="block text-sm font-medium mb-1">Quantidade Estimada</label>
-              <input type="number" class="form-input w-full p-2 border border-gray-300 rounded" placeholder="Ex: 500" />
+              <input
+                type="number"
+                class="form-input w-full p-2 border border-gray-300 rounded"
+                placeholder="Ex: 500"
+              />
             </div>
           </div>
           <div>
             <label class="block text-sm font-medium mb-1">Detalhes do Projeto</label>
-            <textarea class="form-input w-full p-2 border border-gray-300 rounded h-32" placeholder="Descreva medidas específicas, material desejado e tipo de ambiente (interno/externo)..."></textarea>
+            <textarea
+              class="form-input w-full p-2 border border-gray-300 rounded h-32"
+              placeholder="Descreva medidas específicas, material desejado e tipo de ambiente (interno/externo)..."
+            ></textarea>
           </div>
-          <button type="button" class="btn-primary py-3 px-6 rounded font-medium mt-2">Enviar Solicitação (Mock)</button>
+          <button type="button" class="btn-primary py-3 px-6 rounded font-medium mt-2"
+            >Enviar Solicitação (Mock)</button
+          >
         </form>
       </div>
     </div>
@@ -289,7 +334,8 @@ const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562
     text-decoration: none;
   }
 
-  .btn-primary:hover, .btn-primary:focus-visible {
+  .btn-primary:hover,
+  .btn-primary:focus-visible {
     background-color: var(--color-primary-700);
   }
 
@@ -358,45 +404,126 @@ const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562
   }
 
   /* Utils for Tailwind-like classes used in template */
-  .w-full { width: 100%; }
-  .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .text-center { text-align: center; }
-  .mt-16 { margin-top: 4rem; }
-  .pt-16 { padding-top: 4rem; }
-  .mb-8 { margin-bottom: 2rem; }
-  .mb-6 { margin-bottom: 1.5rem; }
-  .mb-4 { margin-bottom: 1rem; }
-  .mb-2 { margin-bottom: 0.5rem; }
-  .mb-1 { margin-bottom: 0.25rem; }
-  .text-2xl { font-size: 1.5rem; }
-  .font-bold { font-weight: 700; }
-  .font-medium { font-weight: 500; }
-  .max-w-3xl { max-width: 48rem; }
-  .max-w-none { max-width: none; }
-  .mx-auto { margin-left: auto; margin-right: auto; }
-  .flex { display: flex; }
-  .flex-col { flex-direction: column; }
-  .gap-4 { gap: 1rem; }
-  .bg-gray-50 { background-color: var(--color-gray-50); }
-  .bg-gray-100 { background-color: var(--color-gray-100); }
-  .p-8 { padding: 2rem; }
-  .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
-  .rounded-lg { border-radius: var(--radius-lg); }
-  .rounded { border-radius: var(--radius-md); }
-  .border { border-width: 1px; }
-  .border-t { border-top-width: 1px; }
-  .border-b { border-bottom-width: 1px; }
-  .border-gray-200 { border-color: var(--color-gray-200); }
-  .border-gray-300 { border-color: var(--color-gray-300); }
-  .text-gray-600 { color: var(--color-gray-600); }
-  .block { display: block; }
-  .text-sm { font-size: 0.875rem; }
-  .p-2 { padding: 0.5rem; }
-  .h-32 { height: 8rem; }
-  .scroll-mt-24 { scroll-margin-top: 6rem; }
-  
+  .w-full {
+    width: 100%;
+  }
+  .py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .mt-16 {
+    margin-top: 4rem;
+  }
+  .pt-16 {
+    padding-top: 4rem;
+  }
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+  .mb-1 {
+    margin-bottom: 0.25rem;
+  }
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  .font-bold {
+    font-weight: 700;
+  }
+  .font-medium {
+    font-weight: 500;
+  }
+  .max-w-3xl {
+    max-width: 48rem;
+  }
+  .max-w-none {
+    max-width: none;
+  }
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .flex {
+    display: flex;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .gap-4 {
+    gap: 1rem;
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .p-8 {
+    padding: 2rem;
+  }
+  .py-4 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .rounded-lg {
+    border-radius: var(--radius-lg);
+  }
+  .rounded {
+    border-radius: var(--radius-md);
+  }
+  .border {
+    border-width: 1px;
+  }
+  .border-t {
+    border-top-width: 1px;
+  }
+  .border-b {
+    border-bottom-width: 1px;
+  }
+  .border-gray-200 {
+    border-color: var(--color-gray-200);
+  }
+  .border-gray-300 {
+    border-color: var(--color-gray-300);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .block {
+    display: block;
+  }
+  .text-sm {
+    font-size: 0.875rem;
+  }
+  .p-2 {
+    padding: 0.5rem;
+  }
+  .h-32 {
+    height: 8rem;
+  }
+  .scroll-mt-24 {
+    scroll-margin-top: 6rem;
+  }
+
   @media (min-width: 768px) {
-    .md\:grid-cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .md\:grid-cols-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
   }
 </style>

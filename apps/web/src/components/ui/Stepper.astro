@@ -1,74 +1,117 @@
 ---
+
 ---
 
 <div class="stepper-container bg-white shadow-sm border border-gray-200 rounded-lg p-6 md:p-10">
-  
   <!-- Stepper Header -->
   <div class="stepper-header mb-8">
     <ol class="flex items-center w-full">
       <li class="flex w-full items-center text-primary-600 step-indicator" data-step="1">
-        <span class="flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full shrink-0">1</span>
+        <span class="flex items-center justify-center w-8 h-8 bg-primary-100 rounded-full shrink-0"
+          >1</span
+        >
         <span class="ml-2 font-medium hidden md:block">Contato</span>
         <div class="flex-auto border-t-2 border-primary-600 mx-4"></div>
       </li>
       <li class="flex w-full items-center text-gray-500 step-indicator" data-step="2">
-        <span class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full shrink-0">2</span>
+        <span class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full shrink-0"
+          >2</span
+        >
         <span class="ml-2 font-medium hidden md:block">Produto</span>
         <div class="flex-auto border-t-2 border-gray-200 mx-4"></div>
       </li>
       <li class="flex w-full items-center text-gray-500 step-indicator" data-step="3">
-        <span class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full shrink-0">3</span>
+        <span class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full shrink-0"
+          >3</span
+        >
         <span class="ml-2 font-medium hidden md:block">Arquivos</span>
         <div class="flex-auto border-t-2 border-gray-200 mx-4"></div>
       </li>
       <li class="flex items-center text-gray-500 step-indicator" data-step="4">
-        <span class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full shrink-0">4</span>
+        <span class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full shrink-0"
+          >4</span
+        >
         <span class="ml-2 font-medium hidden md:block">Confirmação</span>
       </li>
     </ol>
   </div>
 
   <form id="quote-form" class="stepper-body">
-    
     <!-- Etapa 1: Contato -->
     <fieldset class="step-content" data-step="1">
       <h2 class="text-2xl font-bold mb-6">Seus Dados</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label class="block text-sm font-medium mb-1">Nome Completo *</label>
-          <input type="text" name="name" required class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="text"
+            name="name"
+            required
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Empresa</label>
-          <input type="text" name="company" class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="text"
+            name="company"
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">E-mail Corporativo *</label>
-          <input type="email" name="email" required class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="email"
+            name="email"
+            required
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">WhatsApp</label>
-          <input type="tel" name="whatsapp" class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="tel"
+            name="whatsapp"
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Cidade</label>
-          <input type="text" name="city" class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="text"
+            name="city"
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Estado</label>
-          <input type="text" name="state" class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="text"
+            name="state"
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Setor / Indústria</label>
-          <input type="text" name="industry" class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="text"
+            name="industry"
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Cargo (Opcional)</label>
-          <input type="text" name="jobTitle" class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="text"
+            name="jobTitle"
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
       </div>
       <div class="mt-8 flex justify-end">
-        <button type="button" class="btn-primary py-3 px-6 rounded font-medium btn-next">Próxima Etapa &rarr;</button>
+        <button type="button" class="btn-primary py-3 px-6 rounded font-medium btn-next"
+          >Próxima Etapa &rarr;</button
+        >
       </div>
     </fieldset>
 
@@ -78,7 +121,11 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
           <label class="block text-sm font-medium mb-1">Categoria *</label>
-          <select name="category" required class="form-input w-full p-3 border border-gray-300 rounded bg-white">
+          <select
+            name="category"
+            required
+            class="form-input w-full p-3 border border-gray-300 rounded bg-white"
+          >
             <option value="">Selecione...</option>
             <option value="etiquetas-de-patrimonio">Etiquetas de Patrimônio</option>
             <option value="placas-para-maquinas">Placas para Máquinas</option>
@@ -88,18 +135,32 @@
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Material Desejado</label>
-          <input type="text" name="material" placeholder="Ex: Alumínio, Inox, PVC..." class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="text"
+            name="material"
+            placeholder="Ex: Alumínio, Inox, PVC..."
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Medidas</label>
-          <input type="text" name="dimensions" placeholder="Ex: 50x20mm" class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="text"
+            name="dimensions"
+            placeholder="Ex: 50x20mm"
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
         <div>
           <label class="block text-sm font-medium mb-1">Quantidade</label>
-          <input type="number" name="quantity" class="form-input w-full p-3 border border-gray-300 rounded" />
+          <input
+            type="number"
+            name="quantity"
+            class="form-input w-full p-3 border border-gray-300 rounded"
+          />
         </div>
       </div>
-      
+
       <div class="mt-6 mb-6">
         <p class="font-medium mb-2">Dados Variáveis</p>
         <div class="flex flex-wrap gap-4">
@@ -117,34 +178,64 @@
           </label>
         </div>
       </div>
-      
+
       <div>
         <label class="block text-sm font-medium mb-1">Observações Adicionais</label>
-        <textarea name="notes" class="form-input w-full p-3 border border-gray-300 rounded h-24" placeholder="Descreva o ambiente de aplicação (interno/externo), tipo de superfície, prazo..."></textarea>
+        <textarea
+          name="notes"
+          class="form-input w-full p-3 border border-gray-300 rounded h-24"
+          placeholder="Descreva o ambiente de aplicação (interno/externo), tipo de superfície, prazo..."
+        ></textarea>
       </div>
 
       <div class="mt-8 flex justify-between">
-        <button type="button" class="btn-secondary py-3 px-6 rounded font-medium btn-prev">&larr; Voltar</button>
-        <button type="button" class="btn-primary py-3 px-6 rounded font-medium btn-next">Próxima Etapa &rarr;</button>
+        <button type="button" class="btn-secondary py-3 px-6 rounded font-medium btn-prev"
+          >&larr; Voltar</button
+        >
+        <button type="button" class="btn-primary py-3 px-6 rounded font-medium btn-next"
+          >Próxima Etapa &rarr;</button
+        >
       </div>
     </fieldset>
 
     <!-- Etapa 3: Arquivos -->
     <fieldset class="step-content hidden" data-step="3">
       <h2 class="text-2xl font-bold mb-6">Anexos (Opcional)</h2>
-      <p class="text-gray-600 mb-4">Envie logomarcas, projetos em PDF ou fotos do local de aplicação.</p>
-      
-      <div class="upload-area border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50">
-        <p class="font-medium text-gray-700">Arraste seus arquivos aqui ou clique para selecionar</p>
+      <p class="text-gray-600 mb-4">
+        Envie logomarcas, projetos em PDF ou fotos do local de aplicação.
+      </p>
+
+      <div
+        class="upload-area border-2 border-dashed border-gray-300 rounded-lg p-8 text-center bg-gray-50"
+      >
+        <p class="font-medium text-gray-700">
+          Arraste seus arquivos aqui ou clique para selecionar
+        </p>
         <p class="text-sm text-gray-500 mt-2">Permitido: PDF, SVG, PNG, JPG (Máx 10MB)</p>
-        <input type="file" id="file-upload" name="files" multiple accept=".pdf,.svg,.png,.jpg,.jpeg" class="hidden" />
-        <button type="button" onclick="document.getElementById('file-upload').click()" class="mt-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm font-medium">Selecionar Arquivos</button>
+        <input
+          type="file"
+          id="file-upload"
+          name="files"
+          multiple
+          accept=".pdf,.svg,.png,.jpg,.jpeg"
+          class="hidden"
+        />
+        <button
+          type="button"
+          onclick="document.getElementById('file-upload').click()"
+          class="mt-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded text-sm font-medium"
+          >Selecionar Arquivos</button
+        >
       </div>
       <div id="file-list" class="mt-4 flex flex-col gap-2"></div>
 
       <div class="mt-8 flex justify-between">
-        <button type="button" class="btn-secondary py-3 px-6 rounded font-medium btn-prev">&larr; Voltar</button>
-        <button type="button" class="btn-primary py-3 px-6 rounded font-medium btn-next">Revisar Orçamento &rarr;</button>
+        <button type="button" class="btn-secondary py-3 px-6 rounded font-medium btn-prev"
+          >&larr; Voltar</button
+        >
+        <button type="button" class="btn-primary py-3 px-6 rounded font-medium btn-next"
+          >Revisar Orçamento &rarr;</button
+        >
       </div>
     </fieldset>
 
@@ -156,45 +247,66 @@
         <p><strong>Nome:</strong> <span id="summary-name"></span></p>
         <p><strong>E-mail:</strong> <span id="summary-email"></span></p>
         <p><strong>Categoria:</strong> <span id="summary-category"></span></p>
-        <p class="text-sm text-gray-500 mt-4">Ao enviar, você concorda com nossa Política de Privacidade e consente o contato para fins comerciais.</p>
+        <p class="text-sm text-gray-500 mt-4">
+          Ao enviar, você concorda com nossa Política de Privacidade e consente o contato para fins
+          comerciais.
+        </p>
       </div>
 
       <div class="mt-8 flex justify-between items-center">
-        <button type="button" class="btn-secondary py-3 px-6 rounded font-medium btn-prev">&larr; Voltar</button>
-        <button type="submit" class="btn-primary py-3 px-6 rounded font-bold bg-green-600 hover:bg-green-700 text-white" id="submit-btn">
+        <button type="button" class="btn-secondary py-3 px-6 rounded font-medium btn-prev"
+          >&larr; Voltar</button
+        >
+        <button
+          type="submit"
+          class="btn-primary py-3 px-6 rounded font-bold bg-green-600 hover:bg-green-700 text-white"
+          id="submit-btn"
+        >
           Enviar Orçamento Definitivo
         </button>
       </div>
     </fieldset>
-    
+
     <!-- Tela de Sucesso -->
     <div id="success-screen" class="hidden text-center py-12">
-      <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+      <div
+        class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+          ><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"
+          ></path></svg
+        >
       </div>
       <h2 class="text-3xl font-bold mb-2 text-gray-900">Recebido com Sucesso!</h2>
-      <p class="text-lg text-gray-600 mb-6">Seu número de protocolo é: <strong id="protocol-number" class="text-primary-700 font-mono text-xl block mt-2"></strong></p>
+      <p class="text-lg text-gray-600 mb-6">
+        Seu número de protocolo é: <strong
+          id="protocol-number"
+          class="text-primary-700 font-mono text-xl block mt-2"></strong>
+      </p>
       <p class="mb-8">Nossa engenharia fará a análise e retornará o mais breve possível.</p>
-      
-      <a href="#" id="whatsapp-link" target="_blank" class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded font-bold hover:bg-[#128C7E] transition-colors">
+
+      <a
+        href="#"
+        id="whatsapp-link"
+        target="_blank"
+        class="inline-flex items-center justify-center gap-2 bg-[#25D366] text-white px-6 py-3 rounded font-bold hover:bg-[#128C7E] transition-colors"
+      >
         Acompanhar via WhatsApp
       </a>
     </div>
-
   </form>
 </div>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     let currentStep = 1;
-    const totalSteps = 4;
-    
+
     const form = document.getElementById('quote-form') as HTMLFormElement;
     const contents = document.querySelectorAll('.step-content');
     const indicators = document.querySelectorAll('.step-indicator');
     const nextBtns = document.querySelectorAll('.btn-next');
     const prevBtns = document.querySelectorAll('.btn-prev');
-    
+
     // File handling
     const fileInput = document.getElementById('file-upload') as HTMLInputElement;
     const fileList = document.getElementById('file-list');
@@ -203,8 +315,9 @@
     fileInput?.addEventListener('change', (e) => {
       const target = e.target as HTMLInputElement;
       if (target.files) {
-        Array.from(target.files).forEach(file => {
-          if (file.size <= 10 * 1024 * 1024) { // 10MB
+        Array.from(target.files).forEach((file) => {
+          if (file.size <= 10 * 1024 * 1024) {
+            // 10MB
             selectedFiles.push(file);
           } else {
             alert(`O arquivo ${file.name} excede 10MB.`);
@@ -221,13 +334,13 @@
         const div = document.createElement('div');
         div.className = 'flex justify-between items-center bg-gray-100 p-2 rounded text-sm';
         div.innerHTML = `
-          <span class="truncate">${file.name} (${(file.size/1024/1024).toFixed(1)}MB)</span>
+          <span class="truncate">${file.name} (${(file.size / 1024 / 1024).toFixed(1)}MB)</span>
           <button type="button" class="text-red-500 font-bold px-2 remove-file" data-index="${index}">&times;</button>
         `;
         fileList.appendChild(div);
       });
-      
-      document.querySelectorAll('.remove-file').forEach(btn => {
+
+      document.querySelectorAll('.remove-file').forEach((btn) => {
         btn.addEventListener('click', (e) => {
           const idx = parseInt((e.target as HTMLElement).getAttribute('data-index') || '0');
           selectedFiles.splice(idx, 1);
@@ -256,22 +369,23 @@
           return;
         }
       }
-      
+
       // Update Summary before step 4
       if (step === 4) {
         const name = (form.querySelector('[name="name"]') as HTMLInputElement).value;
         const email = (form.querySelector('[name="email"]') as HTMLInputElement).value;
-        const category = (form.querySelector('[name="category"]') as HTMLSelectElement).selectedOptions[0].text;
-        
+        const category = (form.querySelector('[name="category"]') as HTMLSelectElement)
+          .selectedOptions[0].text;
+
         const sn = document.getElementById('summary-name');
         const se = document.getElementById('summary-email');
         const sc = document.getElementById('summary-category');
-        if(sn) sn.textContent = name;
-        if(se) se.textContent = email;
-        if(sc) sc.textContent = category;
+        if (sn) sn.textContent = name;
+        if (se) se.textContent = email;
+        if (sc) sc.textContent = category;
       }
 
-      contents.forEach(c => {
+      contents.forEach((c) => {
         if (parseInt(c.getAttribute('data-step') || '0') === step) {
           c.classList.remove('hidden');
         } else {
@@ -279,29 +393,38 @@
         }
       });
 
-      indicators.forEach(ind => {
+      indicators.forEach((ind) => {
         const s = parseInt(ind.getAttribute('data-step') || '0');
         const num = ind.querySelector('span:first-child');
         const bar = ind.querySelector('div');
-        
+
         if (s < step) {
           ind.classList.remove('text-gray-500', 'text-primary-600');
           ind.classList.add('text-primary-600');
           num?.classList.remove('bg-gray-100', 'bg-primary-100');
           num?.classList.add('bg-primary-600', 'text-white');
-          if(bar) { bar.classList.remove('border-gray-200'); bar.classList.add('border-primary-600'); }
+          if (bar) {
+            bar.classList.remove('border-gray-200');
+            bar.classList.add('border-primary-600');
+          }
         } else if (s === step) {
           ind.classList.remove('text-gray-500');
           ind.classList.add('text-primary-600');
           num?.classList.remove('bg-gray-100', 'bg-primary-600', 'text-white');
           num?.classList.add('bg-primary-100');
-          if(bar) { bar.classList.remove('border-primary-600'); bar.classList.add('border-gray-200'); }
+          if (bar) {
+            bar.classList.remove('border-primary-600');
+            bar.classList.add('border-gray-200');
+          }
         } else {
           ind.classList.remove('text-primary-600');
           ind.classList.add('text-gray-500');
           num?.classList.remove('bg-primary-100', 'bg-primary-600', 'text-white');
           num?.classList.add('bg-gray-100');
-          if(bar) { bar.classList.remove('border-primary-600'); bar.classList.add('border-gray-200'); }
+          if (bar) {
+            bar.classList.remove('border-primary-600');
+            bar.classList.add('border-gray-200');
+          }
         }
       });
 
@@ -309,15 +432,15 @@
       if (window.gtag) {
         window.gtag('event', 'step_view', {
           event_category: 'funnel',
-          event_label: `step_${step}`
+          event_label: `step_${step}`,
         });
       }
 
       currentStep = step;
     }
 
-    nextBtns.forEach(btn => btn.addEventListener('click', () => showStep(currentStep + 1)));
-    prevBtns.forEach(btn => btn.addEventListener('click', () => showStep(currentStep - 1)));
+    nextBtns.forEach((btn) => btn.addEventListener('click', () => showStep(currentStep + 1)));
+    prevBtns.forEach((btn) => btn.addEventListener('click', () => showStep(currentStep - 1)));
 
     // API Submission
     form.addEventListener('submit', async (e) => {
@@ -327,8 +450,8 @@
       submitBtn.textContent = 'Enviando...';
 
       const formData = new FormData(form);
-      const json: any = {};
-      
+      const json: Record<string, unknown> = {};
+
       // Map basic fields
       json.name = formData.get('name');
       json.company = formData.get('company');
@@ -338,13 +461,13 @@
       json.state = formData.get('state');
       json.industry = formData.get('industry');
       json.jobTitle = formData.get('jobTitle');
-      
+
       json.category = formData.get('category');
       json.material = formData.get('material');
       json.dimensions = formData.get('dimensions');
       json.quantity = parseInt(formData.get('quantity') as string) || null;
       json.notes = formData.get('notes');
-      
+
       json.hasNumbering = formData.get('hasNumbering') === 'true';
       json.hasQrcode = formData.get('hasQrcode') === 'true';
       json.hasBarcode = formData.get('hasBarcode') === 'true';
@@ -360,7 +483,7 @@
         window.gtag('event', 'quote_started', {
           event_category: 'form',
           event_label: 'orcamento',
-          category: json.category
+          category: json.category,
         });
       }
 
@@ -370,22 +493,22 @@
         const res = await fetch(`${API_URL}/api/v1/quotes`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(json)
+          body: JSON.stringify(json),
         });
 
         if (!res.ok) throw new Error('Erro na API');
-        
+
         const data = await res.json();
         const protocol = data.protocol;
 
         // Post Attachments if any
         if (selectedFiles.length > 0) {
           const filesData = new FormData();
-          selectedFiles.forEach(f => filesData.append('files', f));
-          
+          selectedFiles.forEach((f) => filesData.append('files', f));
+
           await fetch(`${API_URL}/api/v1/quotes/${protocol}/attachments`, {
             method: 'POST',
-            body: filesData
+            body: filesData,
           });
         }
 
@@ -394,38 +517,38 @@
           window.gtag('event', 'quote_submitted', {
             event_category: 'form',
             event_label: protocol,
-            value: 1
+            value: 1,
           });
         }
 
         // Show Success
-        contents.forEach(c => c.classList.add('hidden'));
+        contents.forEach((c) => c.classList.add('hidden'));
         document.querySelector('.stepper-header')?.classList.add('hidden');
         document.getElementById('success-screen')?.classList.remove('hidden');
-        
+
         const protoEl = document.getElementById('protocol-number');
-        if(protoEl) protoEl.textContent = protocol;
-        
+        if (protoEl) protoEl.textContent = protocol;
+
         const wppBtn = document.getElementById('whatsapp-link') as HTMLAnchorElement;
-        const msg = encodeURIComponent(`Olá! Solicitei um orçamento no site. Meu protocolo é: ${protocol}`);
+        const msg = encodeURIComponent(
+          `Olá! Solicitei um orçamento no site. Meu protocolo é: ${protocol}`
+        );
         wppBtn.href = `https://wa.me/5511999999999?text=${msg}`;
-        
+
         wppBtn.addEventListener('click', () => {
           if (window.gtag) {
             window.gtag('event', 'click_whatsapp', {
               event_category: 'contact',
-              event_label: protocol
+              event_label: protocol,
             });
           }
         });
-
-      } catch (error) {
+      } catch {
         alert('Ocorreu um erro ao enviar o orçamento. Tente novamente.');
         submitBtn.disabled = false;
         submitBtn.textContent = 'Enviar Orçamento Definitivo';
       }
     });
-
   });
 </script>
 
@@ -448,74 +571,195 @@
   }
 
   /* Tailwind-like utils mapped */
-  .bg-white { background-color: #fff; }
-  .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
-  .rounded-lg { border-radius: 0.5rem; }
-  .rounded { border-radius: 0.25rem; }
-  .rounded-full { border-radius: 9999px; }
-  .p-6 { padding: 1.5rem; }
-  .p-8 { padding: 2rem; }
-  .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
-  .mb-8 { margin-bottom: 2rem; }
-  .mb-6 { margin-bottom: 1.5rem; }
-  .mb-4 { margin-bottom: 1rem; }
-  .mb-2 { margin-bottom: 0.5rem; }
-  .mb-1 { margin-bottom: 0.25rem; }
-  .mt-8 { margin-top: 2rem; }
-  .mt-6 { margin-top: 1.5rem; }
-  .mt-4 { margin-top: 1rem; }
-  .mt-2 { margin-top: 0.5rem; }
-  .ml-2 { margin-left: 0.5rem; }
-  .mx-4 { margin-left: 1rem; margin-right: 1rem; }
-  
-  .flex { display: flex; }
-  .flex-col { flex-direction: column; }
-  .flex-wrap { flex-wrap: wrap; }
-  .items-center { align-items: center; }
-  .justify-center { justify-content: center; }
-  .justify-end { justify-content: flex-end; }
-  .justify-between { justify-content: space-between; }
-  
-  .w-full { width: 100%; }
-  .w-8 { width: 2rem; }
-  .h-8 { height: 2rem; }
-  .h-24 { height: 6rem; }
-  .flex-auto { flex: 1 1 auto; }
-  .shrink-0 { flex-shrink: 0; }
-  
-  .text-primary-600 { color: var(--color-primary-600); }
-  .text-primary-700 { color: var(--color-primary-700); }
-  .text-gray-500 { color: var(--color-gray-500); }
-  .text-gray-600 { color: var(--color-gray-600); }
-  .text-gray-700 { color: var(--color-gray-700); }
-  .text-gray-900 { color: var(--color-graphite-900); }
-  .text-white { color: #fff; }
-  
-  .bg-primary-100 { background-color: var(--color-primary-100); }
-  .bg-primary-600 { background-color: var(--color-primary-600); }
-  .bg-gray-100 { background-color: var(--color-gray-100); }
-  .bg-gray-200 { background-color: var(--color-gray-200); }
-  .bg-gray-50 { background-color: var(--color-gray-50); }
-  
-  .border-t-2 { border-top-width: 2px; }
-  .border-primary-600 { border-color: var(--color-primary-600); }
-  .border-gray-200 { border-color: var(--color-gray-200); }
-  
-  .text-2xl { font-size: 1.5rem; }
-  .font-bold { font-weight: 700; }
-  .font-medium { font-weight: 500; }
-  
-  .grid { display: grid; }
-  .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
-  .gap-4 { gap: 1rem; }
-  .gap-2 { gap: 0.5rem; }
-  
-  .hidden { display: none !important; }
-  
+  .bg-white {
+    background-color: #fff;
+  }
+  .shadow-sm {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+  .rounded {
+    border-radius: 0.25rem;
+  }
+  .rounded-full {
+    border-radius: 9999px;
+  }
+  .p-6 {
+    padding: 1.5rem;
+  }
+  .p-8 {
+    padding: 2rem;
+  }
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .py-3 {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  .mb-8 {
+    margin-bottom: 2rem;
+  }
+  .mb-6 {
+    margin-bottom: 1.5rem;
+  }
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+  .mb-2 {
+    margin-bottom: 0.5rem;
+  }
+  .mb-1 {
+    margin-bottom: 0.25rem;
+  }
+  .mt-8 {
+    margin-top: 2rem;
+  }
+  .mt-6 {
+    margin-top: 1.5rem;
+  }
+  .mt-4 {
+    margin-top: 1rem;
+  }
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+  .ml-2 {
+    margin-left: 0.5rem;
+  }
+  .mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .flex {
+    display: flex;
+  }
+  .flex-col {
+    flex-direction: column;
+  }
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+  .w-8 {
+    width: 2rem;
+  }
+  .h-8 {
+    height: 2rem;
+  }
+  .h-24 {
+    height: 6rem;
+  }
+  .flex-auto {
+    flex: 1 1 auto;
+  }
+  .shrink-0 {
+    flex-shrink: 0;
+  }
+
+  .text-primary-600 {
+    color: var(--color-primary-600);
+  }
+  .text-primary-700 {
+    color: var(--color-primary-700);
+  }
+  .text-gray-500 {
+    color: var(--color-gray-500);
+  }
+  .text-gray-600 {
+    color: var(--color-gray-600);
+  }
+  .text-gray-700 {
+    color: var(--color-gray-700);
+  }
+  .text-gray-900 {
+    color: var(--color-graphite-900);
+  }
+  .text-white {
+    color: #fff;
+  }
+
+  .bg-primary-100 {
+    background-color: var(--color-primary-100);
+  }
+  .bg-primary-600 {
+    background-color: var(--color-primary-600);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-gray-200 {
+    background-color: var(--color-gray-200);
+  }
+  .bg-gray-50 {
+    background-color: var(--color-gray-50);
+  }
+
+  .border-t-2 {
+    border-top-width: 2px;
+  }
+  .border-primary-600 {
+    border-color: var(--color-primary-600);
+  }
+  .border-gray-200 {
+    border-color: var(--color-gray-200);
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  .font-bold {
+    font-weight: 700;
+  }
+  .font-medium {
+    font-weight: 500;
+  }
+
+  .grid {
+    display: grid;
+  }
+  .grid-cols-1 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .gap-4 {
+    gap: 1rem;
+  }
+  .gap-2 {
+    gap: 0.5rem;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
   @media (min-width: 768px) {
-    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .md\:block { display: block; }
-    .md\:p-10 { padding: 2.5rem; }
+    .md\:grid-cols-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .md\:block {
+      display: block;
+    }
+    .md\:p-10 {
+      padding: 2.5rem;
+    }
   }
 </style>

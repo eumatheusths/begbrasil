@@ -22,13 +22,17 @@ const produtosCollection = defineCollection({
     featured: z.boolean().default(false),
     seoTitle: z.string().optional(),
     seoDescription: z.string().optional(),
-    faq: z.array(z.object({
-      question: z.string(),
-      answer: z.string()
-    })).default([]),
+    faq: z
+      .array(
+        z.object({
+          question: z.string(),
+          answer: z.string(),
+        })
+      )
+      .default([]),
     status: z.enum(['active', 'draft', 'archived']).default('active'),
-    lastReviewedAt: z.string().optional()
-  })
+    lastReviewedAt: z.string().optional(),
+  }),
 });
 
 const artigosCollection = defineCollection({
@@ -42,11 +46,11 @@ const artigosCollection = defineCollection({
     publishedAt: z.string(),
     updatedAt: z.string(),
     relatedProducts: z.array(z.string()).default([]),
-    image: z.string().optional()
-  })
+    image: z.string().optional(),
+  }),
 });
 
 export const collections = {
   produtos: produtosCollection,
-  artigos: artigosCollection
+  artigos: artigosCollection,
 };
