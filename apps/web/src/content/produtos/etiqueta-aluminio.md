@@ -17,7 +17,7 @@ dimensions:
   - 50x20mm
   - Personalizado
 fixationMethods:
-  - Fita dupla face 3M [CONFIRMAR MODELO]
+  - Fita dupla face de alta aderência
   - Furos para rebite
 variableData: true
 supportsQRCode: true
@@ -26,8 +26,8 @@ supportsSequentialNumbering: true
 minimumQuantity: '[CONFIRMAR QUANTIDADE]'
 leadTime: '[CONFIRMAR PRAZO]'
 images:
-  - 'https://images.unsplash.com/photo-1585241645927-c7a8e5840c42?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-  - 'https://images.unsplash.com/photo-1621844883391-45bd03ecf4ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  - '/images/portfolio/etiquetas-patrimonio-prefeitura.png'
+  - '/images/portfolio/etiqueta-patrimonio-codigo-barras.jpg'
 featured: true
 seoTitle: 'Etiqueta de Patrimônio em Alumínio | BEG Brasil'
 seoDescription: 'Etiquetas de patrimônio em alumínio de alta resistência para gestão de ativos. Gravação permanente, QR Code e código de barras. Solicite orçamento.'

@@ -1,44 +1,154 @@
 ---
-// Footer.astro
+const socialLinks = [
+  {
+    label: 'Facebook',
+    href: 'https://www.facebook.com/begbrasiletiquetas',
+    icon: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+  },
+  {
+    label: 'Instagram',
+    href: 'https://www.instagram.com/begbrasil/?hl=pt-br',
+    icon: '<rect width="18" height="18" x="3" y="3" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>',
+  },
+  {
+    label: 'Como chegar',
+    href: 'https://maps.app.goo.gl/wEUJsQkoeQrYfbC18',
+    icon: '<path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+  },
+];
 ---
 
-<footer class="footer">
+<footer class="footer" id="contato">
   <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col brand-col">
-        <span class="logo-text">BEG BRASIL</span>
+    <div class="footer-intro">
+      <div>
+        <a href="/" class="logo-text" aria-label="BEG Brasil — página inicial">BEG BRASIL</a>
         <p class="brand-desc">
-          Soluções industriais em identificação, patrimônio e sinalização. Feita para durar.
+          Identificação, patrimônio e sinalização personalizados. Qualidade para durar em cada
+          detalhe.
         </p>
       </div>
-
-      <div class="footer-col">
-        <h3 class="footer-title">Produtos</h3>
-        <ul class="footer-links">
-          <li><a href="/produtos/etiquetas-de-patrimonio">Etiquetas de Patrimônio</a></li>
-          <li><a href="/produtos/placas-para-maquinas">Placas para Máquinas</a></li>
-          <li><a href="/produtos/placas-de-sinalizacao">Sinalização Industrial</a></li>
-          <li><a href="/produtos/placas-personalizadas">Placas Personalizadas</a></li>
-        </ul>
+      <div class="social-links" aria-label="Redes sociais e localização">
+        {
+          socialLinks.map((link) => (
+            <a href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label}>
+              <svg
+                viewBox="0 0 24 24"
+                width="20"
+                height="20"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <Fragment set:html={link.icon} />
+              </svg>
+              <span>{link.label}</span>
+            </a>
+          ))
+        }
       </div>
+    </div>
 
-      <div class="footer-col">
-        <h3 class="footer-title">Empresa</h3>
-        <ul class="footer-links">
-          <li><a href="/sobre">Quem Somos</a></li>
-          <li><a href="/segmentos">Segmentos Atendidos</a></li>
-          <li><a href="/materiais">Materiais</a></li>
-          <li><a href="/contato">Contato e Suporte</a></li>
-        </ul>
-      </div>
+    <div class="contact-grid">
+      <section class="contact-card">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"
+            ><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle
+              cx="12"
+              cy="10"
+              r="3"></circle></svg
+          >
+        </div>
+        <div>
+          <h3>Endereço</h3>
+          <address>
+            Rua Moacir de Almeida, 41<br />Água Rasa — São Paulo/SP<br />CEP 03179-130
+          </address>
+          <a
+            class="contact-action"
+            href="https://maps.app.goo.gl/wEUJsQkoeQrYfbC18"
+            target="_blank"
+            rel="noopener noreferrer">Abrir no Google Maps</a
+          >
+        </div>
+      </section>
 
-      <div class="footer-col">
-        <h3 class="footer-title">Contato</h3>
-        <address class="footer-contact">
-          <p><strong>Vendas:</strong> (11) 93281-5618</p>
-          <p><strong>E-mail:</strong> contato@begbrasil.com.br</p>
-          <p><strong>Endereço:</strong> São Paulo, SP (Endereço completo pendente)</p>
-        </address>
+      <section class="contact-card">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"
+            ><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"
+            ></path></svg
+          >
+        </div>
+        <div>
+          <h3>E-mails</h3>
+          <a href="mailto:vendas1@begbrasil.com.br">vendas1@begbrasil.com.br</a>
+          <a href="mailto:vendas2@begbrasil.com.br">vendas2@begbrasil.com.br</a>
+          <a href="mailto:vendas3@begbrasil.com.br">vendas3@begbrasil.com.br</a>
+        </div>
+      </section>
+
+      <section class="contact-card">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"
+            ><path
+              d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"
+            ></path></svg
+          >
+        </div>
+        <div>
+          <h3>Telefones</h3>
+          <a href="tel:+551126061421">(11) 2606-1421</a>
+          <a href="tel:+551126068820">(11) 2606-8820</a>
+          <a href="tel:+551126045670">(11) 2604-5670</a>
+        </div>
+      </section>
+
+      <section class="contact-card">
+        <div class="contact-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"
+            ><path
+              d="M21 11.5a8.4 8.4 0 0 1-9 8.5 9.4 9.4 0 0 1-4-.9L3 21l1.7-4.9A8.4 8.4 0 1 1 21 11.5Z"
+            ></path><path d="M8.6 8.3c.2 3.1 2 5 5.1 5.9"></path></svg
+          >
+        </div>
+        <div>
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/5511932815618" target="_blank" rel="noopener noreferrer"
+            >(11) 93281-5618 <span>Consultora</span></a
+          >
+          <a href="https://wa.me/5511918547598" target="_blank" rel="noopener noreferrer"
+            >(11) 91854-7598 <span>Consultora</span></a
+          >
+          <a href="https://wa.me/5511916840525" target="_blank" rel="noopener noreferrer"
+            >(11) 91684-0525 <span>Consultor</span></a
+          >
+        </div>
+      </section>
+    </div>
+
+    <div class="footer-nav">
+      <nav aria-label="Produtos">
+        <h3>Produtos</h3>
+        <a href="/produtos/etiquetas-de-patrimonio">Etiquetas de patrimônio</a>
+        <a href="/produtos">Placas para máquinas</a>
+        <a href="/produtos/placas-de-sinalizacao">Sinalização industrial</a>
+        <a href="/produtos">Placas personalizadas</a>
+      </nav>
+      <nav aria-label="Empresa">
+        <h3>Empresa</h3>
+        <a href="/sobre">Quem somos</a>
+        <a href="/solucoes">Soluções</a>
+        <a href="/segmentos">Segmentos atendidos</a>
+        <a href="/materiais">Materiais</a>
+      </nav>
+      <div class="business-hours">
+        <h3>Atendimento</h3>
+        <p>Segunda a sexta-feira</p>
+        <strong>8h às 17h</strong>
+        <a href="/orcamento">Solicitar orçamento <span aria-hidden="true">→</span></a>
       </div>
     </div>
 
@@ -46,123 +156,187 @@
       <p>
         &copy; {new Date().getFullYear()} BEG Brasil Etiquetas Metálicas. Todos os direitos reservados.
       </p>
-      <div class="footer-legal">
-        <a href="/politica-de-privacidade">Política de Privacidade</a>
-        <a href="/termos-de-uso">Termos de Uso</a>
-      </div>
+      <p>Atendimento e entregas para todo o Brasil.</p>
     </div>
   </div>
 </footer>
 
 <style>
   .footer {
-    background-color: var(--color-graphite-900);
+    background: var(--color-graphite-900);
     color: var(--color-gray-200);
     padding-top: var(--space-12);
   }
-
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-    padding-bottom: var(--space-12);
+  .footer-intro {
+    align-items: start;
     border-bottom: 1px solid var(--color-graphite-800);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    justify-content: space-between;
+    padding-bottom: var(--space-8);
   }
-
-  @media (min-width: 640px) {
-    .footer-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .footer-grid {
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-    }
-  }
-
   .logo-text {
+    color: var(--color-white);
     display: inline-block;
     font-size: var(--text-2xl);
     font-weight: var(--font-bold);
-    color: var(--color-white);
-    margin-bottom: var(--space-4);
     letter-spacing: -0.025em;
+    margin-bottom: var(--space-3);
   }
-
   .brand-desc {
-    color: var(--color-graphite-500);
+    color: var(--color-gray-200);
     font-size: var(--text-sm);
-    max-width: 300px;
+    line-height: 1.6;
+    max-width: 520px;
   }
-
-  .footer-title {
+  .social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .social-links a {
+    align-items: center;
+    border: 1px solid var(--color-graphite-800);
+    border-radius: var(--radius-full);
+    color: var(--color-white);
+    display: flex;
+    font-size: var(--text-sm);
+    gap: var(--space-2);
+    padding: var(--space-2) var(--space-4);
+    transition:
+      background var(--transition-fast),
+      border-color var(--transition-fast);
+  }
+  .social-links a:hover {
+    background: var(--color-primary-600);
+    border-color: var(--color-primary-600);
+  }
+  .contact-grid {
+    display: grid;
+    gap: var(--space-8);
+    padding: var(--space-12) 0;
+  }
+  .contact-card {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: auto 1fr;
+  }
+  .contact-icon {
+    align-items: center;
+    background: var(--color-primary-600);
+    border-radius: var(--radius-full);
+    color: var(--color-white);
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    width: 48px;
+  }
+  .contact-icon svg {
+    fill: none;
+    height: 22px;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.8;
+    width: 22px;
+  }
+  .contact-card h3,
+  .footer-nav h3 {
     color: var(--color-white);
     font-size: var(--text-base);
-    font-weight: var(--font-semibold);
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3);
   }
-
-  .footer-links {
-    list-style: none;
+  .contact-card address {
+    color: var(--color-gray-200);
+    font-size: var(--text-sm);
+    font-style: normal;
+    line-height: 1.65;
+  }
+  .contact-card div:last-child {
     display: flex;
     flex-direction: column;
-    gap: var(--space-2);
+    align-items: flex-start;
   }
-
-  .footer-links a {
-    color: var(--color-graphite-500);
+  .contact-card a {
+    color: var(--color-gray-200);
     font-size: var(--text-sm);
-    transition: color var(--transition-fast);
+    line-height: 1.75;
   }
-
-  .footer-links a:hover,
-  .footer-links a:focus-visible {
+  .contact-card a:hover {
     color: var(--color-white);
   }
-
-  .footer-contact {
-    font-style: normal;
+  .contact-card a span {
     color: var(--color-graphite-500);
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
+    margin-left: var(--space-1);
+  }
+  .contact-action {
+    color: var(--color-primary-500) !important;
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-2);
+  }
+  .footer-nav {
+    border-top: 1px solid var(--color-graphite-800);
+    display: grid;
+    gap: var(--space-8);
+    padding: var(--space-8) 0;
+  }
+  .footer-nav nav,
+  .business-hours {
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
   }
-
-  .footer-contact strong {
-    color: var(--color-gray-200);
+  .footer-nav a,
+  .business-hours p {
+    color: var(--color-graphite-500);
+    font-size: var(--text-sm);
   }
-
+  .footer-nav a:hover {
+    color: var(--color-white);
+  }
+  .business-hours strong {
+    color: var(--color-white);
+    font-size: var(--text-lg);
+  }
+  .business-hours > a {
+    color: var(--color-primary-500);
+    font-weight: var(--font-semibold);
+    margin-top: var(--space-2);
+  }
   .footer-bottom {
+    align-items: center;
+    border-top: 1px solid var(--color-graphite-800);
+    color: var(--color-graphite-500);
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: var(--space-4);
-    padding: var(--space-6) 0;
     font-size: var(--text-xs);
-    color: var(--color-graphite-500);
+    gap: var(--space-2);
+    justify-content: space-between;
+    padding: var(--space-6) 0;
     text-align: center;
   }
-
-  @media (min-width: 768px) {
-    .footer-bottom {
-      flex-direction: row;
-      justify-content: space-between;
-      text-align: left;
+  @media (min-width: 640px) {
+    .contact-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .footer-nav {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
   }
-
-  .footer-legal {
-    display: flex;
-    gap: var(--space-4);
-  }
-
-  .footer-legal a {
-    transition: color var(--transition-fast);
-  }
-
-  .footer-legal a:hover {
-    color: var(--color-gray-200);
+  @media (min-width: 900px) {
+    .footer-intro {
+      align-items: center;
+      flex-direction: row;
+    }
+    .contact-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .footer-bottom {
+      flex-direction: row;
+      text-align: left;
+    }
   }
 </style>

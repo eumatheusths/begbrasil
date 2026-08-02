@@ -1,0 +1,225 @@
+---
+const projects = [
+  {
+    src: '/images/portfolio/etiquetas-patrimonio-prefeitura.png',
+    alt: 'Etiquetas patrimoniais personalizadas com código de barras',
+    category: 'Patrimônio',
+  },
+  {
+    src: '/images/portfolio/etiqueta-patrimonio-codigo-barras.jpg',
+    alt: 'Etiqueta metálica de patrimônio com código de barras e numeração',
+    category: 'Patrimônio',
+  },
+  {
+    src: '/images/portfolio/placa-tecnica-bomba.png',
+    alt: 'Placa técnica personalizada para bomba industrial',
+    category: 'Placas técnicas',
+  },
+  {
+    src: '/images/portfolio/placa-torno-joinville.jpg',
+    alt: 'Placa de comandos e velocidades para torno',
+    category: 'Máquinas',
+  },
+  {
+    src: '/images/portfolio/placas-torno-hbx.png',
+    alt: 'Conjunto de placas técnicas para torno HBX',
+    category: 'Máquinas',
+  },
+  {
+    src: '/images/portfolio/painel-operacao-industrial.png',
+    alt: 'Painel de operação industrial personalizado',
+    category: 'Máquinas',
+  },
+  {
+    src: '/images/portfolio/painel-industrial-personalizado.jpg',
+    alt: 'Painel industrial metálico recortado e gravado',
+    category: 'Máquinas',
+  },
+  {
+    src: '/images/portfolio/placa-instrucoes-tecnicas.png',
+    alt: 'Placa metálica com instruções técnicas ilustradas',
+    category: 'Placas técnicas',
+  },
+  {
+    src: '/images/portfolio/escala-circular-rpm.jpg',
+    alt: 'Escalas circulares de rotação para máquina',
+    category: 'Escalas',
+  },
+  {
+    src: '/images/portfolio/escala-circular-colorida.png',
+    alt: 'Escala circular colorida para equipamento',
+    category: 'Escalas',
+  },
+  {
+    src: '/images/portfolio/sinalizacao-seguranca-producao.png',
+    alt: 'Produção de adesivos de sinalização de segurança',
+    category: 'Sinalização',
+  },
+  {
+    src: '/images/portfolio/placa-perigo-acrilico.png',
+    alt: 'Placas de perigo em acrílico vermelho e transparente',
+    category: 'Sinalização',
+  },
+  {
+    src: '/images/portfolio/aneis-emergencia.png',
+    alt: 'Anéis amarelos de identificação de emergência',
+    category: 'Sinalização',
+  },
+  {
+    src: '/images/portfolio/placa-inauguracao-aluminio.png',
+    alt: 'Placa de inauguração personalizada em acabamento metálico',
+    category: 'Placas personalizadas',
+  },
+  {
+    src: '/images/portfolio/placa-acrilico-beg-brasil.png',
+    alt: 'Placa em acrílico espelhado da BEG Brasil',
+    category: 'Acrílico',
+  },
+  {
+    src: '/images/portfolio/placa-acrilico-preta-beg.png',
+    alt: 'Placa preta em acrílico gravada a laser',
+    category: 'Acrílico',
+  },
+  {
+    src: '/images/portfolio/etiquetas-acrilico-preto.png',
+    alt: 'Etiquetas pretas em acrílico para comandos elétricos',
+    category: 'Acrílico',
+  },
+  {
+    src: '/images/portfolio/pecas-acrilicas-coloridas.jpg',
+    alt: 'Peças personalizadas em acrílico colorido',
+    category: 'Acrílico',
+  },
+  {
+    src: '/images/portfolio/aneis-identificacao-azuis.png',
+    alt: 'Anéis azuis de identificação personalizados',
+    category: 'Peças especiais',
+  },
+  {
+    src: '/images/portfolio/aneis-identificacao-metalicos.png',
+    alt: 'Anéis metálicos personalizados para identificação',
+    category: 'Peças especiais',
+  },
+];
+---
+
+<section class="portfolio-section" aria-labelledby="portfolio-title">
+  <div class="container">
+    <div class="portfolio-heading">
+      <span>Produção BEG Brasil</span>
+      <h2 id="portfolio-title">Projetos que saíram do papel</h2>
+      <p>
+        Uma amostra de etiquetas, placas, escalas, painéis e peças especiais desenvolvidas sob
+        medida.
+      </p>
+    </div>
+
+    <div class="portfolio-grid">
+      {
+        projects.map((project, index) => (
+          <figure class:list={['portfolio-item', index === 0 || index === 9 ? 'featured' : '']}>
+            <img src={project.src} alt={project.alt} loading="lazy" width="700" height="700" />
+            <figcaption>
+              <span>{project.category}</span>
+              <p>{project.alt}</p>
+            </figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .portfolio-section {
+    background: var(--color-gray-100);
+    padding: var(--space-16) 0;
+  }
+
+  .portfolio-heading {
+    margin-bottom: var(--space-12);
+    max-width: 680px;
+  }
+
+  .portfolio-heading > span {
+    color: var(--color-primary-600);
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-bold);
+    letter-spacing: 0.08em;
+    margin-bottom: var(--space-3);
+    text-transform: uppercase;
+  }
+
+  .portfolio-heading h2 {
+    color: var(--color-graphite-900);
+    font-size: var(--text-3xl);
+    line-height: 1.2;
+    margin-bottom: var(--space-4);
+  }
+
+  .portfolio-heading p {
+    color: var(--color-graphite-500);
+    font-size: var(--text-lg);
+    line-height: 1.65;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-item {
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin: 0;
+    overflow: hidden;
+  }
+
+  .portfolio-item img {
+    aspect-ratio: 4 / 3;
+    height: auto;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+    width: 100%;
+  }
+
+  .portfolio-item:hover img {
+    transform: scale(1.03);
+  }
+
+  .portfolio-item figcaption {
+    padding: var(--space-4);
+  }
+
+  .portfolio-item figcaption span {
+    color: var(--color-primary-600);
+    font-size: var(--text-xs);
+    font-weight: var(--font-bold);
+    text-transform: uppercase;
+  }
+
+  .portfolio-item figcaption p {
+    color: var(--color-graphite-800);
+    font-size: var(--text-sm);
+    margin-top: var(--space-2);
+  }
+
+  @media (min-width: 640px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 960px) {
+    .portfolio-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .portfolio-item.featured {
+      grid-column: span 2;
+    }
+  }
+</style>

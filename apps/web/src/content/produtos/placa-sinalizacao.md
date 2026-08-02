@@ -25,7 +25,8 @@ supportsSequentialNumbering: false
 minimumQuantity: '[CONFIRMAR QUANTIDADE]'
 leadTime: '[CONFIRMAR PRAZO]'
 images:
-  - 'https://images.unsplash.com/photo-1579730248834-8c88667a4216?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+  - '/images/portfolio/sinalizacao-seguranca-producao.png'
+  - '/images/portfolio/placa-perigo-acrilico.png'
 featured: true
 seoTitle: 'Placas de Sinalização de Segurança em PVC | BEG Brasil'
 seoDescription: 'Garanta a conformidade da sua indústria com nossas placas de sinalização de segurança em PVC. Alta durabilidade e normas rigorosas.'

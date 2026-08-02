@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import Hero from '../../components/ui/Hero.astro';
 import ProductCard from '../../components/ui/ProductCard.astro';
+import PortfolioGallery from '../../components/ui/PortfolioGallery.astro';
 import QuoteCTA from '../../components/ui/QuoteCTA.astro';
 
 const produtos = await getCollection('produtos', ({ data }) => {
@@ -68,6 +69,8 @@ const formatCategoryName = (slug: string) => {
       ))
     }
   </section>
+
+  <PortfolioGallery />
 
   <QuoteCTA
     title="Não encontrou exatamente o que procurava?"
