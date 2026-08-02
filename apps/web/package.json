@@ -42,6 +42,7 @@
     "vitest": "^4.1.10"
   },
   "optionalDependencies": {
+    "@astrojs/compiler-binding-linux-x64-gnu": "0.3.2",
     "@rolldown/binding-linux-x64-gnu": "1.2.1"
   }
 }
