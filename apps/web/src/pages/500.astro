@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// 500.astro
+interface Props {
+  error?: unknown;
+}
+
+const { error } = Astro.props;
+---
+
+<Layout 
+  title="Erro Interno" 
+  description="Ocorreu um erro no servidor."
+  noindex={true}
+>
+  <div class="error-page container">
+    <div class="error-content">
+      <div class="error-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+      </div>
+      <h1 class="error-title">500 - Erro Interno</h1>
+      <p class="error-text">
+        Ocorreu um problema inesperado nos nossos servidores. Nossa equipe técnica já foi notificada.
+      </p>
+      
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary">Voltar ao Início</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .error-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-12) 0;
+  }
+
+  .error-content {
+    text-align: center;
+    max-width: 500px;
+  }
+
+  .error-icon {
+    color: var(--color-error);
+    margin-bottom: var(--space-6);
+  }
+
+  .error-title {
+    font-size: var(--text-3xl);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-4);
+  }
+
+  .error-text {
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-8);
+    font-size: var(--text-lg);
+  }
+
+  .error-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+  }
+
+  .btn {
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+  }
+
+  .btn-primary:hover, .btn-primary:focus-visible {
+    background-color: var(--color-primary-700);
+  }
+</style>

@@ -1,0 +1,168 @@
+---
+// Footer.astro
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col brand-col">
+        <span class="logo-text">BEG BRASIL</span>
+        <p class="brand-desc">
+          Soluções industriais em identificação, patrimônio e sinalização. Feita para durar.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Produtos</h3>
+        <ul class="footer-links">
+          <li><a href="/produtos/etiquetas-de-patrimonio">Etiquetas de Patrimônio</a></li>
+          <li><a href="/produtos/placas-para-maquinas">Placas para Máquinas</a></li>
+          <li><a href="/produtos/placas-de-sinalizacao">Sinalização Industrial</a></li>
+          <li><a href="/produtos/placas-personalizadas">Placas Personalizadas</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Empresa</h3>
+        <ul class="footer-links">
+          <li><a href="/sobre">Quem Somos</a></li>
+          <li><a href="/segmentos">Segmentos Atendidos</a></li>
+          <li><a href="/materiais">Materiais</a></li>
+          <li><a href="/contato">Contato e Suporte</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-title">Contato</h3>
+        <address class="footer-contact">
+          <p><strong>Vendas:</strong> (11) 93281-5618</p>
+          <p><strong>E-mail:</strong> contato@begbrasil.com.br</p>
+          <p><strong>Endereço:</strong> São Paulo, SP (Endereço completo pendente)</p>
+        </address>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>
+        &copy; {new Date().getFullYear()} BEG Brasil Etiquetas Metálicas. Todos os direitos reservados.
+      </p>
+      <div class="footer-legal">
+        <a href="/politica-de-privacidade">Política de Privacidade</a>
+        <a href="/termos-de-uso">Termos de Uso</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background-color: var(--color-graphite-900);
+    color: var(--color-gray-200);
+    padding-top: var(--space-12);
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--color-graphite-800);
+  }
+
+  @media (min-width: 640px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .footer-grid {
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+  }
+
+  .logo-text {
+    display: inline-block;
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-white);
+    margin-bottom: var(--space-4);
+    letter-spacing: -0.025em;
+  }
+
+  .brand-desc {
+    color: var(--color-graphite-500);
+    font-size: var(--text-sm);
+    max-width: 300px;
+  }
+
+  .footer-title {
+    color: var(--color-white);
+    font-size: var(--text-base);
+    font-weight: var(--font-semibold);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .footer-links a {
+    color: var(--color-graphite-500);
+    font-size: var(--text-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .footer-links a:hover,
+  .footer-links a:focus-visible {
+    color: var(--color-white);
+  }
+
+  .footer-contact {
+    font-style: normal;
+    color: var(--color-graphite-500);
+    font-size: var(--text-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .footer-contact strong {
+    color: var(--color-gray-200);
+  }
+
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-6) 0;
+    font-size: var(--text-xs);
+    color: var(--color-graphite-500);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .footer-bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+
+  .footer-legal {
+    display: flex;
+    gap: var(--space-4);
+  }
+
+  .footer-legal a {
+    transition: color var(--transition-fast);
+  }
+
+  .footer-legal a:hover {
+    color: var(--color-gray-200);
+  }
+</style>

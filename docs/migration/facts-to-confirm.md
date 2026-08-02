@@ -1,0 +1,166 @@
+# Fatos a Confirmar - BEG Brasil
+
+A diretoria precisa confirmar as seguintes informações para a nova versão do site:
+
+## Empresa
+- **Ano de fundação:** [ ] Qual o ano oficial de fundação da empresa?
+- **Endereço:** [ ] (O site lista um mapa mas precisamos do endereço completo oficial para o rodapé e contato).
+- **Contatos Divergentes:** Foram encontrados múltiplos e-mails e telefones. Quais são os oficiais?
+  - E-mails encontrados: contato@begbrasil.com.br, vendas1@begbrasil.com.br, vendas2@begbrasil.com.br, vendas3@begbrasil.com.br, Vendas2@begbrasil.com.br, Vendas3@begbrasil.com.br, Vendas1@begbrasil.com.br
+  - Telefones encontrados: 11 0000-0000, (11) 932815618, (11) 918547598, 55119328156, (11) 93281-5618, 33546698563, 58149484875, 55616220059, 17695208071, 11 93281-5618, 11 91854-7598, 11 91684-0525, (11) 99999-9999, 12417176891, 55119168405, 11 932815618, 11 918547598, 55119999999, 1785269427, 1785282534, 1742222515, 1742222517, 1742222518, 11 91091-6812, 7496969728, 1785305414
+- **Nomes dos vendedores:** [ ] Confirmar os nomes da equipe de vendas para humanizar o contato (se aplicável).
+
+## Produtos & Produção
+- **Materiais utilizados:** [ ] Alumínio, Poliéster, BOPP, Vinil, Aço Inox, Acrílico, PVC. (Confirmar a lista completa).
+- **Processos de fabricação:** [ ] Quais processos exatos devem ser destacados (ex: gravação, impressão, resinagem)?
+- **Quantidade mínima:** [ ] Qual o pedido mínimo (MOQ) para cada categoria de produto?
+- **Segmentos atendidos:** [ ] (Indústria, Logística, Comércio, etc.).
+- **Garantias:** [ ] Qual o tempo de garantia oferecido nos produtos contra desgaste?
+- **Certificações:** [ ] A empresa possui ISO ou outras certificações de qualidade?
+
+## Políticas
+- **Prazos:** [ ] Qual o prazo padrão de desenvolvimento/produção? E o prazo de entrega?
+- **Política de Envio:** [ ] Transportadoras parceiras, Correios, regiões atendidas (todo Brasil confirmado, mas há restrições?).
+- **Política de Aprovação da Arte:** [ ] Como funciona o envio do layout (desenho) e número de alterações permitidas?
+- **Política de Pagamento:** [ ] Quais as formas de pagamento aceitas (Boleto, Pix, Cartão) e condições de faturamento?
+
+---
+
+## Relatório Preliminar de Problemas Encontrados (Para Referência)
+- Images missing alt text: https://begbrasil.com.br/ (45 images)
+- Potential Portuguese Error: https://begbrasil.com.br/ (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/contato-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/contato-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/contato-beg-brasil.html (29 images)
+- Potential Portuguese Error: https://begbrasil.com.br/contato-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/index.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/index.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/index.html (45 images)
+- Potential Portuguese Error: https://begbrasil.com.br/index.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/placas_beg_brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/placas_beg_brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/placas_beg_brasil.html (38 images)
+- Potential Portuguese Error: https://begbrasil.com.br/placas_beg_brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/etiquetas-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/etiquetas-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/etiquetas-beg-brasil.html (48 images)
+- Potential Portuguese Error: https://begbrasil.com.br/etiquetas-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/pe-r-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/pe-r-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/pe-r-beg-brasil.html (36 images)
+- Potential Portuguese Error: https://begbrasil.com.br/pe-r-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/pe-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/pe-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/pe-beg-brasil.html (36 images)
+- Potential Portuguese Error: https://begbrasil.com.br/pe-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/pc-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/pc-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/pc-beg-brasil.html (36 images)
+- Potential Portuguese Error: https://begbrasil.com.br/pc-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/pm-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/pm-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/pm-beg-brasil.html (36 images)
+- Potential Portuguese Error: https://begbrasil.com.br/pm-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/pmi-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/pmi-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/pmi-beg-brasil.html (36 images)
+- Potential Portuguese Error: https://begbrasil.com.br/pmi-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/pp-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/pp-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/pp-beg-brasil.html (36 images)
+- Potential Portuguese Error: https://begbrasil.com.br/pp-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/ps-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/ps-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/ps-beg-brasil.html (36 images)
+- Potential Portuguese Error: https://begbrasil.com.br/ps-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/a-beg.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/a-beg.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/a-beg.html (31 images)
+- Potential Portuguese Error: https://begbrasil.com.br/a-beg.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/termos.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/termos.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/termos.html (30 images)
+- Potential Portuguese Error: https://begbrasil.com.br/termos.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/comprar-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/comprar-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/comprar-beg-brasil.html (30 images)
+- Potential Portuguese Error: https://begbrasil.com.br/comprar-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/desenho-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/desenho-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/desenho-beg-brasil.html (30 images)
+- Potential Portuguese Error: https://begbrasil.com.br/desenho-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/prazo-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/prazo-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/prazo-beg-brasil.html (30 images)
+- Potential Portuguese Error: https://begbrasil.com.br/prazo-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/envio-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/envio-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/envio-beg-brasil.html (29 images)
+- Potential Portuguese Error: https://begbrasil.com.br/envio-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/cuidado-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/cuidado-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/cuidado-beg-brasil.html (29 images)
+- Potential Portuguese Error: https://begbrasil.com.br/cuidado-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/insta-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/insta-beg-brasil.html (24 images)
+- Potential Portuguese Error: https://begbrasil.com.br/insta-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/sustentabilidade-beg-brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/sustentabilidade-beg-brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/sustentabilidade-beg-brasil.html (31 images)
+- Potential Portuguese Error: https://begbrasil.com.br/sustentabilidade-beg-brasil.html (e.g. Patrimônias/Indústriais)
+- Broken Link or Error: https://begbrasil.com.br/mascote-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/nardinint650.html (404)
+- Broken Link or Error: https://begbrasil.com.br/adesivo-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/mini.html (404)
+- Broken Link or Error: https://begbrasil.com.br/placa-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/etiquetas-de-patrimonio.html (404)
+- Broken Link or Error: https://begbrasil.com.br/nardini-1.html (404)
+- Broken Link or Error: https://begbrasil.com.br/nardini-2.html (404)
+- Broken Link or Error: https://begbrasil.com.br/nardini-3.html (404)
+- Broken Link or Error: https://begbrasil.com.br/nardini-4.html (404)
+- Broken Link or Error: https://begbrasil.com.br/placa-de-posicoes.html (404)
+- Broken Link or Error: https://begbrasil.com.br/77C326.html (404)
+- Broken Link or Error: https://begbrasil.com.br/77CR237A.html (404)
+- Broken Link or Error: https://begbrasil.com.br/175-1-73.html (404)
+- Broken Link or Error: https://begbrasil.com.br/ms-350.html (404)
+- Broken Link or Error: https://begbrasil.com.br/ms410.html (404)
+- Broken Link or Error: https://begbrasil.com.br/inspecao.html (404)
+- Broken Link or Error: https://begbrasil.com.br/emi-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/seguranca-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/pagamento-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/acrilico-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/privacidade.html (404)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/catalogo_beg_brasil.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/catalogo_beg_brasil.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/catalogo_beg_brasil.html (36 images)
+- Potential Portuguese Error: https://begbrasil.com.br/catalogo_beg_brasil.html (e.g. Patrimônias/Indústriais)
+- Broken Link or Error: https://begbrasil.com.br/pi-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/pnar-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/psi-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/etiqueta_de_patrimonio_beg_brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/seguranca_beg_brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/tabela_de_cabecote_beg_brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/inspecao-veicular.html (404)
+- Broken Link or Error: https://begbrasil.com.br/catalogo-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/pm-beg-brasil.html.html (404)
+- Broken Link or Error: https://begbrasil.com.br/seg.html (404)
+- Duplicate Title: "BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ," found in https://begbrasil.com.br/normas.html and https://begbrasil.com.br/
+- Potential Duplicate Content: https://begbrasil.com.br/normas.html and https://begbrasil.com.br/
+- Images missing alt text: https://begbrasil.com.br/normas.html (30 images)
+- Potential Portuguese Error: https://begbrasil.com.br/normas.html (e.g. Patrimônias/Indústriais)
+- Broken Link or Error: https://begbrasil.com.br/ea-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/em-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/r-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/suporte-beg-brasil.html (404)
+- Broken Link or Error: https://begbrasil.com.br/local.html (404)
+- Missing Meta Description: https://begbrasil.com.br/produtos/
+- Images missing alt text: https://begbrasil.com.br/produtos/ (58 images)
+- Potential Duplicate Content: https://begbrasil.com.br/sobre-nos/ and https://begbrasil.com.br/produtos/
+- Missing Meta Description: https://begbrasil.com.br/sobre-nos/
+- Images missing alt text: https://begbrasil.com.br/sobre-nos/ (2 images)
+- Potential Duplicate Content: https://begbrasil.com.br/contatos/ and https://begbrasil.com.br/produtos/
+- Missing Meta Description: https://begbrasil.com.br/contatos/
+- Images missing alt text: https://begbrasil.com.br/contatos/ (2 images)
+- Potential Duplicate Content: https://begbrasil.com.br/blog/ and https://begbrasil.com.br/produtos/
+- Missing Meta Description: https://begbrasil.com.br/blog/
+- Images missing alt text: https://begbrasil.com.br/blog/ (2 images)

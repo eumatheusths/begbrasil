@@ -1,0 +1,135 @@
+---
+// FileUpload.astro
+export interface Props {
+  id: string;
+  label: string;
+  accept?: string;
+  hint?: string;
+  disabled?: boolean;
+}
+
+const {
+  id,
+  label,
+  accept = '.pdf,.jpg,.jpeg,.png,.eps,.ai,.cdr',
+  hint = 'Formatos aceitos: PDF, JPG, PNG ou vetorizados. Máx: 10MB.',
+  disabled = false,
+} = Astro.props;
+---
+
+<div class={`file-upload-wrapper ${disabled ? 'is-disabled' : ''}`}>
+  <label class="field-label">{label}</label>
+
+  <div class="drop-zone" id={`${id}-drop-zone`}>
+    <input
+      type="file"
+      id={id}
+      name={id}
+      accept={accept}
+      class="file-input sr-only"
+      disabled={disabled}
+    />
+
+    <label for={id} class="drop-zone-content">
+      <svg
+        class="upload-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="17 8 12 3 7 8"></polyline>
+        <line x1="12" y1="3" x2="12" y2="15"></line>
+      </svg>
+
+      <span class="upload-text">
+        <span class="upload-link">Clique para enviar</span> ou arraste o arquivo aqui
+      </span>
+
+      <span class="upload-hint">{hint}</span>
+    </label>
+  </div>
+  <div id={`${id}-file-list`} class="file-list"></div>
+</div>
+
+<style>
+  .file-upload-wrapper {
+    margin-bottom: var(--space-4);
+  }
+
+  .field-label {
+    display: block;
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-2);
+  }
+
+  .drop-zone {
+    border: 2px dashed var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-gray-100);
+    transition: all var(--transition-fast);
+  }
+
+  .drop-zone:hover:not(.is-disabled) {
+    border-color: var(--color-primary-500);
+    background-color: #eff6ff; /* light blue tint */
+  }
+
+  .drop-zone.is-dragover {
+    border-color: var(--color-primary-600);
+    background-color: #eff6ff;
+  }
+
+  .drop-zone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-8) var(--space-4);
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .is-disabled .drop-zone-content {
+    cursor: not-allowed;
+  }
+
+  .upload-icon {
+    color: var(--color-graphite-500);
+    margin-bottom: var(--space-3);
+    transition: color var(--transition-fast);
+  }
+
+  .drop-zone:hover:not(.is-disabled) .upload-icon {
+    color: var(--color-primary-500);
+  }
+
+  .upload-text {
+    color: var(--color-graphite-800);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--space-1);
+  }
+
+  .upload-link {
+    color: var(--color-primary-600);
+  }
+
+  .upload-hint {
+    color: var(--color-graphite-500);
+    font-size: var(--text-xs);
+  }
+
+  .file-input:focus + .drop-zone-content {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-lg);
+  }
+</style>

@@ -1,0 +1,126 @@
+---
+// CookieBanner.astro
+export interface Props {
+  message?: string;
+  policyUrl?: string;
+}
+
+const {
+  message = 'Utilizamos cookies para melhorar sua experiência. Ao continuar navegando, você concorda com a nossa ',
+  policyUrl = '/politica-de-privacidade',
+} = Astro.props;
+---
+
+<div id="cookie-banner" class="cookie-banner" aria-live="polite">
+  <div class="container cookie-container">
+    <div class="cookie-text">
+      <p>{message} <a href={policyUrl} class="cookie-link">Política de Privacidade</a>.</p>
+    </div>
+    <div class="cookie-actions">
+      <button id="cookie-accept" class="btn-cookie btn-cookie-accept">Aceitar</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--color-graphite-900);
+    color: var(--color-white);
+    padding: var(--space-4) 0;
+    z-index: 1000;
+    transform: translateY(100%);
+    transition: transform var(--transition-normal);
+  }
+
+  .cookie-banner.is-visible {
+    transform: translateY(0);
+  }
+
+  .cookie-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  @media (min-width: 768px) {
+    .cookie-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  .cookie-text {
+    font-size: var(--text-sm);
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .cookie-text {
+      text-align: left;
+    }
+  }
+
+  .cookie-link {
+    color: var(--color-primary-500);
+    text-decoration: underline;
+  }
+
+  .cookie-link:hover,
+  .cookie-link:focus-visible {
+    color: var(--color-primary-600);
+  }
+
+  .cookie-actions {
+    display: flex;
+    gap: var(--space-2);
+  }
+
+  .btn-cookie {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+  }
+
+  .btn-cookie-accept {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+    border: none;
+  }
+
+  .btn-cookie-accept:hover,
+  .btn-cookie-accept:focus-visible {
+    background-color: var(--color-primary-700);
+  }
+</style>
+
+<script>
+  // Simple logic to show/hide based on localStorage for design-system demo
+  document.addEventListener('DOMContentLoaded', () => {
+    const banner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('cookie-accept');
+
+    if (banner && acceptBtn) {
+      const isAccepted = localStorage.getItem('begbrasil_cookie_accepted');
+
+      if (!isAccepted) {
+        // Small delay so animation is visible
+        setTimeout(() => {
+          banner.classList.add('is-visible');
+        }, 500);
+      }
+
+      acceptBtn.addEventListener('click', () => {
+        localStorage.setItem('begbrasil_cookie_accepted', 'true');
+        banner.classList.remove('is-visible');
+      });
+    }
+  });
+</script>

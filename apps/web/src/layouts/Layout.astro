@@ -1,0 +1,87 @@
+---
+// Layout.astro
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/inter/600.css';
+import '@fontsource/inter/700.css';
+import '../styles/global.css';
+import Header from '../components/layout/Header.astro';
+import Footer from '../components/layout/Footer.astro';
+import MobileMenu from '../components/layout/MobileMenu.astro';
+import CookieBanner from '../components/ui/CookieBanner.astro';
+import WhatsAppButton from '../components/ui/WhatsAppButton.astro';
+import SEO from '../components/seo/SEO.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  image?: string;
+  noindex?: boolean;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
+  schema?: Record<string, any>;
+}
+
+const {
+  title,
+  description = 'BEG Brasil - Soluções industriais em identificação, patrimônio e sinalização.',
+  canonical,
+  image,
+  noindex,
+  type,
+  publishedTime,
+  modifiedTime,
+  schema,
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <SEO 
+      title={title} 
+      description={description} 
+      canonical={canonical}
+      image={image}
+      noindex={noindex}
+      type={type}
+      publishedTime={publishedTime}
+      modifiedTime={modifiedTime}
+      schema={schema}
+    />
+    <JsonLd 
+      type="Organization" 
+      data={{
+        name: "BEG Brasil",
+        url: "https://begbrasil.com.br",
+        logo: "https://begbrasil.com.br/logo.png",
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: "+55-11-99999-9999",
+          contactType: "customer service",
+          areaServed: "BR",
+          availableLanguage: "Portuguese"
+        }
+      }} 
+    />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <Header />
+    <MobileMenu />
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <WhatsAppButton phoneNumber="5511932815618" />
+    <CookieBanner />
+  </body>
+</html>

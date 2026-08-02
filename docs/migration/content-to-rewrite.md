@@ -1,0 +1,128 @@
+# Lista de Conteúdos a Reescrever
+
+- **https://begbrasil.com.br/contato-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/index.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/placas_beg_brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/etiquetas-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pe-r-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pe-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pc-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pm-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pmi-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pp-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/ps-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/a-beg.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/termos.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/comprar-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/desenho-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/prazo-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/envio-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/cuidado-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/insta-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/sustentabilidade-beg-brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/mascote-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/nardinint650.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/adesivo-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/mini.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/placa-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/etiquetas-de-patrimonio.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/nardini-1.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/nardini-2.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/nardini-3.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/nardini-4.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/placa-de-posicoes.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/77C326.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/77CR237A.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/175-1-73.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/ms-350.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/ms410.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/inspecao.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/emi-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/seguranca-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pagamento-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/acrilico-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/privacidade.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/catalogo_beg_brasil.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pi-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pnar-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/psi-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/etiqueta_de_patrimonio_beg_brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/seguranca_beg_brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/tabela_de_cabecote_beg_brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/inspecao-veicular.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/catalogo-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/pm-beg-brasil.html.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/seg.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/normas.html** (BEG BRASIL Etiquetas Metalicas - Etiquetas de Patrimônio ,)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/ea-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/em-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/r-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/suporte-beg-brasil.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/local.html** (Página não encontrada – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/produtos/** (Produtos – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/sobre-nos/** (Sobre nós – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/contatos/** (Contatos – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.
+- **https://begbrasil.com.br/blog/** (Blog – Beg Brasil)
+  - Motivo: Padronização para a nova arquitetura, otimização de SEO, remoção de conteúdo fictício.

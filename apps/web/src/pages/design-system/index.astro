@@ -1,0 +1,555 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/layout/Breadcrumb.astro';
+import Hero from '../../components/ui/Hero.astro';
+import ProcessTimeline from '../../components/ui/ProcessTimeline.astro';
+import FAQ from '../../components/ui/FAQ.astro';
+import ProductCard from '../../components/ui/ProductCard.astro';
+import SolutionCard from '../../components/ui/SolutionCard.astro';
+import SectorCard from '../../components/ui/SectorCard.astro';
+import MaterialCard from '../../components/ui/MaterialCard.astro';
+import CaseCard from '../../components/ui/CaseCard.astro';
+import TestimonialCard from '../../components/ui/TestimonialCard.astro';
+import ArticleCard from '../../components/ui/ArticleCard.astro';
+import TechnicalSpecification from '../../components/ui/TechnicalSpecification.astro';
+import ComparisonTable from '../../components/ui/ComparisonTable.astro';
+import QuoteCTA from '../../components/ui/QuoteCTA.astro';
+import FormField from '../../components/ui/FormField.astro';
+import FileUpload from '../../components/ui/FileUpload.astro';
+import Stepper from '../../components/ui/Stepper.astro';
+import Alert from '../../components/ui/Alert.astro';
+import Modal from '../../components/ui/Modal.astro';
+---
+
+<Layout title="Design System & UI Components">
+  <div class="ds-header">
+    <div class="container">
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Design System' }]} />
+      <h1 class="ds-title">Design System</h1>
+      <p class="ds-desc">
+        Catálogo de componentes para homologação e validação de contraste WCAG AA da nova
+        arquitetura BEG Brasil.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="ds-grid">
+      <!-- Typography -->
+      <section class="ds-section" id="typography">
+        <h2 class="section-title">Tipografia</h2>
+        <div class="ds-card">
+          <div class="type-preview">
+            <h1 class="text-4xl font-bold">Heading 1 (4xl) - Identificação Industrial</h1>
+            <h2 class="text-3xl font-bold">Heading 2 (3xl) - Feita para Durar</h2>
+            <h3 class="text-2xl font-bold">Heading 3 (2xl) - Etiquetas Metálicas</h3>
+            <p class="text-lg">
+              Paragraph Large (lg) - A BEG Brasil desenvolve soluções robustas para ambientes
+              agressivos.
+            </p>
+            <p class="text-base">
+              Paragraph Base (base) - A BEG Brasil desenvolve soluções robustas para ambientes
+              agressivos, utilizando gravação em baixo relevo.
+            </p>
+            <p class="text-sm text-muted">Paragraph Small (sm) - Texto auxiliar e descrições.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Colors -->
+      <section class="ds-section" id="colors">
+        <h2 class="section-title">Cores & WCAG AA</h2>
+        <div class="ds-card color-grid">
+          <div class="color-swatch bg-primary-600 text-white">
+            <span>Primary 600</span>
+            <small>#1e3a8a (Fundo WCAG Pass)</small>
+          </div>
+          <div class="color-swatch bg-graphite-900 text-white">
+            <span>Graphite 900</span>
+            <small>#0f172a (Fundo WCAG Pass)</small>
+          </div>
+          <div class="color-swatch bg-gray-200 text-dark">
+            <span>Gray 200</span>
+            <small>#e2e8f0 (Bordas)</small>
+          </div>
+          <div class="color-swatch bg-gray-100 text-dark border-all">
+            <span>Gray 100</span>
+            <small>#f1f5f9 (Background)</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- Buttons -->
+      <section class="ds-section" id="buttons">
+        <h2 class="section-title">Botões e Ações</h2>
+        <div class="ds-card flex-gap">
+          <button class="btn btn-primary">Primary Button</button>
+          <button class="btn btn-primary btn-hover">Primary Hover</button>
+          <button class="btn btn-primary btn-focus">Primary Focus</button>
+          <button class="btn btn-primary btn-disabled" disabled>Disabled</button>
+          <br />
+          <button class="btn btn-outline">Outline Button</button>
+          <button class="btn btn-outline btn-hover-outline">Outline Hover</button>
+        </div>
+      </section>
+
+      <!-- Alerts -->
+      <section class="ds-section" id="alerts">
+        <h2 class="section-title">Alertas</h2>
+        <div class="ds-card flex-col-gap">
+          <Alert
+            type="info"
+            title="Informação"
+            message="Este é um alerta informativo sobre o sistema."
+            dismissible={true}
+          />
+          <Alert type="success" title="Sucesso" message="O orçamento foi enviado com sucesso!" />
+          <Alert
+            type="warning"
+            title="Atenção"
+            message="Verifique as especificações da sua arte antes do envio."
+          />
+          <Alert type="error" title="Erro" message="Ocorreu uma falha na conexão com o servidor." />
+        </div>
+      </section>
+
+      <!-- Forms -->
+      <section class="ds-section" id="forms">
+        <h2 class="section-title">Formulários & Stepper</h2>
+        <div class="ds-card">
+          <Stepper steps={['Contato', 'Detalhes', 'Revisão', 'Envio']} currentStep={2} />
+
+          <div class="form-grid">
+            <FormField
+              label="Nome Completo"
+              name="name"
+              required={true}
+              placeholder="Ex: João da Silva"
+            />
+            <FormField
+              label="E-mail Corporativo"
+              name="email"
+              type="email"
+              required={true}
+              placeholder="joao@empresa.com.br"
+            />
+
+            <FormField
+              label="Material Desejado"
+              name="material"
+              type="select"
+              placeholder="Selecione o material"
+              options={[
+                { value: 'aluminio', label: 'Alumínio' },
+                { value: 'inox', label: 'Aço Inox' },
+              ]}
+            />
+
+            <FormField
+              label="Quantidade (Com Erro)"
+              name="qtd"
+              placeholder="100"
+              error="A quantidade mínima para este item é 500."
+            />
+
+            <FormField
+              label="Observações"
+              name="obs"
+              type="textarea"
+              placeholder="Descreva o ambiente de aplicação..."
+              hint="Não inclua dados sensíveis."
+            />
+          </div>
+
+          <FileUpload id="file-demo" label="Anexar Desenho Técnico" />
+        </div>
+      </section>
+
+      <!-- Cards -->
+      <section class="ds-section" id="cards">
+        <h2 class="section-title">Cards</h2>
+
+        <h3 class="subsection-title">Product Card</h3>
+        <div class="cards-grid-3">
+          <ProductCard
+            title="Etiqueta Patrimonial Alumínio"
+            description="Alta durabilidade com gravação em baixo relevo e código de barras indestrutível."
+            imageUrl="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=400&auto=format&fit=crop"
+            href="#"
+            tags={['Mais vendido', 'Pronta entrega']}
+          />
+        </div>
+
+        <h3 class="subsection-title mt-8">Sector Card</h3>
+        <div class="cards-grid-3">
+          <SectorCard
+            sectorName="Manutenção Industrial"
+            description="Soluções resistentes a solventes, calor e atrito para maquinário pesado."
+            href="#"
+          />
+        </div>
+
+        <h3 class="subsection-title mt-8">Material Card</h3>
+        <div class="cards-grid-3">
+          <MaterialCard
+            name="Aço Inoxidável 304"
+            description="Resistência extrema para ambientes corrosivos e marítimos."
+            features={['Resistente a ácidos', 'Não oxida', 'Gravação a laser']}
+            href="#"
+          />
+        </div>
+
+        <h3 class="subsection-title mt-8">Case & Testimonial</h3>
+        <div class="cards-grid-2">
+          <CaseCard
+            clientName="Indústria XYZ"
+            title="Padronização de 5.000 ativos em 15 dias"
+            description="Como ajudamos a XYZ a resolver seu problema de inventário perdido utilizando etiquetas de BOPP de alta ancoragem."
+            imageUrl="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=600&auto=format&fit=crop"
+            href="#"
+          />
+          <TestimonialCard
+            quote="As placas de segurança da BEG Brasil superaram nossas expectativas. O acabamento é impecável e a entrega foi pontual, evitando multas."
+            author="Carlos Mendes"
+            role="Engenheiro de Seg. do Trabalho"
+            company="Construtora Alfa"
+          />
+        </div>
+      </section>
+
+      <!-- Technical Data -->
+      <section class="ds-section" id="data">
+        <h2 class="section-title">Dados Técnicos</h2>
+        <div class="ds-card">
+          <TechnicalSpecification
+            specs={[
+              { label: 'Espessura', value: '0,3mm a 1,0mm' },
+              { label: 'Fixação', value: 'Adesivo 3M 467MP ou Furos para rebite' },
+              { label: 'Resistência Térmica', value: 'Até 150°C constantes' },
+            ]}
+          />
+
+          <div class="mt-8">
+            <ComparisonTable
+              headers={['Alumínio Anodizado', 'Aço Inox', 'Poliéster (BOPP)']}
+              rows={[
+                { label: 'Ambiente Externo (UV)', values: [true, true, true] },
+                { label: 'Resistência a Solventes', values: [true, true, false] },
+                { label: 'Superfícies Curvas', values: [false, false, true] },
+                { label: 'Custo Relativo', values: ['$$', '$$$', '$'] },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Modals & Interactive -->
+      <section class="ds-section" id="interactive">
+        <h2 class="section-title">Modais & Apresentação</h2>
+        <div class="ds-card">
+          <Modal
+            id="demo-modal"
+            title="Especificação do Projeto"
+            triggerText="Abrir Modal de Exemplo"
+          >
+            <p class="mb-4 text-graphite-500">
+              Este é um exemplo de modal que segue o design system. Ele trava o scroll do fundo, tem
+              efeito de glassmorphism no overlay e segue as diretrizes WCAG para fechamento via
+              teclado (ESC).
+            </p>
+            <div class="flex gap-4">
+              <button class="btn btn-outline" data-modal-close="demo-modal">Cancelar</button>
+              <button class="btn btn-primary" data-modal-close="demo-modal">Confirmar</button>
+            </div>
+          </Modal>
+
+          <div class="mt-8">
+            <h3 class="subsection-title">FAQ</h3>
+            <FAQ
+              items={[
+                {
+                  question: 'Qual o prazo de produção?',
+                  answer:
+                    'Nosso prazo padrão industrial é de 10 a 15 dias úteis após a aprovação da arte final e confirmação do pagamento.',
+                },
+                {
+                  question: 'Vocês atendem todo o Brasil?',
+                  answer:
+                    'Sim. Despachamos via transportadora parceira ou Correios para qualquer estado do Brasil, com seguro de carga.',
+                },
+              ]}
+            />
+          </div>
+
+          <div class="mt-8">
+            <h3 class="subsection-title">Process Timeline</h3>
+            <ProcessTimeline
+              steps={[
+                { title: 'Orçamento', description: 'Você envia sua necessidade.' },
+                {
+                  title: 'Aprovação da Arte',
+                  description: 'Nossa engenharia elabora o desenho técnico para sua revisão.',
+                },
+                {
+                  title: 'Produção e Entrega',
+                  description: 'Fabricamos com precisão industrial e despachamos.',
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <QuoteCTA />
+</Layout>
+
+<style>
+  .ds-header {
+    background-color: var(--color-white);
+    padding-bottom: var(--space-12);
+    border-bottom: 1px solid var(--color-gray-200);
+    margin-bottom: var(--space-12);
+  }
+
+  .ds-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-2);
+  }
+
+  .ds-desc {
+    font-size: var(--text-lg);
+    color: var(--color-graphite-500);
+    max-width: 800px;
+  }
+
+  .ds-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-16);
+    padding-bottom: var(--space-24);
+  }
+
+  .section-title {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-600);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-2);
+    border-bottom: 2px solid var(--color-gray-200);
+  }
+
+  .subsection-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    margin-bottom: var(--space-4);
+    color: var(--color-graphite-900);
+  }
+
+  .ds-card {
+    background-color: var(--color-white);
+    padding: var(--space-8);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* Utils for Design System */
+  .font-bold {
+    font-weight: var(--font-bold);
+  }
+  .text-4xl {
+    font-size: var(--text-4xl);
+    margin-bottom: var(--space-4);
+    color: var(--color-graphite-900);
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    margin-bottom: var(--space-3);
+    color: var(--color-graphite-900);
+  }
+  .text-2xl {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-3);
+    color: var(--color-graphite-900);
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    margin-bottom: var(--space-2);
+    color: var(--color-graphite-800);
+  }
+  .text-base {
+    font-size: var(--text-base);
+    margin-bottom: var(--space-2);
+    color: var(--color-graphite-800);
+  }
+  .text-sm {
+    font-size: var(--text-sm);
+  }
+  .text-muted {
+    color: var(--color-graphite-500);
+  }
+  .text-graphite-500 {
+    color: var(--color-graphite-500);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .text-dark {
+    color: var(--color-graphite-900);
+  }
+
+  .bg-primary-600 {
+    background-color: var(--color-primary-600);
+  }
+  .bg-graphite-900 {
+    background-color: var(--color-graphite-900);
+  }
+  .bg-gray-200 {
+    background-color: var(--color-gray-200);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+
+  .border-all {
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .mt-8 {
+    margin-top: var(--space-8);
+  }
+  .mb-4 {
+    margin-bottom: var(--space-4);
+  }
+
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .color-swatch {
+    padding: var(--space-6);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    font-weight: var(--font-bold);
+  }
+
+  .color-swatch small {
+    font-weight: var(--font-regular);
+    font-size: var(--text-xs);
+    opacity: 0.9;
+    margin-top: var(--space-1);
+  }
+
+  .flex-gap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    align-items: center;
+  }
+
+  .flex-col-gap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .flex {
+    display: flex;
+  }
+  .gap-4 {
+    gap: var(--space-4);
+  }
+
+  /* Mock hover/focus states for display */
+  .btn-hover {
+    background-color: var(--color-primary-700);
+  }
+  .btn-focus {
+    box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.3);
+  }
+  .btn-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .btn-hover-outline {
+    border-color: var(--color-graphite-900);
+    background-color: var(--color-gray-100);
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    margin-bottom: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .form-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .cards-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .cards-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 768px) {
+    .cards-grid-3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .cards-grid-2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Basic Button Styles applied globally for demo */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-medium);
+    font-size: var(--text-base);
+    transition: all var(--transition-fast);
+    text-decoration: none;
+    cursor: pointer;
+    font-family: var(--font-primary);
+    border: none;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background-color: var(--color-primary-700);
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: var(--color-graphite-900);
+    border: 2px solid var(--color-gray-200);
+  }
+
+  .btn-outline:hover:not(:disabled) {
+    border-color: var(--color-graphite-900);
+    background-color: var(--color-gray-100);
+  }
+</style>

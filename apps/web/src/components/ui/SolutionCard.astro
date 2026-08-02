@@ -1,0 +1,121 @@
+---
+// SolutionCard.astro
+export interface Props {
+  title: string;
+  description: string;
+  imageUrl: string;
+  href: string;
+}
+
+const { title, description, imageUrl, href } = Astro.props;
+---
+
+<a href={href} class="solution-card">
+  <div class="card-media">
+    <img src={imageUrl} alt={title} loading="lazy" />
+  </div>
+  <div class="card-content">
+    <h3 class="card-title">{title}</h3>
+    <p class="card-desc">{description}</p>
+    <span class="card-link">Saiba mais</span>
+  </div>
+</a>
+
+<style>
+  .solution-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    text-decoration: none;
+    transition: all var(--transition-normal);
+  }
+
+  @media (min-width: 640px) {
+    .solution-card {
+      flex-direction: row;
+      align-items: stretch;
+    }
+  }
+
+  .solution-card:hover,
+  .solution-card:focus-visible {
+    border-color: var(--color-primary-500);
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-media {
+    flex-shrink: 0;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background-color: var(--color-gray-100);
+  }
+
+  @media (min-width: 640px) {
+    .card-media {
+      width: 40%;
+      aspect-ratio: auto;
+    }
+  }
+
+  .card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+
+  .solution-card:hover .card-media img {
+    transform: scale(1.05);
+  }
+
+  .card-content {
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .card-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-2);
+  }
+
+  .card-desc {
+    color: var(--color-graphite-500);
+    font-size: var(--text-sm);
+    line-height: 1.6;
+    margin-bottom: var(--space-4);
+  }
+
+  .card-link {
+    color: var(--color-primary-600);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-sm);
+    margin-top: auto;
+    display: inline-block;
+    position: relative;
+    width: max-content;
+  }
+
+  .card-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-600);
+    transition: width var(--transition-fast);
+  }
+
+  .solution-card:hover .card-link::after {
+    width: 100%;
+  }
+</style>

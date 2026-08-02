@@ -1,0 +1,95 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Button from '../components/ui/Button.astro';
+import { ShieldAlert } from 'lucide-react'; // we don't have lucide-react yet, let's use SVG
+
+// 404.astro
+---
+
+<Layout 
+  title="Página não encontrada" 
+  description="A página que você tentou acessar não foi encontrada."
+  noindex={true}
+>
+  <div class="error-page container">
+    <div class="error-content">
+      <div class="error-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+        </svg>
+      </div>
+      <h1 class="error-title">404 - Página não encontrada</h1>
+      <p class="error-text">
+        O recurso que você tentou acessar foi movido ou não existe mais. Verifique se o endereço foi digitado corretamente.
+      </p>
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary">Voltar ao Início</a>
+        <a href="/produtos" class="btn btn-outline">Ver Produtos</a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .error-page {
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-12) 0;
+  }
+
+  .error-content {
+    text-align: center;
+    max-width: 500px;
+  }
+
+  .error-icon {
+    color: var(--color-gray-400);
+    margin-bottom: var(--space-6);
+  }
+
+  .error-title {
+    font-size: var(--text-3xl);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-4);
+  }
+
+  .error-text {
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-8);
+    font-size: var(--text-lg);
+  }
+
+  .error-actions {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+  }
+
+  .btn {
+    padding: var(--space-3) var(--space-6);
+    border-radius: var(--radius-sm);
+    font-weight: var(--font-medium);
+    text-decoration: none;
+    transition: all var(--transition-fast);
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+  }
+
+  .btn-primary:hover, .btn-primary:focus-visible {
+    background-color: var(--color-primary-700);
+  }
+
+  .btn-outline {
+    border: 1px solid var(--color-gray-300);
+    color: var(--color-graphite-800);
+  }
+
+  .btn-outline:hover, .btn-outline:focus-visible {
+    background-color: var(--color-gray-100);
+  }
+</style>

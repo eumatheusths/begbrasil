@@ -1,0 +1,142 @@
+---
+// Header.astro
+import MegaMenu from './MegaMenu.astro';
+---
+
+<header class="header">
+  <div class="header-topbar">
+    <div class="container topbar-inner">
+      <span class="topbar-text">Identificação industrial feita para durar.</span>
+      <div class="topbar-links">
+        <a href="/contato">Suporte & Contato</a>
+        <a href="/orcamento" class="topbar-highlight">Solicitar Orçamento</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="header-main">
+    <div class="container main-inner">
+      <a href="/" class="logo-link" aria-label="BEG Brasil Home">
+        <span class="logo-text">BEG BRASIL</span>
+      </a>
+
+      <div class="desktop-nav">
+        <MegaMenu />
+      </div>
+
+      <button class="mobile-toggle" aria-label="Menu" aria-expanded="false" id="mobile-menu-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-gray-200);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  .header-topbar {
+    background-color: var(--color-graphite-900);
+    color: var(--color-gray-200);
+    font-size: var(--text-xs);
+    padding: var(--space-2) 0;
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .header-topbar {
+      display: block;
+    }
+  }
+
+  .topbar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .topbar-links {
+    display: flex;
+    gap: var(--space-4);
+  }
+
+  .topbar-links a {
+    color: inherit;
+    transition: color var(--transition-fast);
+  }
+
+  .topbar-links a:hover,
+  .topbar-links a:focus-visible {
+    color: var(--color-white);
+  }
+
+  .topbar-highlight {
+    color: var(--color-primary-500) !important;
+    font-weight: var(--font-medium);
+  }
+
+  .header-main {
+    padding: var(--space-4) 0;
+  }
+
+  .main-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-link {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-text {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-600);
+    letter-spacing: -0.025em;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .desktop-nav {
+      display: block;
+    }
+
+    .mobile-toggle {
+      display: none;
+    }
+  }
+
+  .mobile-toggle {
+    color: var(--color-graphite-900);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+  }
+
+  .mobile-toggle:focus-visible {
+    background-color: var(--color-gray-100);
+  }
+</style>

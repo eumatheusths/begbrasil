@@ -1,0 +1,206 @@
+---
+// Modal.astro
+export interface Props {
+  id: string;
+  title: string;
+  triggerText?: string;
+  isOpen?: boolean;
+}
+
+const { id, title, triggerText, isOpen = false } = Astro.props;
+---
+
+{
+  triggerText && (
+    <button type="button" class="btn btn-outline" data-modal-target={id}>
+      {triggerText}
+    </button>
+  )
+}
+
+<div
+  id={id}
+  class={`modal-overlay ${isOpen ? 'is-open' : ''}`}
+  aria-labelledby={`${id}-title`}
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="modal-container">
+    <div class="modal-header">
+      <h3 id={`${id}-title`} class="modal-title">{title}</h3>
+      <button type="button" class="modal-close" data-modal-close={id} aria-label="Fechar modal">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="modal-body">
+      <slot />
+    </div>
+  </div>
+</div>
+
+<style>
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(15, 23, 42, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: var(--space-4);
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-normal);
+    backdrop-filter: blur(2px);
+  }
+
+  .modal-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-container {
+    background-color: var(--color-white);
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-lg);
+    transform: scale(0.95) translateY(20px);
+    transition: transform var(--transition-normal);
+  }
+
+  .modal-overlay.is-open .modal-container {
+    transform: scale(1) translateY(0);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-4) var(--space-6);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .modal-title {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-900);
+    margin: 0;
+  }
+
+  .modal-close {
+    color: var(--color-graphite-500);
+    border-radius: var(--radius-sm);
+    padding: var(--space-1);
+    transition: all var(--transition-fast);
+  }
+
+  .modal-close:hover,
+  .modal-close:focus-visible {
+    background-color: var(--color-gray-100);
+    color: var(--color-graphite-900);
+  }
+
+  .modal-body {
+    padding: var(--space-6);
+    overflow-y: auto;
+    flex: 1;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-md);
+    font-weight: var(--font-medium);
+    font-size: var(--text-sm);
+    transition: all var(--transition-fast);
+    cursor: pointer;
+  }
+
+  .btn-outline {
+    background-color: transparent;
+    color: var(--color-graphite-900);
+    border: 2px solid var(--color-gray-200);
+  }
+
+  .btn-outline:hover,
+  .btn-outline:focus-visible {
+    border-color: var(--color-graphite-900);
+    background-color: var(--color-gray-100);
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Open modal triggers
+    const triggers = document.querySelectorAll('[data-modal-target]');
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const targetId = trigger.getAttribute('data-modal-target');
+        if (targetId) {
+          const modal = document.getElementById(targetId);
+          if (modal) {
+            modal.classList.add('is-open');
+            document.body.style.overflow = 'hidden'; // prevent bg scroll
+          }
+        }
+      });
+    });
+
+    // Close modal triggers
+    const closeBtns = document.querySelectorAll('[data-modal-close]');
+    closeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.getAttribute('data-modal-close');
+        if (targetId) {
+          const modal = document.getElementById(targetId);
+          if (modal) {
+            modal.classList.remove('is-open');
+            document.body.style.overflow = '';
+          }
+        }
+      });
+    });
+
+    // Close on overlay click
+    const overlays = document.querySelectorAll('.modal-overlay');
+    overlays.forEach((overlay) => {
+      overlay.addEventListener('click', (e) => {
+        if (e.target === overlay) {
+          overlay.classList.remove('is-open');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const openModals = document.querySelectorAll('.modal-overlay.is-open');
+        openModals.forEach((modal) => {
+          modal.classList.remove('is-open');
+          document.body.style.overflow = '';
+        });
+      }
+    });
+  });
+</script>

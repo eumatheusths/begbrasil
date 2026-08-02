@@ -1,0 +1,149 @@
+---
+// MegaMenu.astro
+const navItems = [
+  { label: 'Soluções', href: '/solucoes' },
+  {
+    label: 'Produtos',
+    href: '/produtos',
+    dropdown: [
+      { label: 'Etiquetas de Patrimônio', href: '/produtos/etiquetas-de-patrimonio' },
+      { label: 'Placas para Máquinas', href: '/produtos/placas-para-maquinas' },
+      { label: 'Sinalização', href: '/produtos/placas-de-sinalizacao' },
+      { label: 'Placas Personalizadas', href: '/produtos/placas-personalizadas' },
+    ],
+  },
+  { label: 'Materiais', href: '/materiais' },
+  { label: 'Segmentos', href: '/segmentos' },
+  { label: 'Sobre', href: '/sobre' },
+];
+---
+
+<nav aria-label="Main Navigation" class="mega-menu">
+  <ul class="menu-list">
+    {
+      navItems.map((item) => (
+        <li class="menu-item">
+          <a href={item.href} class="menu-link" aria-haspopup={item.dropdown ? 'true' : 'false'}>
+            {item.label}
+            {item.dropdown && (
+              <svg
+                class="dropdown-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            )}
+          </a>
+
+          {item.dropdown && (
+            <div class="dropdown-panel">
+              <ul class="dropdown-list">
+                {item.dropdown.map((dropItem) => (
+                  <li>
+                    <a href={dropItem.href} class="dropdown-link">
+                      {dropItem.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .mega-menu {
+    height: 100%;
+  }
+
+  .menu-list {
+    display: flex;
+    list-style: none;
+    gap: var(--space-6);
+  }
+
+  .menu-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+    font-weight: var(--font-medium);
+    color: var(--color-graphite-900);
+    padding: var(--space-2) 0;
+    transition: color var(--transition-fast);
+  }
+
+  .menu-link:hover,
+  .menu-link:focus-visible {
+    color: var(--color-primary-600);
+  }
+
+  .dropdown-icon {
+    transition: transform var(--transition-fast);
+  }
+
+  .menu-item:hover .dropdown-icon {
+    transform: rotate(180deg);
+  }
+
+  .dropdown-panel {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 240px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all var(--transition-normal);
+    z-index: 100;
+  }
+
+  .menu-item:hover .dropdown-panel,
+  .menu-link:focus + .dropdown-panel,
+  .dropdown-panel:focus-within {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-list {
+    list-style: none;
+    padding: var(--space-2);
+  }
+
+  .dropdown-link {
+    display: block;
+    padding: var(--space-2) var(--space-3);
+    color: var(--color-graphite-800);
+    border-radius: var(--radius-sm);
+    transition:
+      background-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .dropdown-link:hover,
+  .dropdown-link:focus-visible {
+    background-color: var(--color-gray-100);
+    color: var(--color-primary-600);
+  }
+</style>

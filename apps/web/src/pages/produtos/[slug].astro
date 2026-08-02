@@ -1,0 +1,402 @@
+---
+import { getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import FAQ from '../../components/ui/FAQ.astro';
+import QuoteCTA from '../../components/ui/QuoteCTA.astro';
+
+export async function getStaticPaths() {
+  const produtos = await getCollection('produtos', ({ data }) => data.status === 'active');
+  return produtos.map((produto) => ({
+    params: { slug: produto.id },
+    props: { produto },
+  }));
+}
+
+const { produto } = Astro.props;
+const { Content } = await render(produto);
+const data = produto.data;
+
+const image = data.images[0] || 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+---
+
+<Layout 
+  title={data.seoTitle || `${data.name} | BEG Brasil`} 
+  description={data.seoDescription || data.shortDescription}
+  image={image}
+  type="article"
+>
+  <!-- Breadcrumbs -->
+  <div class="bg-gray-100 py-4 border-b border-gray-200">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a> &rsaquo;
+        <a href="/produtos">Produtos</a> &rsaquo;
+        <a href={`/produtos/${data.category}`} class="capitalize">{data.category.replace('-', ' ')}</a> &rsaquo;
+        <span aria-current="page">{data.name}</span>
+      </nav>
+    </div>
+  </div>
+
+  <section class="section container">
+    <div class="product-layout">
+      <!-- Galeria -->
+      <div class="product-gallery">
+        <div class="main-image-wrapper">
+          <img src={image} alt={data.name} class="main-image" fetchpriority="high" />
+        </div>
+        {data.images.length > 1 && (
+          <div class="thumbnail-list">
+            {data.images.map(img => (
+              <img src={img} alt={`Miniatura ${data.name}`} class="thumbnail" loading="lazy" />
+            ))}
+          </div>
+        )}
+      </div>
+
+      <!-- Resumo do Produto -->
+      <div class="product-summary">
+        <h1 class="product-title">{data.name}</h1>
+        <p class="product-short-desc">{data.shortDescription}</p>
+
+        <div class="product-specs-quick">
+          {data.materials.length > 0 && (
+            <div class="spec-row">
+              <span class="spec-label">Materiais:</span>
+              <span class="spec-value">{data.materials.join(', ')}</span>
+            </div>
+          )}
+          {data.minimumQuantity && (
+            <div class="spec-row">
+              <span class="spec-label">Qtd. Mínima:</span>
+              <span class="spec-value">{data.minimumQuantity}</span>
+            </div>
+          )}
+          {data.leadTime && (
+            <div class="spec-row">
+              <span class="spec-label">Prazo de Produção:</span>
+              <span class="spec-value">{data.leadTime}</span>
+            </div>
+          )}
+        </div>
+
+        <div class="product-cta">
+          <a href="#orcamento" class="btn-primary w-full text-center py-3">Solicitar Orçamento Deste Produto</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Detalhamento Técnico -->
+    <div class="technical-details mt-16">
+      <div class="details-grid">
+        <div class="content-body prose max-w-none">
+          <h2 class="text-2xl font-bold mb-6">Descrição Técnica</h2>
+          <Content />
+        </div>
+
+        <div class="specs-tables">
+          <h2 class="text-2xl font-bold mb-6">Especificações</h2>
+          
+          <div class="spec-card">
+            <h3 class="spec-card-title">Aplicações</h3>
+            <ul class="spec-list">
+              {data.applications.map(app => <li>{app}</li>)}
+            </ul>
+          </div>
+
+          <div class="spec-card">
+            <h3 class="spec-card-title">Opções de Fixação</h3>
+            <ul class="spec-list">
+              {data.fixationMethods.map(method => <li>{method}</li>)}
+            </ul>
+          </div>
+
+          <div class="spec-card">
+            <h3 class="spec-card-title">Dados Variáveis</h3>
+            <ul class="spec-list">
+              {data.variableData ? <li>Gravação de Dados Variáveis disponível</li> : <li>Sem dados variáveis</li>}
+              {data.supportsQRCode && <li>Gravação de QR Code Industrial</li>}
+              {data.supportsBarcode && <li>Suporte a Códigos de Barras (ex: Code 128)</li>}
+              {data.supportsSequentialNumbering && <li>Numeração Sequencial</li>}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ do Produto -->
+    {data.faq && data.faq.length > 0 && (
+      <div class="product-faq mt-16 pt-16 border-t border-gray-200">
+        <h2 class="text-2xl font-bold mb-8 text-center">Perguntas Frequentes sobre este Produto</h2>
+        <div class="max-w-3xl mx-auto">
+          <FAQ items={data.faq} />
+        </div>
+      </div>
+    )}
+
+    <!-- Formulário Mockado de Orçamento -->
+    <div id="orcamento" class="mt-16 pt-16 border-t border-gray-200 scroll-mt-24">
+      <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg border border-gray-200">
+        <h2 class="text-2xl font-bold mb-2">Solicitar Orçamento</h2>
+        <p class="text-gray-600 mb-6">Você está orçando: <strong>{data.name}</strong></p>
+        <form class="flex flex-col gap-4">
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Nome Completo</label>
+              <input type="text" class="form-input w-full p-2 border border-gray-300 rounded" placeholder="Seu nome" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">E-mail Corporativo</label>
+              <input type="email" class="form-input w-full p-2 border border-gray-300 rounded" placeholder="email@empresa.com.br" />
+            </div>
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1">Telefone / WhatsApp</label>
+              <input type="tel" class="form-input w-full p-2 border border-gray-300 rounded" placeholder="(00) 00000-0000" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1">Quantidade Estimada</label>
+              <input type="number" class="form-input w-full p-2 border border-gray-300 rounded" placeholder="Ex: 500" />
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1">Detalhes do Projeto</label>
+            <textarea class="form-input w-full p-2 border border-gray-300 rounded h-32" placeholder="Descreva medidas específicas, material desejado e tipo de ambiente (interno/externo)..."></textarea>
+          </div>
+          <button type="button" class="btn-primary py-3 px-6 rounded font-medium mt-2">Enviar Solicitação (Mock)</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .breadcrumb {
+    font-size: var(--text-sm);
+    color: var(--color-gray-600);
+  }
+
+  .breadcrumb a {
+    color: var(--color-primary-600);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  .capitalize {
+    text-transform: capitalize;
+  }
+
+  .product-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .product-layout {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .main-image-wrapper {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--color-gray-200);
+    aspect-ratio: 4/3;
+    background-color: var(--color-gray-100);
+  }
+
+  .main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .thumbnail-list {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+  }
+
+  .thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-gray-200);
+    cursor: pointer;
+  }
+
+  .product-title {
+    font-size: var(--text-4xl);
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-4);
+    line-height: 1.1;
+  }
+
+  .product-short-desc {
+    font-size: var(--text-lg);
+    color: var(--color-gray-600);
+    margin-bottom: var(--space-8);
+  }
+
+  .product-specs-quick {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-bottom: var(--space-8);
+    padding: var(--space-4);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed var(--color-gray-300);
+    padding-bottom: var(--space-2);
+  }
+
+  .spec-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .spec-label {
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-800);
+  }
+
+  .spec-value {
+    color: var(--color-graphite-600);
+    text-align: right;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+    display: inline-block;
+    transition: background-color var(--transition-fast);
+    text-decoration: none;
+  }
+
+  .btn-primary:hover, .btn-primary:focus-visible {
+    background-color: var(--color-primary-700);
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  @media (min-width: 1024px) {
+    .details-grid {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  .content-body {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-graphite-700);
+  }
+
+  .content-body h2 {
+    color: var(--color-graphite-900);
+  }
+
+  .content-body p {
+    margin-bottom: var(--space-4);
+  }
+
+  .content-body strong {
+    color: var(--color-graphite-900);
+    font-weight: var(--font-bold);
+  }
+
+  .specs-tables {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .spec-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-md);
+    padding: var(--space-6);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .spec-card-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-primary-700);
+    margin-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-gray-100);
+    padding-bottom: var(--space-2);
+  }
+
+  .spec-list {
+    list-style: disc;
+    padding-left: var(--space-4);
+    color: var(--color-graphite-700);
+  }
+
+  .spec-list li {
+    margin-bottom: var(--space-2);
+  }
+
+  /* Utils for Tailwind-like classes used in template */
+  .w-full { width: 100%; }
+  .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+  .px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .text-center { text-align: center; }
+  .mt-16 { margin-top: 4rem; }
+  .pt-16 { padding-top: 4rem; }
+  .mb-8 { margin-bottom: 2rem; }
+  .mb-6 { margin-bottom: 1.5rem; }
+  .mb-4 { margin-bottom: 1rem; }
+  .mb-2 { margin-bottom: 0.5rem; }
+  .mb-1 { margin-bottom: 0.25rem; }
+  .text-2xl { font-size: 1.5rem; }
+  .font-bold { font-weight: 700; }
+  .font-medium { font-weight: 500; }
+  .max-w-3xl { max-width: 48rem; }
+  .max-w-none { max-width: none; }
+  .mx-auto { margin-left: auto; margin-right: auto; }
+  .flex { display: flex; }
+  .flex-col { flex-direction: column; }
+  .gap-4 { gap: 1rem; }
+  .bg-gray-50 { background-color: var(--color-gray-50); }
+  .bg-gray-100 { background-color: var(--color-gray-100); }
+  .p-8 { padding: 2rem; }
+  .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+  .rounded-lg { border-radius: var(--radius-lg); }
+  .rounded { border-radius: var(--radius-md); }
+  .border { border-width: 1px; }
+  .border-t { border-top-width: 1px; }
+  .border-b { border-bottom-width: 1px; }
+  .border-gray-200 { border-color: var(--color-gray-200); }
+  .border-gray-300 { border-color: var(--color-gray-300); }
+  .text-gray-600 { color: var(--color-gray-600); }
+  .block { display: block; }
+  .text-sm { font-size: 0.875rem; }
+  .p-2 { padding: 0.5rem; }
+  .h-32 { height: 8rem; }
+  .scroll-mt-24 { scroll-margin-top: 6rem; }
+  
+  @media (min-width: 768px) {
+    .md\:grid-cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+</style>

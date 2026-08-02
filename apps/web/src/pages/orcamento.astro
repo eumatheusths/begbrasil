@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/ui/Hero.astro';
+import Stepper from '../components/ui/Stepper.astro';
+---
+
+<Layout 
+  title="Solicitar Orçamento | BEG Brasil"
+  description="Preencha nosso formulário inteligente e receba uma cotação precisa para o seu projeto de identificação industrial."
+>
+  <Hero
+    title="Solicitar Orçamento"
+    subtitle="Nossa equipe de engenharia avaliará as informações e retornará com a melhor solução em materiais, formatos e processos."
+  />
+
+  <section class="section container">
+    <div class="max-w-4xl mx-auto">
+      <Stepper />
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .section {
+    padding: var(--space-12) 0;
+  }
+  .max-w-4xl {
+    max-width: 56rem;
+  }
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

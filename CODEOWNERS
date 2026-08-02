@@ -1,0 +1,7 @@
+# Donos do código por diretório
+
+* @matheus
+apps/web/ @matheus @frontend-team
+apps/api/ @matheus @backend-team
+.github/workflows/ @matheus @devops-team
+infra/ @matheus @devops-team

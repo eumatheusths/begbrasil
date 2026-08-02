@@ -1,0 +1,146 @@
+---
+// ComparisonTable.astro
+export interface Props {
+  headers: string[];
+  rows: {
+    label: string;
+    values: (string | boolean)[];
+  }[];
+}
+
+const { headers, rows } = Astro.props;
+---
+
+<div class="table-container">
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th scope="col" class="th-label"></th>
+        {headers.map((header) => <th scope="col">{header}</th>)}
+      </tr>
+    </thead>
+    <tbody>
+      {
+        rows.map((row) => (
+          <tr>
+            <th scope="row" class="row-label">
+              {row.label}
+            </th>
+            {row.values.map((value) => (
+              <td>
+                {typeof value === 'boolean' ? (
+                  value ? (
+                    <svg
+                      class="icon-check"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  ) : (
+                    <svg
+                      class="icon-x"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                  )
+                ) : (
+                  value
+                )}
+              </td>
+            ))}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .table-container {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+    background-color: var(--color-white);
+  }
+
+  .comparison-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-gray-200);
+    border-right: 1px solid var(--color-gray-200);
+  }
+
+  .comparison-table th:last-child,
+  .comparison-table td:last-child {
+    border-right: none;
+  }
+
+  .comparison-table tbody tr:last-child th,
+  .comparison-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .comparison-table thead th {
+    background-color: var(--color-gray-100);
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-900);
+    font-size: var(--text-sm);
+  }
+
+  .th-label {
+    background-color: transparent !important;
+    border-top: none;
+    border-left: none;
+  }
+
+  .row-label {
+    text-align: left;
+    font-weight: var(--font-semibold);
+    color: var(--color-graphite-900);
+    font-size: var(--text-sm);
+    background-color: var(--color-gray-50);
+  }
+
+  .comparison-table td {
+    color: var(--color-graphite-500);
+    font-size: var(--text-sm);
+  }
+
+  .icon-check {
+    color: var(--color-success);
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .icon-x {
+    color: var(--color-gray-400);
+    display: inline-block;
+    vertical-align: middle;
+  }
+</style>

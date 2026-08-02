@@ -1,0 +1,137 @@
+---
+// SectorCard.astro
+export interface Props {
+  sectorName: string;
+  description: string;
+  icon?: string;
+  href: string;
+}
+
+const { sectorName, description, icon, href } = Astro.props;
+---
+
+<a href={href} class="sector-card">
+  <div class="card-icon">
+    {
+      icon ? (
+        <Fragment set:html={icon} />
+      ) : (
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="32"
+          height="32"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z" />
+          <path d="M17 18h1" />
+          <path d="M13 18h1" />
+          <path d="M9 18h1" />
+        </svg>
+      )
+    }
+  </div>
+  <div class="card-content">
+    <h3 class="sector-name">{sectorName}</h3>
+    <p class="sector-desc">{description}</p>
+  </div>
+  <div class="card-action">
+    <span class="action-text">Ver soluções</span>
+    <svg
+      class="action-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <line x1="5" y1="12" x2="19" y2="12"></line>
+      <polyline points="12 5 19 12 12 19"></polyline>
+    </svg>
+  </div>
+</a>
+
+<style>
+  .sector-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-6);
+    background-color: var(--color-white);
+    border: 1px solid var(--color-gray-200);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    height: 100%;
+  }
+
+  .sector-card:hover,
+  .sector-card:focus-visible {
+    border-color: var(--color-primary-500);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+  }
+
+  .card-icon {
+    color: var(--color-primary-600);
+    margin-bottom: var(--space-4);
+    background-color: var(--color-gray-100);
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-md);
+    transition:
+      background-color var(--transition-fast),
+      color var(--transition-fast);
+  }
+
+  .sector-card:hover .card-icon {
+    background-color: var(--color-primary-600);
+    color: var(--color-white);
+  }
+
+  .card-content {
+    flex: 1;
+  }
+
+  .sector-name {
+    font-size: var(--text-xl);
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-2);
+  }
+
+  .sector-desc {
+    color: var(--color-graphite-500);
+    font-size: var(--text-sm);
+    line-height: 1.5;
+    margin-bottom: var(--space-6);
+  }
+
+  .card-action {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-primary-600);
+    font-weight: var(--font-semibold);
+    font-size: var(--text-sm);
+    margin-top: auto;
+  }
+
+  .action-icon {
+    transition: transform var(--transition-fast);
+  }
+
+  .sector-card:hover .action-icon {
+    transform: translateX(4px);
+  }
+</style>

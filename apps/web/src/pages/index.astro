@@ -1,0 +1,351 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/ui/Hero.astro';
+import TrustBar from '../components/home/TrustBar.astro';
+import SolutionCard from '../components/ui/SolutionCard.astro';
+import ProductCard from '../components/ui/ProductCard.astro';
+import GuidedSelector from '../components/home/GuidedSelector.astro';
+import MaterialCard from '../components/ui/MaterialCard.astro';
+import ProcessTimeline from '../components/ui/ProcessTimeline.astro';
+import SectorCard from '../components/ui/SectorCard.astro';
+import CaseCard from '../components/ui/CaseCard.astro';
+import ArticleCard from '../components/ui/ArticleCard.astro';
+import FAQ from '../components/ui/FAQ.astro';
+import QuoteCTA from '../components/ui/QuoteCTA.astro';
+
+// FAQs para a Home
+const homeFaqs = [
+  {
+    question: "Vocês personalizam tamanho?",
+    answer: "Sim, fabricamos etiquetas e placas sob medida, cortadas com precisão de acordo com as especificações do seu projeto."
+  },
+  {
+    question: "Posso enviar meu logotipo?",
+    answer: "Sim, aceitamos logotipos e os reproduzimos com alta fidelidade e durabilidade através de [CONFIRMAR PROCESSO] ou gravação."
+  },
+  {
+    question: "Trabalham com numeração?",
+    answer: "Sim, produzimos itens com numeração sequencial, código de barras e dados variáveis para controle de patrimônio e rastreabilidade."
+  },
+  {
+    question: "Fazem QR Code?",
+    answer: "Sim, gravamos ou imprimimos QR Codes de alta definição, garantindo a leitura industrial mesmo em ambientes severos."
+  },
+  {
+    question: "Quais arquivos posso enviar?",
+    answer: "Aceitamos os formatos vetorizados (.pdf, .ai, .eps, .cdr) para garantir a melhor qualidade de gravação e impressão."
+  },
+  {
+    question: "Como solicito orçamento?",
+    answer: "Basta clicar em 'Solicitar orçamento' e enviar as especificações. Nossa equipe retornará rapidamente com a proposta comercial."
+  },
+  {
+    question: "Atendem todo o Brasil?",
+    answer: "Sim, enviamos nossas soluções de identificação para empresas, indústrias e órgãos de todos os estados do Brasil."
+  }
+];
+
+const processSteps = [
+  { title: "Envie sua necessidade", description: "Fale com nossa equipe sobre o que você precisa identificar." },
+  { title: "Receba orientação", description: "Nossos especialistas indicam o material e processo ideal." },
+  { title: "Aprove o projeto", description: "Validação final do layout e das especificações técnicas." },
+  { title: "Acompanhe a produção", description: "Fabricação com qualidade garantida em cada etapa." },
+  { title: "Receba seu pedido", description: "Entrega segura em todo o território nacional." }
+];
+
+---
+
+<Layout 
+  title="Identificação industrial feita para durar" 
+  description="Etiquetas patrimoniais, placas para máquinas, sinalização e soluções personalizadas para empresas de todo o Brasil."
+>
+  <!-- 1. Hero -->
+  <Hero
+    title="Identificação industrial feita para durar."
+    subtitle="Etiquetas patrimoniais, placas para máquinas, sinalização e soluções personalizadas para empresas de todo o Brasil."
+    primaryCta={{ label: "Solicitar orçamento", href: "/orcamento" }}
+    secondaryCta={{ label: "Conhecer soluções", href: "#solucoes" }}
+    imageUrl="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+  />
+
+  <!-- 2. Barra de Confiança -->
+  <TrustBar />
+
+  <!-- 3. Soluções -->
+  <section id="solucoes" class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Soluções Completas</h2>
+        <p class="section-subtitle">Tudo o que sua empresa precisa em identificação durável.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <SolutionCard 
+          title="Controle Patrimonial" 
+          description="Etiquetas de alta fixação para gestão de ativos físicos." 
+          icon="barcode" 
+          href="/produtos/etiquetas-de-patrimonio" 
+        />
+        <SolutionCard 
+          title="Identificação de Máquinas" 
+          description="Placas técnicas resistentes a ambientes industriais severos." 
+          icon="settings" 
+          href="/produtos/placas-para-maquinas" 
+        />
+        <SolutionCard 
+          title="Sinalização Industrial" 
+          description="Avisos e alertas para segurança no trabalho e fluxos." 
+          icon="alert-triangle" 
+          href="/produtos/placas-de-sinalizacao" 
+        />
+        <SolutionCard 
+          title="Identificação de Marca" 
+          description="Logotipos e apliques metálicos premium para produtos." 
+          icon="tag" 
+          href="/produtos/etiquetas-metalicas" 
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Produtos Principais -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Nossos Produtos</h2>
+        <p class="section-subtitle">Qualidade e durabilidade comprovada na indústria.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <ProductCard
+          title="Etiquetas de Patrimônio Alumínio"
+          description="Máxima durabilidade para controle de ativos fixos."
+          imageUrl="https://images.unsplash.com/photo-1585241645927-c7a8e5840c42?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/produtos/etiquetas-de-patrimonio"
+        />
+        <ProductCard
+          title="Placas de Especificação de Máquina"
+          description="Dados técnicos indeléveis gravados em aço inox."
+          imageUrl="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/produtos/placas-para-maquinas"
+        />
+        <ProductCard
+          title="Sinalização de Segurança"
+          description="Placas de aviso em PVC e acrílico de alta visibilidade."
+          imageUrl="https://images.unsplash.com/photo-1621844883391-45bd03ecf4ec?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/produtos/placas-de-sinalizacao"
+        />
+      </div>
+      <div class="text-center mt-8">
+        <a href="/produtos" class="btn btn-outline">Ver Catálogo Completo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Seletor Guiado -->
+  <GuidedSelector />
+
+  <!-- 6. Materiais -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Materiais de Alta Performance</h2>
+        <p class="section-subtitle">Selecionados para resistir ao seu ambiente operacional.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <MaterialCard 
+          name="Alumínio" 
+          description="Leve, resistente à corrosão e aceita [CONFIRMAR PROCESSO] em alta definição." 
+          features={["Resistente a UV", "Alta fixação"]}
+          href="/materiais/aluminio" 
+        />
+        <MaterialCard 
+          name="Aço Inox" 
+          description="Extrema resistência mecânica e química, ideal para indústrias pesadas." 
+          features={["Ambientes severos", "Anticorrosivo"]}
+          href="/materiais/aco-inox" 
+        />
+        <MaterialCard 
+          name="Acrílico" 
+          description="Acabamento premium e transparente para displays e painéis." 
+          features={["Corte a laser", "Alta transparência"]}
+          href="/materiais/acrilico" 
+        />
+        <MaterialCard 
+          name="Poliéster / Adesivos" 
+          description="Flexibilidade e alta aderência para superfícies curvadas." 
+          features={["Flexível", "Várias espessuras"]}
+          href="/materiais/polimeros" 
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Processo -->
+  <section class="section bg-graphite-900 text-white">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title text-white">Como Trabalhamos</h2>
+        <p class="section-subtitle text-gray-400">Do primeiro contato até a entrega na sua empresa.</p>
+      </div>
+      <ProcessTimeline steps={processSteps} />
+    </div>
+  </section>
+
+  <!-- 8. Segmentos -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Setores que Atendemos</h2>
+        <p class="section-subtitle">Expertise aplicada às exigências de cada mercado.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <SectorCard title="Indústrias" icon="factory" href="/segmentos/industrias" />
+        <SectorCard title="Fabricantes de Máquinas" icon="cpu" href="/segmentos/fabricantes-de-maquinas" />
+        <SectorCard title="Hospitais" icon="activity" href="/segmentos/hospitais" />
+        <SectorCard title="Escolas e Universidades" icon="book-open" href="/segmentos/escolas-e-universidades" />
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Projetos Realizados -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Projetos Realizados</h2>
+        <p class="section-subtitle">Exemplos de soluções entregues com precisão.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <CaseCard
+          title="Identificação de Frota Pesada"
+          client="[CONFIRMAR CLIENTE]"
+          imageUrl="https://images.unsplash.com/photo-1616423640778-28d1b53229bd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/projetos/frota-pesada"
+        />
+        <CaseCard
+          title="Placas para Painéis Elétricos"
+          client="[CONFIRMAR CLIENTE]"
+          imageUrl="https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/projetos/paineis-eletricos"
+        />
+        <CaseCard
+          title="Sinalização de Rota de Fuga"
+          client="[CONFIRMAR CLIENTE]"
+          imageUrl="https://images.unsplash.com/photo-1579730248834-8c88667a4216?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/projetos/sinalizacao-fuga"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Conteúdo Técnico -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Conteúdo Técnico</h2>
+        <p class="section-subtitle">Artigos e guias para auxiliar na especificação.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <ArticleCard
+          title="Como escolher a etiqueta de patrimônio ideal"
+          excerpt="Guia prático para definir material, tamanho e fixação do seu ativo."
+          date="Atualizado recentemente"
+          imageUrl="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/conteudos/como-escolher-etiqueta-patrimonio"
+        />
+        <ArticleCard
+          title="Alumínio vs Aço Inox em placas industriais"
+          excerpt="Entenda as diferenças químicas e mecânicas para ambientes agressivos."
+          date="Atualizado recentemente"
+          imageUrl="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/conteudos/aluminio-vs-aco-inox"
+        />
+        <ArticleCard
+          title="A importância da sinalização de segurança"
+          excerpt="Normas e práticas para evitar acidentes no chão de fábrica."
+          date="Atualizado recentemente"
+          imageUrl="https://images.unsplash.com/photo-1584446394541-118e906c9a92?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          href="/conteudos/importancia-sinalizacao-seguranca"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. FAQ -->
+  <section class="section bg-gray-50">
+    <div class="container">
+      <div class="section-header text-center">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+      </div>
+      <div class="max-w-3xl mx-auto">
+        <FAQ items={homeFaqs} />
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. CTA Final -->
+  <QuoteCTA 
+    title="Conte para nossa equipe o que você precisa identificar."
+    description="Especialistas prontos para entender seu projeto e indicar a solução ideal com foco na durabilidade."
+  />
+</Layout>
+
+<style>
+  .section {
+    padding: var(--space-16) 0;
+  }
+  
+  .section-header {
+    margin-bottom: var(--space-12);
+  }
+  
+  .section-title {
+    font-size: var(--text-3xl);
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-4);
+  }
+  
+  .section-title.text-white {
+    color: var(--color-white);
+  }
+  
+  .section-subtitle {
+    font-size: var(--text-lg);
+    color: var(--color-gray-600);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .section-subtitle.text-gray-400 {
+    color: var(--color-gray-400);
+  }
+
+  .grid {
+    display: grid;
+  }
+  
+  .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  
+  .gap-6 { gap: var(--space-6); }
+  
+  .mt-8 { margin-top: var(--space-8); }
+  
+  .text-center { text-align: center; }
+  
+  .max-w-3xl { max-width: 48rem; }
+  
+  .mx-auto { margin-left: auto; margin-right: auto; }
+
+  @media (min-width: 640px) {
+    .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (min-width: 768px) {
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+
+  @media (min-width: 1024px) {
+    .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .lg\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+</style>

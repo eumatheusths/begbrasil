@@ -1,0 +1,269 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Layout.astro';
+import Hero from '../../../components/ui/Hero.astro';
+import ProductCard from '../../../components/ui/ProductCard.astro';
+import QuoteCTA from '../../../components/ui/QuoteCTA.astro';
+
+export async function getStaticPaths() {
+  const produtos = await getCollection('produtos', ({ data }) => data.status === 'active');
+  const categories = [...new Set(produtos.map((p) => p.data.category))];
+
+  return categories.map((category) => {
+    const categoryProducts = produtos.filter((p) => p.data.category === category);
+    return {
+      params: { category },
+      props: { products: categoryProducts },
+    };
+  });
+}
+
+const { category } = Astro.params;
+const { products } = Astro.props;
+
+const formatCategoryName = (slug: string) => {
+  return slug
+    .split('-')
+    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+};
+
+const categoryName = formatCategoryName(category);
+---
+
+<Layout 
+  title={`${categoryName} | BEG Brasil`} 
+  description={`Encontre a solução ideal em ${categoryName} para as necessidades da sua empresa.`}
+>
+  <Hero
+    title={categoryName}
+    subtitle={`Produtos desenvolvidos e testados para máxima resistência na linha de ${categoryName.toLowerCase()}.`}
+  />
+
+  <section class="section container">
+    <div class="category-layout">
+      
+      <!-- Filtros (Client-Side) -->
+      <aside class="filters-sidebar">
+        <h3 class="filters-title">Filtros</h3>
+        
+        <div class="filter-group">
+          <label class="filter-label">Recursos de Rastreabilidade</label>
+          <div class="checkbox-list">
+            <label class="checkbox-item">
+              <input type="checkbox" id="filter-qrcode" class="filter-input" data-filter="qrcode" />
+              <span>Suporta QR Code</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="filter-barcode" class="filter-input" data-filter="barcode" />
+              <span>Suporta Código de Barras</span>
+            </label>
+            <label class="checkbox-item">
+              <input type="checkbox" id="filter-seq" class="filter-input" data-filter="seq" />
+              <span>Numeração Sequencial</span>
+            </label>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Grid de Produtos -->
+      <div class="products-grid">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="product-list">
+          {products.map(produto => (
+            <div 
+              class="product-item"
+              data-qrcode={produto.data.supportsQRCode ? 'true' : 'false'}
+              data-barcode={produto.data.supportsBarcode ? 'true' : 'false'}
+              data-seq={produto.data.supportsSequentialNumbering ? 'true' : 'false'}
+            >
+              <ProductCard
+                title={produto.data.name}
+                description={produto.data.shortDescription}
+                imageUrl={produto.data.images[0] || 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'}
+                href={`/produtos/${produto.id}`}
+              />
+            </div>
+          ))}
+        </div>
+        
+        <div id="no-results" class="no-results hidden">
+          <p>Nenhum produto atende a todos os filtros selecionados.</p>
+          <button id="clear-filters" class="btn-clear text-primary-600">Limpar filtros</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <QuoteCTA 
+    title="Precisa de algo específico?"
+    description="Podemos desenvolver produtos sob medida para as dimensões e ambientes da sua planta."
+  />
+</Layout>
+
+<script>
+  // Lógica de Filtros Client-Side
+  document.addEventListener('DOMContentLoaded', () => {
+    const inputs = document.querySelectorAll('.filter-input');
+    const items = document.querySelectorAll('.product-item');
+    const noResults = document.getElementById('no-results');
+    const clearBtn = document.getElementById('clear-filters');
+
+    const updateFilters = () => {
+      let activeFilters = {
+        qrcode: (document.getElementById('filter-qrcode') as HTMLInputElement).checked,
+        barcode: (document.getElementById('filter-barcode') as HTMLInputElement).checked,
+        seq: (document.getElementById('filter-seq') as HTMLInputElement).checked,
+      };
+
+      let visibleCount = 0;
+
+      items.forEach((item) => {
+        const el = item as HTMLElement;
+        const hasQrcode = el.dataset.qrcode === 'true';
+        const hasBarcode = el.dataset.barcode === 'true';
+        const hasSeq = el.dataset.seq === 'true';
+
+        let show = true;
+        if (activeFilters.qrcode && !hasQrcode) show = false;
+        if (activeFilters.barcode && !hasBarcode) show = false;
+        if (activeFilters.seq && !hasSeq) show = false;
+
+        if (show) {
+          el.style.display = 'block';
+          visibleCount++;
+        } else {
+          el.style.display = 'none';
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults?.classList.remove('hidden');
+      } else {
+        noResults?.classList.add('hidden');
+      }
+    };
+
+    inputs.forEach(input => input.addEventListener('change', updateFilters));
+
+    clearBtn?.addEventListener('click', () => {
+      inputs.forEach((input) => {
+        (input as HTMLInputElement).checked = false;
+      });
+      updateFilters();
+    });
+  });
+</script>
+
+<style>
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  .category-layout {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+
+  @media (min-width: 1024px) {
+    .category-layout {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  .filters-sidebar {
+    width: 100%;
+    background-color: var(--color-gray-50);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  @media (min-width: 1024px) {
+    .filters-sidebar {
+      width: 280px;
+      position: sticky;
+      top: 100px; /* offset para o header fixo */
+    }
+  }
+
+  .filters-title {
+    font-size: var(--text-lg);
+    font-weight: var(--font-bold);
+    color: var(--color-graphite-900);
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-2);
+    border-bottom: 1px solid var(--color-gray-200);
+  }
+
+  .filter-group {
+    margin-bottom: var(--space-6);
+  }
+
+  .filter-label {
+    display: block;
+    font-weight: var(--font-medium);
+    color: var(--color-graphite-800);
+    margin-bottom: var(--space-3);
+  }
+
+  .checkbox-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    cursor: pointer;
+    font-size: var(--text-sm);
+    color: var(--color-gray-700);
+  }
+
+  .checkbox-item input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--color-primary-600);
+  }
+
+  .products-grid {
+    flex: 1;
+  }
+
+  .grid {
+    display: grid;
+  }
+  
+  .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  .gap-6 { gap: var(--space-6); }
+
+  @media (min-width: 768px) {
+    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .no-results {
+    text-align: center;
+    padding: var(--space-12);
+    background-color: var(--color-gray-50);
+    border-radius: var(--radius-lg);
+    border: 1px dashed var(--color-gray-300);
+    color: var(--color-gray-600);
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  .btn-clear {
+    margin-top: var(--space-4);
+    background: none;
+    border: none;
+    font-weight: var(--font-medium);
+    cursor: pointer;
+    text-decoration: underline;
+  }
+</style>

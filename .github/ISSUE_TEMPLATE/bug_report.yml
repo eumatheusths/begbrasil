@@ -1,0 +1,26 @@
+name: Bug Report
+description: Reporte um bug ou falha no sistema
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição do Bug
+      description: Uma descrição clara e concisa sobre qual é o problema.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Passos para Reproduzir
+      description: Liste as etapas para reproduzir o comportamento anômalo.
+    validations:
+      required: true
+  - type: input
+    id: expected
+    attributes:
+      label: Comportamento Esperado
+      description: O que deveria acontecer?
+    validations:
+      required: true
