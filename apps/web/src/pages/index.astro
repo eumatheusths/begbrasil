@@ -215,7 +215,7 @@ const processSteps = [
   </section>
 
   <!-- 9. Projetos Realizados -->
-  <section class="section bg-gray-50">
+  <section id="projetos-realizados" class="section bg-gray-50">
     <div class="container">
       <div class="section-header text-center">
         <h2 class="section-title">Projetos Realizados</h2>
@@ -223,29 +223,32 @@ const processSteps = [
       </div>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <CaseCard
-          title="Identificação de Frota Pesada"
-          client="[CONFIRMAR CLIENTE]"
-          imageUrl="/images/portfolio/placa-tecnica-bomba.png"
-          href="/projetos/frota-pesada"
+          title="Etiquetas Patrimoniais para Gestão de Ativos"
+          description="Identificação durável com numeração e código de barras para inventários mais confiáveis."
+          clientName="Patrimônio"
+          imageUrl="/images/portfolio/etiquetas-patrimonio-prefeitura.png"
+          href="/produtos/etiqueta-aluminio"
         />
         <CaseCard
-          title="Placas para Painéis Elétricos"
-          client="[CONFIRMAR CLIENTE]"
-          imageUrl="/images/portfolio/painel-operacao-industrial.png"
-          href="/projetos/paineis-eletricos"
+          title="Painéis e Tabelas Técnicas para Máquinas"
+          description="Escalas, comandos e diagramas produzidos sob medida para operação e manutenção."
+          clientName="Máquinas"
+          imageUrl="/images/portfolio/painel-nardini-dt650.jpg"
+          href="/produtos/placa-tecnica-maquinas"
         />
         <CaseCard
-          title="Sinalização de Rota de Fuga"
-          client="[CONFIRMAR CLIENTE]"
-          imageUrl="/images/portfolio/sinalizacao-seguranca-producao.png"
-          href="/projetos/sinalizacao-fuga"
+          title="Sinalização Industrial de Segurança"
+          description="Placas de alerta e orientação com alto contraste para áreas operacionais."
+          clientName="Segurança"
+          imageUrl="/images/portfolio/placa-perigo-acrilico.png"
+          href="/produtos/placa-sinalizacao"
         />
       </div>
     </div>
   </section>
 
   <!-- 10. Conteúdo Técnico -->
-  <section class="section">
+  <section id="conteudo-tecnico" class="section">
     <div class="container">
       <div class="section-header text-center">
         <h2 class="section-title">Conteúdo Técnico</h2>
@@ -256,21 +259,24 @@ const processSteps = [
           title="Como escolher a etiqueta de patrimônio ideal"
           excerpt="Guia prático para definir material, tamanho e fixação do seu ativo."
           date="Atualizado recentemente"
-          imageUrl="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-          href="/conteudos/como-escolher-etiqueta-patrimonio"
+          category="Patrimônio"
+          imageUrl="/images/blog/como-escolher-etiqueta-patrimonial.webp"
+          href="/conteudos/como-escolher-etiqueta-patrimonial"
         />
         <ArticleCard
           title="Alumínio vs Aço Inox em placas industriais"
           excerpt="Entenda as diferenças químicas e mecânicas para ambientes agressivos."
           date="Atualizado recentemente"
-          imageUrl="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          category="Materiais"
+          imageUrl="/images/blog/aluminio-vs-aco-inox.webp"
           href="/conteudos/aluminio-vs-aco-inox"
         />
         <ArticleCard
           title="A importância da sinalização de segurança"
           excerpt="Normas e práticas para evitar acidentes no chão de fábrica."
           date="Atualizado recentemente"
-          imageUrl="https://images.unsplash.com/photo-1584446394541-118e906c9a92?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+          category="Segurança"
+          imageUrl="/images/blog/importancia-sinalizacao-seguranca.webp"
           href="/conteudos/importancia-sinalizacao-seguranca"
         />
       </div>

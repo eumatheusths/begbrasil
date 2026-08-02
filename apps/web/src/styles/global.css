@@ -3,6 +3,8 @@
 :root {
   /* Colors */
   --color-primary-400: #38bdf8;
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
   --color-primary-500: #2563eb;
   --color-primary-600: #1d4ed8;
   --color-primary-700: #1e3a8a;
@@ -16,6 +18,13 @@
   --color-graphite-500: #64748b;
   --color-gray-200: #e2e8f0;
   --color-gray-100: #f1f5f9;
+  --color-gray-50: #f8fafc;
+  --color-gray-300: #cbd5e1;
+  --color-gray-400: #94a3b8;
+  --color-gray-500: #64748b;
+  --color-gray-600: #475569;
+  --color-gray-700: #334155;
+  --color-gray-900: #0f172a;
   --color-white: #fff;
   --color-success: #15803d;
   --color-error: #b91c1c;

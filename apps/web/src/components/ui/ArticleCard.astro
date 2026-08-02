@@ -11,6 +11,7 @@ export interface Props {
 }
 
 const { title, summary, excerpt, imageUrl, href, date, category } = Astro.props;
+const copy = summary || excerpt || '';
 ---
 
 <a href={href} class="article-card">
@@ -23,7 +24,8 @@ const { title, summary, excerpt, imageUrl, href, date, category } = Astro.props;
       <span class="article-date">{date}</span>
     </div>
     <h3 class="article-title">{title}</h3>
-    <p class="article-summary">{summary}</p>
+    <p class="article-summary">{copy}</p>
+    <span class="article-link">Ler artigo <span aria-hidden="true">→</span></span>
   </div>
 </a>
 
@@ -110,5 +112,13 @@ const { title, summary, excerpt, imageUrl, href, date, category } = Astro.props;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .article-link {
+    color: var(--color-primary-600);
+    font-size: var(--text-sm);
+    font-weight: var(--font-semibold);
+    margin-top: auto;
+    padding-top: var(--space-4);
   }
 </style>

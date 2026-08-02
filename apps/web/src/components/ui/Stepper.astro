@@ -533,7 +533,7 @@
         const msg = encodeURIComponent(
           `Olá! Solicitei um orçamento no site. Meu protocolo é: ${protocol}`
         );
-        wppBtn.href = `https://wa.me/5511999999999?text=${msg}`;
+        wppBtn.href = `https://wa.me/5511932815618?text=${msg}`;
 
         wppBtn.addEventListener('click', () => {
           if (window.gtag) {
@@ -553,16 +553,124 @@
 </script>
 
 <style>
+  .stepper-container {
+    background: rgb(255 255 255 / 96%);
+    border: 1px solid #dbeafe;
+    border-radius: 24px;
+    box-shadow: 0 30px 70px -42px rgb(29 78 216 / 55%);
+    overflow: hidden;
+    padding: clamp(24px, 5vw, 48px);
+    position: relative;
+  }
+
+  .stepper-container::before {
+    background: var(--gradient-brand);
+    content: '';
+    height: 5px;
+    inset: 0 0 auto;
+    position: absolute;
+  }
+
+  .stepper-header {
+    border-bottom: 1px solid #e2e8f0;
+    margin-bottom: 32px;
+    padding-bottom: 28px;
+  }
+
+  .stepper-header ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .step-indicator > span:first-child {
+    border: 2px solid currentColor;
+    box-shadow: 0 0 0 4px #fff;
+    font-weight: 800;
+  }
+
+  .step-indicator > span:nth-child(2) {
+    font-size: 0.82rem;
+    font-weight: 700;
+  }
+
+  .step-content {
+    border: 0;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+  }
+
+  .step-content > h2 {
+    color: var(--color-graphite-900);
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    letter-spacing: -0.025em;
+  }
+
+  .step-content label {
+    color: var(--color-graphite-800);
+    display: block;
+    font-size: 0.88rem;
+    font-weight: 650;
+  }
+
+  .form-input {
+    background: #fff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    color: var(--color-graphite-900);
+    font: inherit;
+    min-height: 50px;
+    outline: none;
+    padding: 12px 14px;
+    transition:
+      border-color 160ms ease,
+      box-shadow 160ms ease;
+    width: 100%;
+  }
+
+  textarea.form-input {
+    min-height: 120px;
+    resize: vertical;
+  }
+
+  .form-input:hover {
+    border-color: #94a3b8;
+  }
+  .form-input:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 4px rgb(37 99 235 / 13%);
+  }
+
+  .step-content input[type='checkbox'] {
+    accent-color: var(--color-primary-600);
+    height: 19px;
+    width: 19px;
+  }
+
+  .upload-area {
+    background: linear-gradient(135deg, #f8fbff, #eff6ff);
+    border: 2px dashed #93c5fd;
+    border-radius: 18px;
+    padding: clamp(28px, 5vw, 48px);
+  }
+
   .btn-primary {
-    background-color: var(--color-primary-600);
+    background: var(--gradient-brand);
+    border-radius: 11px;
+    box-shadow: var(--shadow-color);
     color: var(--color-white);
+    min-height: 48px;
     transition: background-color var(--transition-fast);
   }
   .btn-primary:hover {
-    background-color: var(--color-primary-700);
+    filter: brightness(0.93) saturate(1.1);
+    transform: translateY(-1px);
   }
   .btn-secondary {
-    background-color: var(--color-gray-200);
+    background-color: #eef2f7;
+    border: 1px solid #cbd5e1;
+    border-radius: 11px;
     color: var(--color-graphite-800);
     transition: background-color var(--transition-fast);
   }
@@ -643,6 +751,12 @@
   }
   .flex-wrap {
     flex-wrap: wrap;
+  }
+  .gap-2 {
+    gap: 0.5rem;
+  }
+  .gap-4 {
+    gap: 1rem;
   }
   .items-center {
     align-items: center;
@@ -756,7 +870,7 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .md\:block {
-      display: block;
+      display: block !important;
     }
     .md\:p-10 {
       padding: 2.5rem;

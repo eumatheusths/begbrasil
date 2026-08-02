@@ -7,20 +7,28 @@ export interface Props {
   description?: string;
   imageUrl: string;
   href: string;
+  linkLabel?: string;
 }
 
-const { clientName, title, description, imageUrl, href } = Astro.props;
+const {
+  clientName,
+  title,
+  description,
+  imageUrl,
+  href,
+  linkLabel = 'Ver solução completa',
+} = Astro.props;
 ---
 
 <a href={href} class="case-card">
   <div class="case-image">
     <img src={imageUrl} alt={title} loading="lazy" />
-    <div class="case-client-badge">{clientName}</div>
+    {clientName && <div class="case-client-badge">{clientName}</div>}
   </div>
   <div class="case-content">
     <h3 class="case-title">{title}</h3>
     <p class="case-description">{description}</p>
-    <span class="case-link">Ler estudo de caso completo &rarr;</span>
+    <span class="case-link">{linkLabel} &rarr;</span>
   </div>
 </a>
 
@@ -55,7 +63,7 @@ const { clientName, title, description, imageUrl, href } = Astro.props;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.8;
+    opacity: 0.94;
     transition:
       opacity var(--transition-normal),
       transform var(--transition-slow);

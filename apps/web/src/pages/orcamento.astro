@@ -13,22 +13,94 @@ import Stepper from '../components/ui/Stepper.astro';
     subtitle="Nossa equipe de engenharia avaliará as informações e retornará com a melhor solução em materiais, formatos e processos."
   />
 
-  <section class="section container">
-    <div class="max-w-4xl mx-auto">
-      <Stepper />
+  <section class="quote-section">
+    <div class="container quote-layout">
+      <aside class="quote-aside">
+        <span>Orçamento personalizado</span>
+        <h2>Conte os detalhes do seu projeto</h2>
+        <p>
+          Quanto mais informações você enviar, mais precisa será a recomendação de material,
+          acabamento e fixação.
+        </p>
+        <ul>
+          <li>Retorno de uma equipe especializada</li>
+          <li>Atendimento para todo o Brasil</li>
+          <li>Seus arquivos tratados com segurança</li>
+        </ul>
+      </aside>
+      <div class="quote-form-wrap">
+        <Stepper />
+      </div>
     </div>
   </section>
 </Layout>
 
 <style>
-  .section {
-    padding: var(--space-12) 0;
+  .quote-section {
+    background: linear-gradient(145deg, #eff6ff, #f8fbff 55%, #ecfeff);
+    padding: var(--space-16) 0;
   }
-  .max-w-4xl {
-    max-width: 56rem;
+  .quote-layout {
+    align-items: start;
+    display: grid;
+    gap: clamp(32px, 5vw, 64px);
+    grid-template-columns: minmax(240px, 0.62fr) minmax(0, 1.7fr);
   }
-  .mx-auto {
-    margin-left: auto;
-    margin-right: auto;
+  .quote-aside {
+    position: sticky;
+    top: 150px;
+  }
+  .quote-aside > span {
+    color: var(--color-primary-600);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .quote-aside h2 {
+    color: var(--color-graphite-900);
+    font-size: clamp(1.8rem, 3vw, 2.55rem);
+    letter-spacing: -0.04em;
+    line-height: 1.08;
+    margin: 12px 0 18px;
+  }
+  .quote-aside p {
+    color: var(--color-gray-600);
+    line-height: 1.7;
+  }
+  .quote-aside ul {
+    display: grid;
+    gap: 12px;
+    list-style: none;
+    margin-top: 28px;
+  }
+  .quote-aside li {
+    color: var(--color-graphite-800);
+    padding-left: 28px;
+    position: relative;
+  }
+  .quote-aside li::before {
+    align-items: center;
+    background: #dbeafe;
+    border-radius: 50%;
+    color: var(--color-primary-700);
+    content: '✓';
+    display: flex;
+    font-size: 0.72rem;
+    font-weight: 900;
+    height: 20px;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 2px;
+    width: 20px;
+  }
+  @media (max-width: 900px) {
+    .quote-layout {
+      grid-template-columns: 1fr;
+    }
+    .quote-aside {
+      position: static;
+    }
   }
 </style>

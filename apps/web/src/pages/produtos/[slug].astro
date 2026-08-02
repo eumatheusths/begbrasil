@@ -162,12 +162,14 @@ const image =
       <div class="max-w-3xl mx-auto bg-gray-50 p-8 rounded-lg border border-gray-200">
         <h2 class="text-2xl font-bold mb-2">Solicitar Orçamento</h2>
         <p class="text-gray-600 mb-6">Você está orçando: <strong>{data.name}</strong></p>
-        <form class="flex flex-col gap-4">
+        <form class="product-quote-form flex flex-col gap-4" action="/orcamento" method="get">
           <div class="grid md:grid-cols-2 gap-4">
             <div>
               <label class="block text-sm font-medium mb-1">Nome Completo</label>
               <input
                 type="text"
+                name="nome"
+                required
                 class="form-input w-full p-2 border border-gray-300 rounded"
                 placeholder="Seu nome"
               />
@@ -176,6 +178,8 @@ const image =
               <label class="block text-sm font-medium mb-1">E-mail Corporativo</label>
               <input
                 type="email"
+                name="email"
+                required
                 class="form-input w-full p-2 border border-gray-300 rounded"
                 placeholder="email@empresa.com.br"
               />
@@ -186,6 +190,7 @@ const image =
               <label class="block text-sm font-medium mb-1">Telefone / WhatsApp</label>
               <input
                 type="tel"
+                name="telefone"
                 class="form-input w-full p-2 border border-gray-300 rounded"
                 placeholder="(00) 00000-0000"
               />
@@ -194,6 +199,7 @@ const image =
               <label class="block text-sm font-medium mb-1">Quantidade Estimada</label>
               <input
                 type="number"
+                name="quantidade"
                 class="form-input w-full p-2 border border-gray-300 rounded"
                 placeholder="Ex: 500"
               />
@@ -202,12 +208,13 @@ const image =
           <div>
             <label class="block text-sm font-medium mb-1">Detalhes do Projeto</label>
             <textarea
+              name="detalhes"
               class="form-input w-full p-2 border border-gray-300 rounded h-32"
               placeholder="Descreva medidas específicas, material desejado e tipo de ambiente (interno/externo)..."
             ></textarea>
           </div>
-          <button type="button" class="btn-primary py-3 px-6 rounded font-medium mt-2"
-            >Enviar Solicitação (Mock)</button
+          <button type="submit" class="btn-primary py-3 px-6 rounded font-medium mt-2"
+            >Continuar solicitação</button
           >
         </form>
       </div>
@@ -518,6 +525,38 @@ const image =
   }
   .scroll-mt-24 {
     scroll-margin-top: 6rem;
+  }
+
+  .product-quote-form label {
+    color: var(--color-graphite-800);
+    font-weight: 650;
+  }
+  .product-quote-form .form-input {
+    background: #fff;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 12px;
+    color: var(--color-graphite-900);
+    font: inherit;
+    min-height: 50px;
+    outline: none;
+    padding: 12px 14px;
+    transition:
+      border-color 160ms ease,
+      box-shadow 160ms ease;
+  }
+  .product-quote-form .form-input:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 4px rgb(37 99 235 / 13%);
+  }
+  .product-quote-form textarea.form-input {
+    min-height: 140px;
+    resize: vertical;
+  }
+  #orcamento > div {
+    background: linear-gradient(145deg, #f8fbff, #eef7ff);
+    border-color: #bfdbfe;
+    border-radius: 22px;
+    box-shadow: 0 24px 60px -42px rgb(29 78 216 / 55%);
   }
 
   @media (min-width: 768px) {

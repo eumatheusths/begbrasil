@@ -7,6 +7,7 @@ reviewer: 'Departamento Técnico'
 publishedAt: '2026-08-02'
 updatedAt: '2026-08-02'
 relatedProducts: ['etiquetas-de-patrimonio', 'etiqueta-aluminio']
+image: '/images/blog/como-escolher-etiqueta-patrimonial.webp'
 ---
 
 O controle de ativos fixos em uma indústria não é apenas uma exigência contábil, mas o pilar de uma manutenção preditiva eficiente. A falha na identificação (etiquetas que descolam, apagam ou derretem) gera prejuízos de milhares de reais anuais em re-trabalho e auditorias malsucedidas.
