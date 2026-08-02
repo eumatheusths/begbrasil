@@ -159,20 +159,39 @@ const processSteps = [
   </section>
 
   <!-- 7. Processo -->
-  <section class="section bg-graphite-900 text-white">
+  <section id="processo" class="section process-section">
     <div class="container">
-      <div class="section-header text-center">
-        <h2 class="section-title text-white">Como Trabalhamos</h2>
-        <p class="section-subtitle text-gray-400">
-          Do primeiro contato até a entrega na sua empresa.
-        </p>
+      <div class="process-layout">
+        <div class="process-copy">
+          <div class="section-header">
+            <span class="process-eyebrow">Processo completo</span>
+            <h2 class="section-title text-white">Como Trabalhamos</h2>
+            <p class="section-subtitle text-gray-400">
+              Do primeiro contato até a entrega na sua empresa.
+            </p>
+          </div>
+          <ProcessTimeline steps={processSteps} />
+        </div>
+        <figure class="process-media">
+          <img
+            src="/images/portfolio/placa-torno-joinville.jpg"
+            alt="Placa técnica produzida sob medida pela BEG Brasil"
+            width="750"
+            height="1000"
+            loading="lazy"
+          />
+          <figcaption>
+            <strong>Produção sob medida</strong><span
+              >Precisão, acabamento e acompanhamento em cada etapa.</span
+            >
+          </figcaption>
+        </figure>
       </div>
-      <ProcessTimeline steps={processSteps} />
     </div>
   </section>
 
   <!-- 8. Segmentos -->
-  <section class="section">
+  <section id="segmentos-atendidos" class="section">
     <div class="container">
       <div class="section-header text-center">
         <h2 class="section-title">Setores que Atendemos</h2>
@@ -305,7 +324,93 @@ const processSteps = [
   }
 
   .section-subtitle.text-gray-400 {
-    color: var(--color-gray-400);
+    color: rgb(255 255 255 / 72%);
+  }
+
+  .process-section {
+    background: linear-gradient(135deg, #071a3d 0%, #0b2f72 58%, #075fd8 100%);
+    color: var(--color-white);
+    overflow: hidden;
+    position: relative;
+  }
+
+  .process-layout {
+    align-items: center;
+    display: grid;
+    gap: clamp(40px, 7vw, 90px);
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  }
+
+  .process-copy .section-header {
+    margin-bottom: var(--space-8);
+  }
+  .process-copy .section-subtitle {
+    margin: 0;
+  }
+  .process-eyebrow {
+    color: #67e8f9;
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+  .process-media {
+    border: 5px solid rgb(255 255 255 / 18%);
+    border-radius: 24px;
+    box-shadow: 0 28px 70px rgb(2 8 23 / 38%);
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .process-media img {
+    aspect-ratio: 4/5;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+  .process-media figcaption {
+    background: linear-gradient(transparent, rgb(2 8 23 / 92%));
+    bottom: 0;
+    display: grid;
+    gap: 4px;
+    left: 0;
+    padding: 72px 28px 25px;
+    position: absolute;
+    right: 0;
+  }
+  .process-media strong {
+    font-size: 1.15rem;
+  }
+  .process-media span {
+    color: rgb(255 255 255 / 72%);
+    font-size: 0.92rem;
+  }
+  .process-section :global(.timeline-title) {
+    color: var(--color-white);
+  }
+  .process-section :global(.timeline-description) {
+    color: rgb(255 255 255 / 68%);
+  }
+  .process-section :global(.timeline-number) {
+    background: #22d3ee;
+    border-color: #a5f3fc;
+    color: #082f49;
+    box-shadow: 0 0 0 5px rgb(34 211 238 / 13%);
+  }
+  .process-section :global(.timeline-line) {
+    background: linear-gradient(#67e8f9, rgb(255 255 255 / 18%));
+  }
+
+  @media (max-width: 850px) {
+    .process-layout {
+      grid-template-columns: 1fr;
+    }
+    .process-media {
+      max-height: 520px;
+    }
   }
 
   .grid {

@@ -10,13 +10,31 @@ export interface Props {
 
 const { name, title, description, icon, href } = Astro.props;
 const displayTitle = title || name || '';
+const icons: Record<string, string> = {
+  factory: '<path d="M3 21V9l6 4V9l6 4V5h6v16H3Z"/><path d="M7 21v-3h3v3M15 17h2M15 13h2"/>',
+  cpu: '<rect x="5" y="5" width="14" height="14" rx="2"/><path d="M9 9h6v6H9zM9 1v4M15 1v4M9 19v4M15 19v4M19 9h4M19 14h4M1 9h4M1 14h4"/>',
+  activity:
+    '<path d="M3 12h4l2.5-7 5 14 2.5-7h4"/><path d="M12 22C6 18 3 15 3 10a5 5 0 0 1 9-3 5 5 0 0 1 9 3c0 5-3 8-9 12Z"/>',
+  'book-open':
+    '<path d="M3 5.5A2.5 2.5 0 0 1 5.5 3H11v16H5.5A2.5 2.5 0 0 0 3 21.5v-16ZM21 5.5A2.5 2.5 0 0 0 18.5 3H13v16h5.5a2.5 2.5 0 0 1 2.5 2.5v-16Z"/>',
+};
 ---
 
 <a href={href} class="sector-card">
   <div class="card-icon">
     {
-      icon ? (
-        <Fragment set:html={icon} />
+      icon && icons[icon] ? (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.7"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <Fragment set:html={icons[icon]} />
+        </svg>
       ) : (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -94,6 +112,11 @@ const displayTitle = title || name || '';
     transition:
       background-color var(--transition-fast),
       color var(--transition-fast);
+  }
+
+  .card-icon svg {
+    height: 34px;
+    width: 34px;
   }
 
   .sector-card:hover .card-icon {
